@@ -1,1023 +1,2537 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plan Ciclo — Planificación y Diseño Cicloinclusivo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ciclo: {
-              DEFAULT: '#4D76A1',
-              dark: '#38597C',
-              deep: '#1E3246',
-              deepMid: '#2A4664',
-              light: '#EBF1F6',
-              tint: '#F4F6F8',
-              signal: '#D94E4E',
-              charcoal: '#1A202C',
-              slate: '#4A5568'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <meta name="description" content="Consultoría técnica en movilidad activa, diseño cicloinclusivo, planes maestros y aprobación normativa D.S. N° 102 (MTT) en Chile.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20class%3D%22brand-mark%22%20viewBox%3D%220%200%20100%20100%22%20aria-hidden%3D%22true%22%3E%0A%20%20%3Cpath%20d%3D%22M%2028.00%2C0.00%20L%2028.00%2C28.00%20L%200.00%2C28.00%20L%200.00%2C0.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2028.00%2C35.00%20L%2028.00%2C55.50%20L%2018.50%2C65.00%20L%200.00%2C65.00%20L%200.00%2C35.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2011.50%2C72.00%20L%200.00%2C83.50%20L%200.00%2C72.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2028.00%2C88.50%20L%2028.00%2C100.00%20L%2016.50%2C100.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2065.00%2C0.00%20L%2065.00%2C18.50%20L%2055.50%2C28.00%20L%2035.00%2C28.00%20L%2035.00%2C0.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2048.50%2C35.00%20L%2035.00%2C48.50%20L%2035.00%2C35.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2065.00%2C51.50%20L%2065.00%2C65.00%20L%2051.50%2C65.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2044.50%2C72.00%20L%2065.00%2C72.00%20L%2065.00%2C100.00%20L%2035.00%2C100.00%20L%2035.00%2C81.50%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2083.50%2C0.00%20L%2072.00%2C11.50%20L%2072.00%2C0.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20100.00%2C16.50%20L%20100.00%2C28.00%20L%2088.50%2C28.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%2081.50%2C35.00%20L%20100.00%2C35.00%20L%20100.00%2C65.00%20L%2072.00%2C65.00%20L%2072.00%2C44.50%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20100.00%2C72.00%20L%20100.00%2C100.00%20L%2072.00%2C100.00%20L%2072.00%2C72.00%20Z%22%20fill%3D%22%23111315%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20100.00%2C9.00%20L%209.00%2C100.00%20L%200.00%2C100.00%20L%200.00%2C91.00%20L%2091.00%2C0.00%20L%20100.00%2C0.00%20Z%22%20fill%3D%22%230089C4%22/%3E%0A%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #F7F7F5;
+      --surface: #FFFFFF;
+      --surface-alt: #EFEFEB;
+      --ink: #111315;
+      --ink-2: #464C54;
+      --ink-3: #767E87;
+      --border: #E2E4E0;
+      --border-strong: #C9CCC6;
+      --blue: #0089C4;
+      --blue-dark: #006E9E;
+      --blue-soft: rgba(0, 137, 196, 0.08);
+      --accent: #D94B2B;
+      --accent-soft: rgba(217, 75, 43, 0.10);
+      --dark-bg: #111315;
+      --dark-surface: #1A1D21;
+      --dark-border: rgba(247, 247, 245, 0.12);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+      --max-w: 1280px;
+      --radius: 2px;
+      --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      color: #1A202C;
-      background-color: #FFFFFF;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
       overflow-x: hidden;
     }
-    h1, h2, h3, .font-display {
-      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
     }
-    @keyframes urbanPanZoom {
-      0% { transform: scale(1.02) translate3d(0, 0, 0); }
-      50% { transform: scale(1.09) translate3d(-1.2%, -0.8%, 0); }
-      100% { transform: scale(1.02) translate3d(0, 0, 0); }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .hero-motion-bg {
-      animation: urbanPanZoom 28s ease-in-out infinite;
-      will-change: transform;
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
     }
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--blue);
+      display: inline-block;
     }
-    .reveal-up.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* ================= HEADER ================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 19, 21, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #F7F7F5;
     }
-    .arch-grid {
-      background-size: 36px 36px;
-      background-image:
-        linear-gradient(to right, rgba(77, 118, 161, 0.055) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(77, 118, 161, 0.055) 1px, transparent 1px);
+
+    .site-header.scrolled {
+      background: rgba(247, 247, 245, 0.94);
+      border-bottom-color: var(--border);
+      color: var(--ink);
+    }
+
+    .header-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .site-header .logo-dark { display: none; }
+    .site-header .logo-light { display: block; }
+    .site-header.scrolled .logo-dark { display: block; }
+    .site-header.scrolled .logo-light { display: none; }
+
+    .brand-wordmark {
+      font-size: 1.32rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.24em;
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      opacity: 0.82;
+      transition: opacity var(--transition), color var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover { opacity: 1; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 0.72rem 1.25rem;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: #F7F7F5;
+    }
+    .btn-dark:hover {
+      background: var(--blue);
+    }
+
+    .btn-outline-light {
+      border: 1px solid rgba(247, 247, 245, 0.35);
+      color: #F7F7F5;
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .btn-outline-light:hover {
+      border-color: #F7F7F5;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-outline-dark {
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
+      background: transparent;
+    }
+    .btn-outline-dark:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #F7F7F5;
+    }
+
+    .header-dossier-btn {
+      border: 1px solid rgba(247, 247, 245, 0.3);
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+    }
+    .site-header.scrolled .header-dossier-btn {
+      border-color: var(--border-strong);
+      color: var(--ink);
+    }
+    .site-header.scrolled .header-dossier-btn:hover {
+      border-color: var(--ink);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 76px 0 0 0;
+      background: var(--dark-bg);
+      color: #F7F7F5;
+      padding: 2rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 660px;
+      max-height: 980px;
+      display: flex;
+      flex-direction: column;
+      background: var(--dark-bg);
+      color: #F7F7F5;
+      overflow: hidden;
+      padding-top: clamp(98px, 12vh, 132px);
+      padding-bottom: clamp(1.75rem, 3.2vh, 2.5rem);
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      opacity: 0.88;
+      filter: contrast(1.03) saturate(0.95);
+    }
+
+    /* Subtle editorial vignette: dark top & bottom for legibility, crystal-clear middle band for cyclists */
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(17, 19, 21, 0.74) 0%,
+        rgba(17, 19, 21, 0.44) 24%,
+        rgba(17, 19, 21, 0.08) 48%,
+        rgba(17, 19, 21, 0.10) 68%,
+        rgba(17, 19, 21, 0.72) 86%,
+        rgba(17, 19, 21, 0.92) 100%
+      );
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-top {
+      max-width: 920px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+      color: rgba(247, 247, 245, 0.86);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(0, 137, 196, 0.30);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.65rem, 6vw, 5.15rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      margin-bottom: 0;
+      color: #FFFFFF;
+      text-shadow: 0 4px 28px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero h1 .accent-dot {
+      color: var(--blue);
+    }
+
+    /* Open middle breathing window so cyclists remain unobstructed */
+    .hero-window {
+      flex: 1;
+      min-height: clamp(110px, 24vh, 280px);
+    }
+
+    .hero-footer-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .hero-lead-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.35vw, 1.2rem);
+      line-height: 1.5;
+      color: rgba(247, 247, 245, 0.90);
+      max-width: 660px;
+      margin: 0;
+      font-weight: 400;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-lead strong {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .hero-bottom {
+      border-top: 1px solid rgba(247, 247, 245, 0.22);
+      padding-top: 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .normative-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.5rem;
+      color: rgba(247, 247, 245, 0.72);
+    }
+
+    .normative-badges span.sep {
+      color: var(--blue);
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(247, 247, 245, 0.72);
+      transition: color var(--transition);
+    }
+    .scroll-cue:hover { color: #FFFFFF; }
+
+    /* ================= SECTIONS GENERAL ================= */
+    section.band {
+      padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: end;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.06;
+      color: var(--ink);
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+
+    /* ================= ENFOQUE ================= */
+    .enfoque-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .viewport-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      position: sticky;
+      top: 96px;
+    }
+
+    .viewport-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .viewport-stage {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      background: #EAECE8;
+      overflow: hidden;
+    }
+
+    .viewport-stage img.stage-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 420ms ease;
+    }
+
+    .viewport-stage .svg-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .viewport-stage img.stage-img { z-index: 2; }
+
+    .stage-pill {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 5;
+      background: rgba(17, 19, 21, 0.86);
+      color: #F7F7F5;
+      padding: 0.38rem 0.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .stage-pill.project {
+      background: var(--blue);
+    }
+
+    /* Technical annotation pins */
+    .tech-pins {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .tech-pins.hidden { opacity: 0; }
+
+    .tech-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(17, 19, 21, 0.9);
+      color: #FFFFFF;
+      padding: 0.32rem 0.6rem;
+      border-left: 2px solid var(--blue);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    .tech-pin.alert { border-left-color: var(--accent); }
+
+    .tech-pin::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .tech-pin.alert::before { background: var(--accent); }
+
+    .viewport-footer {
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .viewport-caption {
+      font-size: 0.88rem;
+      color: var(--ink-2);
+    }
+
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      background: var(--bg);
+      transition: all var(--transition);
+    }
+    .toggle-btn.active {
+      background: var(--ink);
+      color: #F7F7F5;
+      border-color: var(--ink);
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+
+    .step-item {
+      padding: 1.75rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: transparent;
+      text-align: left;
+      width: 100%;
+    }
+
+    .step-item:hover {
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .step-item.active {
+      background: var(--surface);
+      border-left-color: var(--blue);
+    }
+
+    .step-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+      color: var(--ink-3);
+    }
+
+    .step-item.active .step-meta { color: var(--blue); }
+
+    .step-item h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.55rem;
+      color: var(--ink);
+    }
+
+    .step-item p {
+      font-size: 0.94rem;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    /* ================= SERVICIOS (SWISS GRID) ================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .service-card {
+      padding: clamp(2rem, 3.5vw, 3rem);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.75rem;
+      position: relative;
+      transition: background-color var(--transition);
+    }
+
+    .service-card:hover {
+      background: #FCFDFC;
+    }
+
+    .service-card.featured {
+      background: linear-gradient(180deg, rgba(0, 137, 196, 0.045) 0%, #FFFFFF 45%);
+    }
+
+    .service-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    .service-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-3);
+    }
+
+    .client-tag {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+    }
+
+    .service-card.featured .client-tag {
+      background: var(--blue-soft);
+      border-color: rgba(0, 137, 196, 0.25);
+      color: var(--blue-dark);
+    }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    .service-card p {
+      font-size: 0.96rem;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .service-list li::before {
+      content: "—";
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 0.5rem;
+    }
+    .service-cta:hover { color: var(--blue-dark); gap: 0.7rem; }
+
+    /* ================= ESCALAS MULTIESCALAR ================= */
+    .scale-tabs {
+      display: inline-flex;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      padding: 4px;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .scale-tab {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--ink-2);
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scale-tab .tab-idx {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      opacity: 0.65;
+    }
+
+    .scale-tab.active {
+      background: var(--ink);
+      color: #F7F7F5;
+    }
+
+    .scale-panel { display: none; }
+    .scale-panel.active { display: block; }
+
+    /* Before/After Slider */
+    .comparator-shell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .comparator-head {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .comparator-head h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .compare-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 8.2;
+      min-height: 320px;
+      background: #E8EAE6;
+      overflow: hidden;
+      user-select: none;
+      touch-action: pan-y;
+      cursor: ew-resize;
+    }
+
+    .compare-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .compare-layer img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .compare-layer .svg-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .compare-before-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      clip-path: inset(0 50% 0 0);
+    }
+
+    .compare-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 1px rgba(17, 19, 21, 0.3);
+      z-index: 8;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .compare-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .compare-badge {
+      position: absolute;
+      top: 1.15rem;
+      z-index: 7;
+      padding: 0.38rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .compare-badge.left {
+      left: 1.15rem;
+      background: rgba(17, 19, 21, 0.85);
+      color: #F7F7F5;
+    }
+
+    .compare-badge.right {
+      right: 1.15rem;
+      background: var(--blue);
+      color: #FFFFFF;
+    }
+
+    .compare-range-bar {
+      padding: 0.9rem 1.5rem;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .compare-range-bar input[type="range"] {
+      flex: 1;
+      accent-color: var(--blue);
+      cursor: ew-resize;
+    }
+
+    .meta-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-cell {
+      padding: 1.35rem 1.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .meta-cell:last-child { border-right: none; }
+
+    .meta-cell h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--ink);
+    }
+
+    .meta-cell p {
+      font-size: 0.86rem;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    /* Escala 2 & 3 split layout */
+    .scale-split {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .scale-visual {
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .scale-canvas {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      background: #E8EAE6;
+      overflow: hidden;
+    }
+
+    .scale-canvas img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .scale-canvas .svg-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .scale-controls {
+      padding: 1rem 1.25rem;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pill-group {
+      display: inline-flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      padding: 0.42rem 0.78rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-2);
+      transition: all var(--transition);
+    }
+    .pill-btn.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+    }
+    .pill-btn.blue.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #FFFFFF;
+    }
+
+    .scale-info {
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .scale-info h3 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+
+    .scale-info p {
+      font-size: 0.94rem;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+
+    .tech-spec-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .tech-spec-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.82rem;
+      border-bottom: 1px dashed var(--border-strong);
+      padding-bottom: 0.45rem;
+    }
+    .tech-spec-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .tech-spec-row span:first-child { color: var(--ink-3); font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; }
+    .tech-spec-row span:last-child { font-weight: 600; color: var(--ink); text-align: right; }
+
+    /* ================= RESPALDO (DARK EDITORIAL BAND) ================= */
+    .band-dark {
+      background: var(--dark-bg);
+      color: #F7F7F5;
+      padding: clamp(5rem, 8.5vw, 8rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .band-dark .section-title { color: #FFFFFF; }
+    .band-dark .section-desc { color: rgba(247, 247, 245, 0.74); }
+
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+      margin-bottom: 4rem;
+    }
+
+    .metric-cell {
+      padding: 2rem 1.75rem 2rem 0;
+      border-right: 1px solid var(--dark-border);
+    }
+    .metric-cell:not(:first-child) { padding-left: 1.75rem; }
+    .metric-cell:last-child { border-right: none; }
+
+    .metric-val {
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #FFFFFF;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .metric-val span { color: var(--blue); }
+
+    .metric-label {
+      font-size: 0.86rem;
+      color: rgba(247, 247, 245, 0.68);
+      line-height: 1.45;
+    }
+
+    .respaldo-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .director-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .director-head {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .director-avatar {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      background: #111315;
+      border: 1px solid rgba(0, 137, 196, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .director-avatar span {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F7F7F5;
+      letter-spacing: 0.05em;
+    }
+
+    .director-avatar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--blue);
+    }
+
+    .director-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 0.25rem;
+    }
+
+    .director-role {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--blue);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .director-bio {
+      font-size: 0.95rem;
+      color: rgba(247, 247, 245, 0.78);
+      line-height: 1.68;
+    }
+
+    .cred-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cred-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.35rem 0.65rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--dark-border);
+      color: rgba(247, 247, 245, 0.82);
+    }
+
+    .pillars-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .pillar-box {
+      padding: 1.75rem;
+      border: 1px solid var(--dark-border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .pillar-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0.6rem 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .pillar-box p {
+      font-size: 0.92rem;
+      color: rgba(247, 247, 245, 0.72);
+      line-height: 1.6;
+    }
+
+    .fasttrack-box {
+      padding: 1.5rem 1.75rem;
+      background: rgba(0, 137, 196, 0.12);
+      border: 1px solid rgba(0, 137, 196, 0.38);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* ================= CONTACTO ================= */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-direct {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .email-copy-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .email-big {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 2px;
+    }
+
+    .copy-chip {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.32rem 0.65rem;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-2);
+      transition: all var(--transition);
+    }
+    .copy-chip:hover { border-color: var(--ink); color: var(--ink); }
+
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: clamp(1.75rem, 3vw, 2.75rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .field-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-2);
+      margin-bottom: 0.55rem;
+    }
+
+    .topic-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .topic-pill {
+      padding: 0.52rem 0.85rem;
+      border: 1px solid var(--border-strong);
+      font-size: 0.82rem;
+      font-weight: 500;
+      background: var(--bg);
+      color: var(--ink-2);
+      transition: all var(--transition);
+    }
+    .topic-pill.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.82rem 0.95rem;
+      font-family: var(--font-sans);
+      font-size: 0.94rem;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), background-color var(--transition);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #FFFFFF;
+    }
+
+    .form-textarea { min-height: 112px; resize: vertical; }
+
+    .form-status {
+      display: none;
+      padding: 0.85rem 1rem;
+      background: var(--blue-soft);
+      border-left: 3px solid var(--blue);
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+    .form-status.show { display: block; }
+
+    /* ================= FOOTER ================= */
+    .site-footer {
+      background: var(--surface);
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-meta {
+      text-align: right;
+      font-size: 0.84rem;
+      color: var(--ink-3);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      align-items: flex-end;
+    }
+
+    /* ================= MODAL DOSSIER ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(17, 19, 21, 0.78);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal-box {
+      width: 100%;
+      max-width: 1040px;
+      height: 86vh;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 1rem 1.35rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--bg);
+    }
+
+    .modal-body {
+      flex: 1;
+      position: relative;
+      background: #FFFFFF;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 980px) {
+      .nav-desktop { display: none; }
+      .mobile-toggle { display: inline-flex; }
+      .section-header,
+      .enfoque-grid,
+      .services-grid,
+      .scale-split,
+      .respaldo-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .viewport-card { position: static; }
+      .scale-visual { border-right: none; border-bottom: 1px solid var(--border); }
+      .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+      .metric-cell { padding: 1.5rem 1rem !important; border-bottom: 1px solid var(--dark-border); }
+      .metric-cell:nth-child(2n) { border-right: none; }
+      .meta-strip { grid-template-columns: 1fr; }
+      .meta-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .meta-cell:last-child { border-bottom: none; }
+      .footer-meta { text-align: left; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .compare-stage { aspect-ratio: 4 / 3; }
+      .hero { min-height: 600px; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-window { min-height: 110px; }
     }
   </style>
 </head>
-<body class="antialiased selection:bg-ciclo selection:text-white">
+<body>
 
-  <!-- NAVEGACIÓN -->
-  <header id="mainHeader" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-transparent text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#inicio" class="flex items-center gap-3.5 group focus:outline-none" aria-label="Plan Ciclo Inicio">
-        <div id="logoBox" class="w-11 h-11 rounded-lg bg-white/15 backdrop-blur-sm border border-white/25 group-hover:bg-ciclo transition-all flex items-center justify-center shrink-0">
-          <svg id="planCicloIsotipo" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="shrink-0">
-            <path d="M6.5 11H17.5C21.642 11 25 14.358 25 18.5V22.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M6.5 17.5H14.5C16.709 17.5 18.5 19.291 18.5 21.5V25.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.82"/>
-            <circle cx="25" cy="25.5" r="2.3" fill="#FFFFFF"/>
-          </svg>
-        </div>
-        <div class="flex flex-col leading-none">
-          <span id="logoPlanText" class="font-display font-bold text-[20px] tracking-[0.07em] text-white transition-colors">PLAN</span>
-          <span id="logoCicloText" class="font-display font-medium text-[18px] tracking-[0.09em] text-white/90 mt-0.5 transition-colors">CICLO</span>
-        </div>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand-link" aria-label="Plan Ciclo Inicio">
+        <span class="logo-light"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+  <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#F7F7F5"/>
+  <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#F7F7F5"/>
+  <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#F7F7F5"/>
+  <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#F7F7F5"/>
+  <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#F7F7F5"/>
+  <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#F7F7F5"/>
+  <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#F7F7F5"/>
+  <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#F7F7F5"/>
+  <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#F7F7F5"/>
+  <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#F7F7F5"/>
+  <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#F7F7F5"/>
+  <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#F7F7F5"/>
+  <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+</svg></span>
+        <span class="logo-dark"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+  <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
+  <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
+  <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#111315"/>
+  <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#111315"/>
+  <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#111315"/>
+  <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#111315"/>
+  <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#111315"/>
+  <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#111315"/>
+  <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#111315"/>
+  <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#111315"/>
+  <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#111315"/>
+  <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#111315"/>
+  <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+</svg></span>
+        <span class="brand-wordmark">Plan Ciclo</span>
       </a>
 
-      <!-- Menú Desktop -->
-      <nav id="desktopNav" class="hidden md:flex items-center gap-7 text-sm font-medium text-white/90">
-        <a href="#enfoque" class="nav-link hover:text-white transition-colors">Enfoque</a>
-        <a href="#servicios" class="nav-link hover:text-white transition-colors">Servicios</a>
-        <a href="#escalas" class="nav-link hover:text-white transition-colors">Escalas</a>
-        <a href="#trayectoria" class="nav-link hover:text-white transition-colors">Respaldo</a>
-        <button type="button" onclick="openBrochureModal()" id="brochureNavBtn" class="inline-flex items-center gap-1.5 text-white hover:opacity-80 font-semibold transition-all">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          Brochure B2B
-        </button>
-        <a href="#contacto" id="ctaNavBtn" class="px-4 py-2.5 rounded-lg bg-white text-ciclo-deep hover:bg-ciclo-light font-semibold transition-colors shadow-sm">
-          Conversemos
-        </a>
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="#enfoque" class="nav-link">Enfoque</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#escalas" class="nav-link">Escalas</a>
+        <a href="#respaldo" class="nav-link">Respaldo</a>
+        <div class="nav-actions">
+          <button type="button" class="btn header-dossier-btn" data-open-dossier>Dossier B2B</button>
+          <a href="#contacto" class="btn btn-primary">Conversemos</a>
+        </div>
       </nav>
 
-      <!-- Botón Menú Móvil -->
-      <button type="button" id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10" aria-label="Abrir menú">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="7" x2="21" y2="7"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="17" x2="21" y2="17"></line>
         </svg>
       </button>
     </div>
-
-    <!-- Menú Móvil -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white text-ciclo-charcoal border-b border-slate-200 px-4 pt-3 pb-5 space-y-3 text-sm font-medium shadow-lg">
-      <a href="#enfoque" class="block py-1.5 hover:text-ciclo">Enfoque</a>
-      <a href="#servicios" class="block py-1.5 hover:text-ciclo">Servicios</a>
-      <a href="#escalas" class="block py-1.5 hover:text-ciclo">Escalas</a>
-      <a href="#trayectoria" class="block py-1.5 hover:text-ciclo">Respaldo</a>
-      <button type="button" onclick="openBrochureModal()" class="block w-full text-left py-1.5 text-ciclo font-semibold">Brochure B2B</button>
-      <a href="#contacto" class="block w-full text-center py-2.5 rounded-lg bg-ciclo text-white font-semibold">Conversemos</a>
-    </div>
   </header>
 
-  <!-- 1. HERO -->
-  <section id="inicio" class="relative min-h-screen flex flex-col justify-between overflow-hidden bg-ciclo-deep text-white">
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <video
-        id="heroUrbanVideo"
-        class="w-full h-full object-cover"
-        preload="auto"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=2000&q=80"
-      >
-        <source src="assets/video/ciclosweb.mp4" type="video/mp4" />
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#enfoque" data-close-mobile>Enfoque</a>
+    <a href="#servicios" data-close-mobile>Servicios</a>
+    <a href="#escalas" data-close-mobile>Escalas</a>
+    <a href="#respaldo" data-close-mobile>Respaldo</a>
+    <a href="#contacto" data-close-mobile>Conversemos</a>
+    <button type="button" class="btn btn-primary" data-open-dossier data-close-mobile style="margin-top: 0.5rem;">Abrir Dossier Comercial B2B</button>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-media">
+      <video autoplay loop muted playsinline preload="auto">
+        <source src="assets/video/ciclosweb.mp4" type="video/mp4">
       </video>
-
-      <img
-        src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=2000&q=80"
-        alt="Ciclistas cotidianos desplazándose por una ciclovía urbana arbolada"
-        class="absolute inset-0 w-full h-full object-cover hero-motion-bg -z-10"
-      />
-
-      <div class="absolute inset-0 bg-ciclo/55 mix-blend-multiply"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-ciclo-deep/80 via-ciclo-deep/45 to-ciclo/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-ciclo-deep/70 via-transparent to-ciclo-deep/25"></div>
+      <div class="hero-scrim"></div>
     </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-6 w-full min-h-screen flex flex-col justify-between">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-medium tracking-wide text-blue-100 mb-5">
-          <span class="w-2 h-2 rounded-full bg-ciclo-signal animate-pulse"></span>
+    <div class="container hero-content">
+      <div class="hero-top">
+        <div class="hero-kicker mono">
+          <span class="live-dot"></span>
           Consultoría técnica en movilidad activa · Sector público y privado
         </div>
 
-        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-[58px] leading-[1.08] tracking-tight text-white">
-          Planificación y diseño cicloinclusivo.
-        </h1>
+        <h1>Planificación y diseño cicloinclusivo<span class="accent-dot">.</span></h1>
       </div>
 
-      <div class="space-y-5 pt-12">
-        <p class="text-lg sm:text-2xl text-blue-50/95 font-light leading-relaxed max-w-2xl">
-          Redes, proyectos viales y estudios de cicloinfraestructura con <strong class="font-semibold text-white">rigor normativo, viabilidad de aprobación</strong> y desempeño real en la calle.
-        </p>
+      <div class="hero-window" aria-hidden="true"></div>
 
-        <div class="pt-4 border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-blue-100/85">
-          <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+      <div class="hero-footer-group">
+        <div class="hero-lead-row">
+          <p class="hero-lead">
+            Redes, proyectos viales y estudios de cicloinfraestructura con
+            <strong>rigor normativo, viabilidad de aprobación</strong> y desempeño real en la calle.
+          </p>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="normative-badges mono">
             <span>D.S. N° 102 (MTT)</span>
-            <span class="text-white/30">•</span>
+            <span class="sep">/</span>
             <span>OGUC Art. 2.3.2 bis</span>
-            <span class="text-white/30">•</span>
+            <span class="sep">/</span>
             <span>Guía de Diseño Vial Ciclo-inclusivo SECTRA</span>
           </div>
-          <a href="#enfoque" class="inline-flex items-center gap-2 text-white/95 hover:text-white font-medium">
-            <span>Deslizar para recorrer</span>
-            <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
+          <a href="#enfoque" class="scroll-cue mono">
+            Deslizar para recorrer
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. ENFOQUE (SCROLLYTELLING CON PNG LIVIANOS) -->
-  <section id="enfoque" class="relative py-24 lg:py-32 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-16 lg:mb-20 reveal-up">
-        <span class="text-xs font-semibold uppercase tracking-[0.14em] text-ciclo">Enfoque</span>
-        <h2 class="font-display font-bold text-3xl sm:text-5xl text-ciclo-charcoal mt-3 leading-tight">
-          Entre el plano y la calle
-        </h2>
-        <p class="mt-5 text-lg text-ciclo-slate leading-relaxed">
+  <!-- ================= ENFOQUE ================= -->
+  <section class="band" id="enfoque">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Enfoque</span>
+          <h2 class="section-title">Entre el plano y la calle</h2>
+        </div>
+        <p class="section-desc">
           Cumplir formalmente una lámina no garantiza que un proyecto se apruebe sin trabas ni que opere con seguridad en terreno. Integramos criterio normativo, ingeniería vial y lectura urbana para diseñar infraestructura viable en tramitación y efectiva en operación.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-        <!-- Columna Izquierda Sticky: Plano PNG sincronizado con el scroll -->
-        <div class="lg:col-span-6 lg:sticky lg:top-28">
-          <div class="rounded-2xl bg-ciclo-tint border border-slate-200/90 p-5 sm:p-7 shadow-sm">
-            <div class="flex items-center justify-between gap-3 text-xs text-ciclo-slate mb-4 pb-3 border-b border-slate-200">
-              <span class="font-semibold text-ciclo-charcoal" id="storyDiagramTitle">01 · Situación Base y diagnóstico normativo</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-ciclo-light text-ciclo font-semibold shrink-0" id="storyStepBadge">1 / 3</span>
-            </div>
+      <div class="enfoque-grid">
+        <div class="viewport-card">
+          <div class="viewport-bar">
+            <span class="mono" id="enfoqueStepLabel">01 · Situación Base y diagnóstico normativo</span>
+            <span class="mono" style="color: var(--ink-3);" id="enfoqueStepCounter">1 / 3</span>
+          </div>
 
-            <div class="relative w-full aspect-square max-w-[460px] mx-auto rounded-xl overflow-hidden border border-slate-200/80 bg-white">
-              <img
-                id="enfoqueImgBase"
-                src="assets/enfoque/esc-base.png"
-                alt="Planta de intersección — Situación Base"
-                class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-100"
-              />
-              <img
-                id="enfoqueImgProy"
-                src="assets/enfoque/esc-proyecto.png"
-                alt="Planta de intersección — Con Proyecto"
-                class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out opacity-0"
-              />
-              <span id="enfoqueLayerPill" class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-ciclo-charcoal/85 text-white text-[11px] font-semibold tracking-wide pointer-events-none">
-                Situación Base
-              </span>
-            </div>
+          <div class="viewport-stage">
+            <!-- Architectural SVG Fallback (renders seamlessly if remote assets are offline) -->
+            <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice" id="enfoqueSvgFallback">
+              <rect width="800" height="550" fill="#EAECE8"/>
+              <!-- Urban Blocks -->
+              <rect x="0" y="0" width="245" height="165" fill="#DCDFD9"/>
+              <rect x="555" y="0" width="245" height="165" fill="#DCDFD9"/>
+              <rect x="0" y="385" width="245" height="165" fill="#DCDFD9"/>
+              <rect x="555" y="385" width="245" height="165" fill="#DCDFD9"/>
+              <!-- Roadway Asphalt -->
+              <rect x="265" y="0" width="270" height="550" fill="#2A2E33"/>
+              <rect x="0" y="185" width="800" height="180" fill="#2A2E33"/>
+              <!-- Lane dashes -->
+              <line x1="400" y1="0" x2="400" y2="175" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
+              <line x1="400" y1="375" x2="400" y2="550" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
+              <line x1="0" y1="275" x2="255" y2="275" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
+              <line x1="545" y1="275" x2="800" y2="275" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
+              <!-- Project Layer (toggled via JS) -->
+              <g id="enfoqueSvgProject" opacity="0" style="transition: opacity 0.4s ease;">
+                <!-- Segregated Blue Cycleway -->
+                <rect x="0" y="330" width="800" height="32" fill="#0089C4"/>
+                <rect x="268" y="0" width="32" height="550" fill="#0089C4"/>
+                <!-- Buffer Hatch -->
+                <rect x="0" y="324" width="252" height="6" fill="#E5A910"/>
+                <rect x="548" y="324" width="252" height="6" fill="#E5A910"/>
+                <!-- Corner Protected Islands (Gajos D.S. 102) -->
+                <path d="M 304,324 L 332,324 A 28,28 0 0 1 304,296 Z" fill="#F7F7F5"/>
+                <path d="M 548,324 L 520,324 A 28,28 0 0 0 548,296 Z" fill="#F7F7F5"/>
+                <!-- Zebra Crossings -->
+                <g fill="#F7F7F5" opacity="0.9">
+                  <rect x="236" y="196" width="18" height="10"/><rect x="236" y="216" width="18" height="10"/>
+                  <rect x="236" y="236" width="18" height="10"/><rect x="236" y="256" width="18" height="10"/>
+                  <rect x="236" y="276" width="18" height="10"/><rect x="236" y="296" width="18" height="10"/>
+                  <rect x="546" y="196" width="18" height="10"/><rect x="546" y="216" width="18" height="10"/>
+                  <rect x="546" y="236" width="18" height="10"/><rect x="546" y="256" width="18" height="10"/>
+                  <rect x="546" y="276" width="18" height="10"/><rect x="546" y="296" width="18" height="10"/>
+                </g>
+              </g>
+            </svg>
 
-            <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <p class="text-xs text-ciclo-slate leading-relaxed" id="storyDiagramCaption">
-                Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.
-              </p>
-              <div class="inline-flex p-1 rounded-lg bg-white border border-slate-200 shrink-0 self-start sm:self-auto">
-                <button type="button" id="btnEnfoqueBase" onclick="setEnfoqueView('base')" class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-ciclo text-white transition-colors">
-                  Base
-                </button>
-                <button type="button" id="btnEnfoqueProy" onclick="setEnfoqueView('proyecto')" class="px-2.5 py-1 rounded-md text-[11px] font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-colors">
-                  Proyecto
-                </button>
-              </div>
+            <!-- Real planciclo.cl assets -->
+            <img class="stage-img" id="enfoqueImgBase" src="assets/enfoque/esc-base.png" alt="Planta de intersección — Situación Base" onerror="this.style.display='none'">
+            <img class="stage-img" id="enfoqueImgProyecto" src="assets/enfoque/esc-proyecto.png" alt="Planta de intersección — Con Proyecto" style="opacity:0;" onerror="this.style.display='none'">
+
+            <span class="stage-pill mono" id="enfoqueBadge">Situación Base</span>
+
+            <!-- Technical Pins Overlay -->
+            <div class="tech-pins" id="enfoquePins">
+              <div class="tech-pin alert" style="left: 34%; top: 58%;" data-step="0">Conflicto de viraje derecho</div>
+              <div class="tech-pin alert" style="left: 68%; top: 38%;" data-step="0">Ancho subestándar entre L.O.</div>
+              <div class="tech-pin" style="left: 41%; top: 60%; display:none;" data-step="1">Isla de resguardo · Radio R=6 m</div>
+              <div class="tech-pin" style="left: 66%; top: 64%; display:none;" data-step="1">Cruce continuo D.S. N° 102</div>
+              <div class="tech-pin" style="left: 38%; top: 52%; display:none;" data-step="2">Intervisibilidad ≥ 25 m</div>
+              <div class="tech-pin" style="left: 64%; top: 62%; display:none;" data-step="2">Velocidad de viraje ≤ 15 km/h</div>
             </div>
+          </div>
+
+          <div class="viewport-footer">
+            <p class="viewport-caption" id="enfoqueCaption">Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.</p>
+            <button type="button" class="toggle-btn active" id="toggleEnfoquePins">
+              <span>●</span> Capas técnicas: ON
+            </button>
           </div>
         </div>
 
-        <!-- Columna Derecha: Pasos narrativos -->
-        <div class="lg:col-span-6 space-y-16 lg:space-y-28 lg:py-6">
-          <div class="story-step p-7 sm:p-8 rounded-2xl border border-ciclo ring-2 ring-ciclo/15 bg-white shadow-sm transition-all" data-step="1">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ciclo mb-3">
-              <span class="w-6 h-6 rounded-full bg-ciclo text-white flex items-center justify-center text-[11px]">01</span>
-              Viabilidad normativa
+        <div class="steps-list">
+          <button type="button" class="step-item active" data-enfoque-step="0">
+            <div class="step-meta mono">
+              <span>01</span>
+              <span>·</span>
+              <span>Viabilidad normativa</span>
             </div>
-            <h3 class="font-display font-bold text-2xl text-ciclo-charcoal mb-3">
-              Rigor técnico desde el primer trazo
-            </h3>
-            <p class="text-ciclo-slate leading-relaxed">
-              Definimos emplazamiento, anchos efectivos y criterios geométricos desde el anteproyecto para anticipar observaciones técnicas y asegurar la viabilidad de aprobación ante las contrapartes públicas.
-            </p>
-          </div>
+            <h3>Rigor técnico desde el primer trazo</h3>
+            <p>Definimos emplazamiento, anchos efectivos y criterios geométricos desde el anteproyecto para anticipar observaciones técnicas y asegurar la viabilidad de aprobación ante las contrapartes públicas.</p>
+          </button>
 
-          <div class="story-step p-7 sm:p-8 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all" data-step="2">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ciclo mb-3">
-              <span class="w-6 h-6 rounded-full bg-ciclo text-white flex items-center justify-center text-[11px]">02</span>
-              Resolución de puntos críticos
+          <button type="button" class="step-item" data-enfoque-step="1">
+            <div class="step-meta mono">
+              <span>02</span>
+              <span>·</span>
+              <span>Resolución de puntos críticos</span>
             </div>
-            <h3 class="font-display font-bold text-2xl text-ciclo-charcoal mb-3">
-              Continuidad donde los flujos se cruzan
-            </h3>
-            <p class="text-ciclo-slate leading-relaxed">
-              Los mayores riesgos aparecen donde la ciclovía se interrumpe: intersecciones, paraderos de buses, accesos vehiculares y virajes. Ajustamos radios de giro, islas de resguardo y transiciones para sostener la continuidad en cada cruce.
-            </p>
-          </div>
+            <h3>Continuidad donde los flujos se cruzan</h3>
+            <p>Los mayores riesgos aparecen donde la ciclovía se interrumpe: intersecciones, paraderos de buses, accesos vehiculares y virajes. Ajustamos radios de giro, islas de resguardo y transiciones para sostener la continuidad en cada cruce.</p>
+          </button>
 
-          <div class="story-step p-7 sm:p-8 rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all" data-step="3">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ciclo mb-3">
-              <span class="w-6 h-6 rounded-full bg-ciclo text-white flex items-center justify-center text-[11px]">03</span>
-              Desempeño en terreno
+          <button type="button" class="step-item" data-enfoque-step="2">
+            <div class="step-meta mono">
+              <span>03</span>
+              <span>·</span>
+              <span>Desempeño en terreno</span>
             </div>
-            <h3 class="font-display font-bold text-2xl text-ciclo-charcoal mb-3">
-              Infraestructura legible para todos los usuarios
-            </h3>
-            <p class="text-ciclo-slate leading-relaxed">
-              Evaluamos intervisibilidad, velocidades reales de giro y convivencia cotidiana entre peatones, ciclistas y vehículos motorizados. El objetivo son calles predecibles, cómodas y seguras desde el primer día de operación.
-            </p>
-          </div>
+            <h3>Infraestructura legible para todos los usuarios</h3>
+            <p>Evaluamos intervisibilidad, velocidades reales de giro y convivencia cotidiana entre peatones, ciclistas y vehículos motorizados. El objetivo son calles predecibles, cómodas y seguras desde el primer día de operación.</p>
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. SERVICIOS -->
-  <section id="servicios" class="relative py-24 lg:py-32 bg-ciclo-tint overflow-hidden">
-    <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-ciclo/25 to-transparent -translate-x-1/2 pointer-events-none"></div>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal-up">
-        <div class="max-w-2xl">
-          <span class="text-xs font-semibold uppercase tracking-[0.14em] text-ciclo">Servicios</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-ciclo-charcoal mt-2 leading-tight">
-            Apoyo técnico especializado en cada etapa del proyecto
-          </h2>
+  <!-- ================= SERVICIOS ================= -->
+  <section class="band" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Servicios</span>
+          <h2 class="section-title">Apoyo técnico especializado en cada etapa</h2>
         </div>
-        <p class="text-sm text-ciclo-slate max-w-md leading-relaxed">
+        <p class="section-desc">
           Colaboramos como especialistas asociados con consultoras de transporte, equipos de ingeniería vial y estudios IMIV, o directamente con municipalidades, gobiernos regionales y desarrolladores urbanos.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-7">
-        <!-- Servicio 1 -->
-        <article class="reveal-up bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col">
-          <div class="w-12 h-12 rounded-xl bg-ciclo-light text-ciclo flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-            </svg>
+      <div class="services-grid">
+        <article class="service-card">
+          <div>
+            <div class="service-top-row">
+              <span class="service-num">01</span>
+              <span class="client-tag">IMIV · Consultoras viales · GORE</span>
+            </div>
+            <h3>Planificación y Diseño Cicloinclusivo</h3>
+            <p>Desarrollo de planes maestros comunales, anteproyectos viales, perfiles transversales e intersecciones protegidas con alto estándar operativo.</p>
           </div>
-          <h3 class="font-display font-bold text-xl text-ciclo-charcoal mb-3">
-            Planificación y Diseño Cicloinclusivo
-          </h3>
-          <p class="text-sm text-ciclo-slate leading-relaxed mb-5">
-            Desarrollo de planes maestros comunales, anteproyectos viales, perfiles transversales e intersecciones protegidas con alto estándar operativo.
-          </p>
-          <ul class="space-y-2 text-xs text-ciclo-slate border-t border-slate-100 pt-4 mt-auto">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Diseño de especialidad ciclovial para proyectos urbanos e IMIV</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Resolución de nodos críticos, paraderos y zonas calma (Zona 30)</li>
+          <ul class="service-list">
+            <li>Diseño de especialidad ciclovial para proyectos urbanos e IMIV</li>
+            <li>Resolución de nodos críticos, paraderos RED y zonas calma (Zona 30)</li>
           </ul>
         </article>
 
-        <!-- Servicio 2 -->
-        <article class="reveal-up bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col" style="transition-delay: 80ms;">
-          <div class="w-12 h-12 rounded-xl bg-ciclo-light text-ciclo flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
+        <article class="service-card">
+          <div>
+            <div class="service-top-row">
+              <span class="service-num">02</span>
+              <span class="client-tag">Municipios · Desarrolladores</span>
+            </div>
+            <h3>Evaluación y Diagnóstico de Movilidad Activa</h3>
+            <p>Auditorías en terreno, análisis espacial de redes y evaluación de seguridad vial para priorizar inversiones y medidas de mitigación.</p>
           </div>
-          <h3 class="font-display font-bold text-xl text-ciclo-charcoal mb-3">
-            Evaluación y Diagnóstico de Movilidad Activa
-          </h3>
-          <p class="text-sm text-ciclo-slate leading-relaxed mb-5">
-            Auditorías en terreno, análisis espacial de redes y evaluación de seguridad vial para priorizar inversiones y medidas de mitigación.
-          </p>
-          <ul class="space-y-2 text-xs text-ciclo-slate border-t border-slate-100 pt-4 mt-auto">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Catastros operativos, conectividad y detección de brechas</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Estudios de intermodalidad y cicloestacionamientos</li>
+          <ul class="service-list">
+            <li>Catastros operativos, conectividad territorial y detección de brechas</li>
+            <li>Estudios de intermodalidad, BiciHubs y cicloestacionamientos</li>
           </ul>
         </article>
 
-        <!-- Servicio 3 -->
-        <article class="reveal-up bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col" style="transition-delay: 140ms;">
-          <div class="w-12 h-12 rounded-xl bg-ciclo-light text-ciclo flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+        <article class="service-card featured">
+          <div>
+            <div class="service-top-row">
+              <span class="service-num" style="color: var(--blue);">03 · FAST-TRACK</span>
+              <span class="client-tag">SEREMITT · SECTRA · SERVIU · UOCT</span>
+            </div>
+            <h3>Revisión Normativa y Aprobación D.S. N° 102</h3>
+            <p>Acompañamiento técnico para proyectos que requieren autorización ante SEREMITT y coordinación con SECTRA, SERVIU y UOCT bajo D.S. N° 102 (MTT), OGUC y D.S. N° 78.</p>
           </div>
-          <h3 class="font-display font-bold text-xl text-ciclo-charcoal mb-3">
-            Revisión Normativa y Aprobación D.S. N° 102
-          </h3>
-          <p class="text-sm text-ciclo-slate leading-relaxed mb-5">
-            Acompañamiento técnico para proyectos que requieren autorización ante SEREMITT y coordinación con SECTRA, SERVIU y UOCT bajo D.S. N° 102 (MTT), OGUC y D.S. N° 78.
-          </p>
-          <div class="border-t border-slate-100 pt-4 mt-auto space-y-3">
-            <ul class="space-y-2 text-xs text-ciclo-slate">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Revisión preventiva de planimetría y memorias antes de ingreso</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Respuesta a observaciones técnicas y destrabe de expedientes</li>
+          <div>
+            <ul class="service-list">
+              <li>Revisión preventiva de planimetría y memorias antes de ingreso</li>
+              <li>Respuesta a observaciones técnicas y destrabe de expedientes</li>
             </ul>
-            <button type="button" onclick="openBrochureModal()" class="inline-flex items-center text-xs font-semibold text-ciclo hover:text-ciclo-dark underline underline-offset-4 pt-1">
-              Ver modalidad rápida B2B →
-            </button>
-          </div>
-        </article>
-
-        <!-- Servicio 4 -->
-        <article class="reveal-up bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col" style="transition-delay: 200ms;">
-          <div class="w-12 h-12 rounded-xl bg-ciclo-light text-ciclo flex items-center justify-center mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-display font-bold text-xl text-ciclo-charcoal mb-3">
-            Capacitación Técnica y Procesos Participativos
-          </h3>
-          <p class="text-sm text-ciclo-slate leading-relaxed mb-5">
-            Talleres aplicados para equipos municipales y consultoras, junto con instancias de participación ciudadana y validación en terreno.
-          </p>
-          <ul class="space-y-2 text-xs text-ciclo-slate border-t border-slate-100 pt-4 mt-auto">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Formación en diseño vial cicloinclusivo y normativa vigente</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ciclo shrink-0"></span>Auditorías participativas y co-diseño de espacio público</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. ESCALAS DE TRABAJO (ARCO, NODO, RED) -->
-  <section id="escalas" class="py-24 lg:py-32 bg-white arch-grid">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-up">
-        <div>
-          <span class="text-xs font-semibold uppercase tracking-[0.14em] text-ciclo">Metodología multiescalar</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-ciclo-charcoal mt-2">
-            Del perfil de calle a la red metropolitana
-          </h2>
-        </div>
-
-        <div class="inline-flex p-1.5 rounded-xl bg-ciclo-tint border border-slate-200 self-start">
-          <button type="button" onclick="switchScale('calle')" id="tab-calle" class="scale-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-ciclo text-white shadow-sm transition-all">
-            Arco
-          </button>
-          <button type="button" onclick="switchScale('nodo')" id="tab-nodo" class="scale-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-all">
-            Nodo
-          </button>
-          <button type="button" onclick="switchScale('red')" id="tab-red" class="scale-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-all">
-            Red
-          </button>
-        </div>
-      </div>
-
-      <!-- PANEL 1: ARCO -->
-      <div id="panel-calle" class="scale-panel bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="p-6 sm:p-8 bg-slate-50/70">
-          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
-            <div>
-              <span class="text-xs font-semibold text-ciclo uppercase tracking-wider">Perfil Vial Tipo · Avenida Estructurante</span>
-              <h3 class="font-display font-bold text-xl sm:text-2xl text-ciclo-charcoal mt-0.5">
-                Corredor — Situación Base vs. Con Proyecto
-              </h3>
-            </div>
-            <span class="text-xs font-medium text-ciclo-slate" id="baPercentLabel">Corte: 50%</span>
-          </div>
-
-          <div
-            id="baContainer"
-            class="relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm select-none cursor-ew-resize"
-          >
-            <img
-              id="baAfterImg"
-              src="assets/perfiles/corredor-proyecto.png"
-              alt="Perfil vial — Con Proyecto"
-              class="w-full h-auto block pointer-events-none"
-            />
-            <div
-              id="baBeforeClip"
-              class="absolute inset-y-0 left-0 overflow-hidden pointer-events-none"
-              style="width: 50%;"
-            >
-              <img
-                id="baBeforeImg"
-                src="assets/perfiles/corredor-base.png"
-                alt="Perfil vial — Situación Base"
-                class="h-full max-w-none object-cover object-left grayscale contrast-95 brightness-95"
-              />
-              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ciclo-charcoal/85 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap">
-                SITUACIÓN BASE
-              </span>
-            </div>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-ciclo text-white text-[11px] font-semibold tracking-wide pointer-events-none">
-              CON PROYECTO
-            </span>
-            <div
-              id="baDividerLine"
-              class="absolute inset-y-0 w-0.5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.55)] pointer-events-none"
-              style="left: 50%;"
-            >
-              <div class="w-9 h-9 rounded-full bg-white text-ciclo-deep border-2 border-ciclo shadow-lg flex items-center justify-center text-sm font-bold -translate-x-1/2 top-1/2 -translate-y-1/2 relative">
-                ⇄
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-3 flex items-center gap-3 bg-white px-4 py-3 rounded-xl border border-slate-200">
-            <span class="text-[11px] font-semibold text-ciclo-slate shrink-0">Situación Base</span>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              id="baSlider"
-              aria-label="Comparar Situación Base y Con Proyecto"
-              oninput="updateBA(this.value)"
-              onchange="updateBA(this.value)"
-              class="w-full accent-[#4D76A1] cursor-pointer"
-            />
-            <span class="text-[11px] font-semibold text-ciclo shrink-0">Con Proyecto</span>
-          </div>
-
-          <div class="mt-5 pt-5 border-t border-slate-200/80 grid sm:grid-cols-3 gap-4 text-xs text-ciclo-slate">
-            <div>
-              <p class="font-semibold text-ciclo-charcoal mb-1">Redistribución del perfil</p>
-              <p class="leading-relaxed">Optimización del ancho entre líneas oficiales para equilibrar calzada, transporte público, ciclovía y veredas.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-ciclo-charcoal mb-1">Segregación y estándar</p>
-              <p class="leading-relaxed">Definición de anchos efectivos, franjas de resguardo y dispositivos físicos acordes a la jerarquía y velocidad de la vía.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-ciclo-charcoal mb-1">Convivencia con paraderos</p>
-              <p class="leading-relaxed">Resolución de interfaces entre pista ciclovial, pistas solo bus, árboles existentes y accesos prediales.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 2: NODO -->
-      <div id="panel-nodo" class="scale-panel hidden bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="p-6 sm:p-8 grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7">
-            <div id="interseccionPngFadeStage" class="relative w-full max-w-[420px] aspect-square mx-auto rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
-              <img src="assets/plantas/I1_Base.png" data-label="Intersección 1 · Situación Base" alt="Intersección 1 Situación Base" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100" />
-              <img src="assets/plantas/I1_Proyecto.png" data-label="Intersección 1 · Con Proyecto" alt="Intersección 1 Con Proyecto" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I5_Base.png" data-label="Intersección 2 · Situación Base" alt="Intersección 2 Situación Base" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I5_Proyecto.png" data-label="Intersección 2 · Con Proyecto" alt="Intersección 2 Con Proyecto" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I12_Base.png" data-label="Intersección 3 · Situación Base" alt="Intersección 3 Situación Base" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I12_Proyecto.png" data-label="Intersección 3 · Con Proyecto" alt="Intersección 3 Con Proyecto" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I19_Base.png" data-label="Intersección 4 · Situación Base" alt="Intersección 4 Situación Base" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I19_Proyecto.png" data-label="Intersección 4 · Con Proyecto" alt="Intersección 4 Con Proyecto" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I23_Base.png" data-label="Intersección 5 · Situación Base" alt="Intersección 5 Situación Base" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <img src="assets/plantas/I23_Proyecto.png" data-label="Intersección 5 · Con Proyecto" alt="Intersección 5 Con Proyecto" class="interseccion-fade-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" />
-              <span id="interseccionPngLabel" class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-ciclo-charcoal/85 text-white text-[11px] font-semibold tracking-wide z-10">
-                Intersección 1 · Situación Base
-              </span>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 space-y-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-ciclo">Intersecciones y Puntos Críticos</span>
-            <h3 class="font-display font-bold text-2xl text-ciclo-charcoal">
-              Continuidad y control de velocidades de viraje
-            </h3>
-            <p class="text-sm text-ciclo-slate leading-relaxed">
-              Las intersecciones concentran la mayor parte de los siniestros viales. Diseñamos cruces protegidos, adelantamientos de línea de detención, fases semafóricas dedicadas y radios de giro contenidos para asegurar visibilidad mutua.
-            </p>
-            <ul class="space-y-2 text-xs text-ciclo-slate pt-2 border-t border-slate-100">
-              <li>• Verificación de radios de giro de diseño y vehículos mayores</li>
-              <li>• Islas de protección, demarcación de cruces y señalización vertical</li>
-              <li>• Evaluación de índice de riesgo operacional por fase semafórica</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- PANEL 3: RED -->
-      <div id="panel-red" class="scale-panel hidden bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="p-6 sm:p-8 grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7">
-            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-3 sm:p-4">
-              <div class="rounded-xl overflow-hidden bg-white border border-slate-200/80">
-              <img src="assets/mapas/mapa-final-indice-multianillo.webp" alt="mapa final indice multianillo" data-red-idx="0" class="red-map-img  w-full h-auto max-h-[480px] object-contain mx-auto block" />
-              <img src="assets/mapas/mapa-futuro-simulado-multianillo.webp" alt="mapa futuro simulado multianillo" data-red-idx="1" class="red-map-img hidden w-full h-auto max-h-[480px] object-contain mx-auto block" />
-              </div>
-              <div class="mt-3 flex flex-wrap items-center justify-between gap-2">
-                <div class="flex flex-wrap gap-2">
-                <button type="button" onclick="selectRedMap(0)" data-red-btn="0" class="red-map-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-ciclo text-white shadow-sm">mapa final indice multianillo</button>
-                <button type="button" onclick="selectRedMap(1)" data-red-btn="1" class="red-map-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-ciclo-slate border border-slate-200 hover:border-ciclo hover:text-ciclo-charcoal">mapa futuro simulado multianillo</button>
-                </div>
-                <span id="redMapCounter" class="text-[11px] font-medium text-ciclo-slate">1 / 2</span>
-              </div>
-            </div>
-          </div>
-          <div class="lg:col-span-5 space-y-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-ciclo">Planificación Territorial y Conectividad</span>
-            <h3 class="font-display font-bold text-2xl text-ciclo-charcoal">
-              Más allá de los kilómetros lineales
-            </h3>
-            <p class="text-sm text-ciclo-slate leading-relaxed">
-              Una red ciclista solo cumple su propósito cuando conecta orígenes y destinos cotidianos sin cortes abruptos. Evaluamos cobertura territorial, conectividad con transporte público y potencial de cambio modal para priorizar tramos de alto impacto.
-            </p>
-            <ul class="space-y-2 text-xs text-ciclo-slate pt-2 border-t border-slate-100">
-              <li>• Análisis SIG de accesibilidad, densidad de viajes y brechas de red</li>
-              <li>• Planes maestros comunales e intercomunales de movilidad activa</li>
-              <li>• Integración con estaciones de transporte público y equipamientos</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. RESPALDO TÉCNICO -->
-  <section id="trayectoria" class="py-24 bg-ciclo-deep text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-6 reveal-up">
-          <span class="text-xs font-semibold uppercase tracking-[0.14em] text-blue-200">Respaldo técnico y académico</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl leading-tight">
-            Experiencia en política pública, investigación aplicada y diseño urbano
-          </h2>
-          <p class="text-blue-100/90 leading-relaxed">
-            <strong>Plan Ciclo</strong> combina experiencia directa en la conducción de políticas y estándares nacionales de movilidad activa en Chile, investigación aplicada en ingeniería de transporte y práctica proyectual en espacio público.
-          </p>
-          <p class="text-blue-100/80 text-sm leading-relaxed">
-            Haber estado tanto del lado de la evaluación técnica y la normativa ministerial como del diseño urbano y la docencia universitaria nos permite trabajar con fluidez junto a oficinas de ingeniería vial, contrapartes públicas y municipios.
-          </p>
-        </div>
-
-        <div class="lg:col-span-5 reveal-up">
-          <div class="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md p-7 space-y-5">
-            <div class="flex items-start gap-3.5">
-              <div class="w-8 h-8 rounded-lg bg-ciclo flex items-center justify-center shrink-0 font-display font-bold text-xs">01</div>
-              <div>
-                <h3 class="font-display font-semibold text-base">Criterio normativo desde adentro</h3>
-                <p class="text-xs text-blue-100/80 mt-1 leading-relaxed">Experiencia formulando estándares públicos y evaluando proyectos ante SEREMITT, SECTRA, SERVIU y UOCT.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3.5">
-              <div class="w-8 h-8 rounded-lg bg-ciclo flex items-center justify-center shrink-0 font-display font-bold text-xs">02</div>
-              <div>
-                <h3 class="font-display font-semibold text-base">Evidencia empírica y análisis espacial</h3>
-                <p class="text-xs text-blue-100/80 mt-1 leading-relaxed">Decisiones de diseño respaldadas por análisis territorial SIG, modelación de redes y evaluación de seguridad vial.</p>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-white/15 flex items-center justify-between gap-2">
-              <span class="text-xs text-blue-200">¿Buscas apoyo puntual para D.S. N° 102?</span>
-              <button type="button" onclick="openBrochureModal()" class="text-xs font-semibold text-white underline underline-offset-4 hover:text-blue-200 shrink-0">
-                Abrir ficha B2B →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. CONTACTO -->
-  <section id="contacto" class="py-24 lg:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-5 space-y-6 reveal-up">
-          <span class="text-xs font-semibold uppercase tracking-[0.14em] text-ciclo">Contacto</span>
-          <h2 class="font-display font-bold text-3xl sm:text-4xl text-ciclo-charcoal leading-tight">
-            Conversemos sobre tu proyecto
-          </h2>
-          <p class="text-ciclo-slate leading-relaxed">
-            Cuéntanos el alcance, los plazos o las observaciones a resolver. Respondemos para coordinar una reunión breve o preparar una propuesta técnica a medida.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <a href="mailto:contacto@planciclo.cl?subject=Consulta%20Proyecto%20-%20Plan%20Ciclo" class="inline-flex items-center gap-3 px-5 py-3.5 rounded-xl bg-ciclo-tint hover:bg-ciclo-light text-ciclo-charcoal font-medium text-sm border border-slate-200 transition-colors">
-              <svg class="w-5 h-5 text-ciclo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-              contacto@planciclo.cl
+            <a href="#contacto" class="service-cta" data-select-topic="Revisión D.S. N° 102">
+              Solicitar revisión preventiva
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <p class="text-xs text-ciclo-slate">
-              Sitio web: <span class="font-medium text-ciclo-charcoal">planciclo.cl</span> · Santiago, Chile
-            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div>
+            <div class="service-top-row">
+              <span class="service-num">04</span>
+              <span class="client-tag">Equipos públicos · Co-diseño</span>
+            </div>
+            <h3>Capacitación Técnica y Procesos Participativos</h3>
+            <p>Talleres aplicados para equipos municipales y consultoras, junto con instancias de participación ciudadana y validación en terreno.</p>
+          </div>
+          <ul class="service-list">
+            <li>Formación en diseño vial cicloinclusivo y normativa vigente</li>
+            <li>Auditorías participativas y co-diseño de espacio público</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ESCALAS MULTIESCALAR ================= -->
+  <section class="band" id="escalas">
+    <div class="container">
+      <div class="section-header" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Metodología multiescalar</span>
+          <h2 class="section-title">Del perfil de calle a la red metropolitana</h2>
+        </div>
+        <div style="display: flex; justify-content: flex-end;">
+          <div class="scale-tabs" role="tablist">
+            <button type="button" class="scale-tab active" data-scale-tab="perfil"><span class="tab-idx">01</span> Perfil vial</button>
+            <button type="button" class="scale-tab" data-scale-tab="intersecciones"><span class="tab-idx">02</span> Intersecciones</button>
+            <button type="button" class="scale-tab" data-scale-tab="red"><span class="tab-idx">03</span> Red SIG</button>
           </div>
         </div>
+      </div>
 
-        <div class="lg:col-span-7 reveal-up">
-          <form id="contactForm" action="https://formspree.io/f/tu-endpoint-planciclo" method="POST" class="bg-ciclo-tint rounded-2xl p-7 sm:p-9 border border-slate-200/90 space-y-5">
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label for="name" class="block text-xs font-semibold text-ciclo-charcoal mb-1.5">Nombre y apellido</label>
-                <input type="text" id="name" name="name" required placeholder="Ej. Carolina Soto" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:border-ciclo" />
-              </div>
-              <div>
-                <label for="organization" class="block text-xs font-semibold text-ciclo-charcoal mb-1.5">Consultora / Institución</label>
-                <input type="text" id="organization" name="organization" placeholder="Ej. Consultora Vial / Municipalidad" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:border-ciclo" />
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label for="email" class="block text-xs font-semibold text-ciclo-charcoal mb-1.5">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="nombre@empresa.cl" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:border-ciclo" />
-              </div>
-              <div>
-                <label for="scope" class="block text-xs font-semibold text-ciclo-charcoal mb-1.5">Línea de interés</label>
-                <select id="scope" name="scope" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:border-ciclo">
-                  <option value="Planificación y Diseño Cicloinclusivo">Planificación y diseño cicloinclusivo</option>
-                  <option value="Aprobación D.S. 102">Revisión normativa / Aprobación D.S. N° 102</option>
-                  <option value="Diagnóstico y Evaluación">Diagnóstico / Auditoría de movilidad activa</option>
-                  <option value="Capacitación o Participación">Capacitación técnica / Proceso participativo</option>
-                  <option value="Otro requerimiento">Otro requerimiento o alianza</option>
-                </select>
-              </div>
-            </div>
-
+      <!-- TAB 01: PERFIL VIAL BEFORE/AFTER -->
+      <div class="scale-panel active" id="panel-perfil">
+        <div class="comparator-shell">
+          <div class="comparator-head">
             <div>
-              <label for="message" class="block text-xs font-semibold text-ciclo-charcoal mb-1.5">Cuéntanos brevemente sobre el proyecto o requerimiento</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Ubicación, escala del proyecto, plazos estimados o apoyo técnico requerido..." class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-sm focus:outline-none focus:border-ciclo"></textarea>
+              <span class="mono" style="color: var(--blue);">Perfil Vial Tipo · Avenida Estructurante (24 m L.O.)</span>
+              <h3>Corredor — Situación Base vs. Con Proyecto</h3>
+            </div>
+            <span class="mono" id="cutIndicator" style="color: var(--ink-2);">CORTE: 50%</span>
+          </div>
+
+          <div class="compare-stage" id="compareStage">
+            <!-- AFTER (CON PROYECTO) -->
+            <div class="compare-layer">
+              <svg class="svg-fallback" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+                <rect width="1200" height="600" fill="#F2F4F2"/>
+                <!-- Sky & Subtle Building Elevations -->
+                <rect x="0" y="80" width="130" height="360" fill="#E1E4E0"/>
+                <rect x="1070" y="60" width="130" height="380" fill="#E1E4E0"/>
+                <!-- Trees -->
+                <circle cx="190" cy="270" r="62" fill="#8FA98E" opacity="0.72"/><rect x="186" y="310" width="8" height="130" fill="#5D534A"/>
+                <circle cx="995" cy="270" r="62" fill="#8FA98E" opacity="0.72"/><rect x="991" y="310" width="8" height="130" fill="#5D534A"/>
+                <!-- Sidewalks -->
+                <rect x="0" y="440" width="250" height="44" fill="#D4D7D2"/>
+                <rect x="950" y="440" width="250" height="44" fill="#D4D7D2"/>
+                <!-- Segregated Blue Cycleway (D.S. 102) -->
+                <rect x="250" y="446" width="150" height="38" fill="#0089C4"/>
+                <rect x="400" y="446" width="26" height="38" fill="#E5A910"/>
+                <!-- Roadway Asphalt -->
+                <rect x="426" y="446" width="524" height="38" fill="#2A2E33"/>
+                <!-- Subgrade -->
+                <rect x="0" y="484" width="1200" height="116" fill="#E4E5E2"/>
+                <!-- Cyclist silhouette -->
+                <circle cx="315" cy="422" r="14" fill="none" stroke="#111315" stroke-width="3.5"/>
+                <circle cx="355" cy="422" r="14" fill="none" stroke="#111315" stroke-width="3.5"/>
+                <path d="M315,422 L332,398 L350,398 L355,422 M332,398 L322,382" stroke="#111315" stroke-width="3.5" fill="none"/>
+                <!-- RED Bus -->
+                <rect x="470" y="310" width="190" height="128" rx="8" fill="#C93B2B"/>
+                <rect x="485" y="328" width="160" height="48" rx="3" fill="#23272B"/>
+                <rect x="485" y="392" width="160" height="14" fill="#FFFFFF" opacity="0.9"/>
+                <!-- Dimension lines -->
+                <g stroke="#111315" stroke-width="1.2" font-family="IBM Plex Mono, monospace" font-size="13" fill="#111315" text-anchor="middle">
+                  <line x1="250" y1="520" x2="400" y2="520"/><text x="325" y="544" stroke="none" fill="#0089C4" font-weight="600">CICLOVÍA 2,4m</text>
+                  <line x1="426" y1="520" x2="950" y2="520"/><text x="688" y="544" stroke="none">CALZADA OPTIMIZADA + PISTA SOLO BUS</text>
+                </g>
+              </svg>
+              <img src="assets/perfiles/corredor-proyecto.png" alt="Perfil vial — Con Proyecto" onerror="this.style.display='none'">
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
-              <button type="submit" class="px-6 py-3.5 rounded-lg bg-ciclo hover:bg-ciclo-dark text-white font-semibold text-sm transition-colors shadow-sm">
-                Enviar mensaje
-              </button>
-              <a href="mailto:contacto@planciclo.cl?subject=Consulta%20T%C3%A9cnica%20-%20Plan%20Ciclo" class="text-xs font-medium text-ciclo hover:text-ciclo-dark underline underline-offset-4">
-                O abrir directamente en tu cliente de correo
-              </a>
+            <!-- BEFORE (SITUACIÓN BASE) -->
+            <div class="compare-before-wrap" id="compareBeforeWrap">
+              <div class="compare-layer">
+                <svg class="svg-fallback" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+                  <rect width="1200" height="600" fill="#ECECE9"/>
+                  <rect x="0" y="80" width="130" height="360" fill="#D5D7D3"/>
+                  <rect x="1070" y="60" width="130" height="380" fill="#D5D7D3"/>
+                  <!-- Narrow sidewalks -->
+                  <rect x="0" y="440" width="175" height="44" fill="#CACCC8"/>
+                  <rect x="1025" y="440" width="175" height="44" fill="#CACCC8"/>
+                  <!-- Over-wide Roadway -->
+                  <rect x="175" y="446" width="850" height="38" fill="#32363B"/>
+                  <rect x="0" y="484" width="1200" height="116" fill="#DEDFD9"/>
+                  <!-- Multiple Cars -->
+                  <rect x="240" y="388" width="115" height="52" rx="8" fill="#5D646D"/>
+                  <rect x="440" y="388" width="115" height="52" rx="8" fill="#464C54"/>
+                  <rect x="650" y="388" width="115" height="52" rx="8" fill="#5D646D"/>
+                  <rect x="850" y="388" width="115" height="52" rx="8" fill="#464C54"/>
+                  <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#464C54" text-anchor="middle">
+                    <text x="600" y="544">SITUACIÓN BASE · 4 PISTAS MOTORIZADAS SIN SEGREGACIÓN CICLISTA</text>
+                  </g>
+                </svg>
+                <img src="assets/perfiles/corredor-base.png" alt="Perfil vial — Situación Base" onerror="this.style.display='none'">
+              </div>
             </div>
 
-            <p id="formFeedback" class="hidden text-xs font-medium text-ciclo-dark bg-ciclo-light px-4 py-3 rounded-lg border border-ciclo/25"></p>
-          </form>
+            <span class="compare-badge left">Situación Base</span>
+            <span class="compare-badge right">Con Proyecto</span>
+
+            <div class="compare-divider" id="compareDivider">
+              <div class="compare-handle">⇄</div>
+            </div>
+          </div>
+
+          <div class="compare-range-bar">
+            <span class="mono" style="color: var(--ink-3);">Situación Base</span>
+            <input type="range" id="compareRange" min="0" max="100" value="50" aria-label="Comparador Situación Base vs Con Proyecto">
+            <span class="mono" style="color: var(--blue);">Con Proyecto</span>
+          </div>
+
+          <div class="meta-strip">
+            <div class="meta-cell">
+              <h4>Redistribución del perfil</h4>
+              <p>Optimización del ancho entre líneas oficiales para equilibrar calzada, transporte público, ciclovía y veredas sin expropiaciones.</p>
+            </div>
+            <div class="meta-cell">
+              <h4>Segregación y estándar D.S. N° 102</h4>
+              <p>Definición de anchos efectivos, franjas de resguardo de 0,5 m y dispositivos físicos acordes a la jerarquía y velocidad de la vía.</p>
+            </div>
+            <div class="meta-cell">
+              <h4>Convivencia con paraderos RED</h4>
+              <p>Resolución de interfaces entre pista ciclovial, pistas solo bus, arbolado existente y accesos prediales críticos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 02: INTERSECCIONES -->
+      <div class="scale-panel" id="panel-intersecciones">
+        <div class="scale-split">
+          <div class="scale-visual">
+            <div class="scale-canvas">
+              <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="550" fill="#EAECE8"/>
+                <rect x="0" y="0" width="230" height="160" fill="#D8DBD5"/>
+                <rect x="570" y="0" width="230" height="160" fill="#D8DBD5"/>
+                <rect x="0" y="390" width="230" height="160" fill="#D8DBD5"/>
+                <rect x="570" y="390" width="230" height="160" fill="#D8DBD5"/>
+                <rect x="255" y="0" width="290" height="550" fill="#2A2E33"/>
+                <rect x="0" y="180" width="800" height="190" fill="#2A2E33"/>
+                <g id="intSvgProject" opacity="0" style="transition: opacity 0.35s ease;">
+                  <rect x="0" y="335" width="800" height="30" fill="#0089C4"/>
+                  <rect x="260" y="0" width="30" height="550" fill="#0089C4"/>
+                  <path d="M 294,331 L 326,331 A 32,32 0 0 1 294,299 Z" fill="#F7F7F5"/>
+                  <path d="M 556,331 L 524,331 A 32,32 0 0 0 556,299 Z" fill="#F7F7F5"/>
+                </g>
+              </svg>
+              <img id="intersectionImg" src="assets/plantas/I1_Base.png" alt="Intersección 1 Situación Base" onerror="this.style.display='none'">
+              <span class="stage-pill mono" id="intersectionBadge">Intersección 1 · Situación Base</span>
+            </div>
+
+            <div class="scale-controls">
+              <div class="pill-group" id="intSelector">
+                <button type="button" class="pill-btn active" data-int-idx="0">I1</button>
+                <button type="button" class="pill-btn" data-int-idx="1">I5</button>
+                <button type="button" class="pill-btn" data-int-idx="2">I12</button>
+                <button type="button" class="pill-btn" data-int-idx="3">I19</button>
+                <button type="button" class="pill-btn" data-int-idx="4">I23</button>
+              </div>
+              <div class="pill-group">
+                <button type="button" class="pill-btn active" data-int-state="Base">Situación Base</button>
+                <button type="button" class="pill-btn blue" data-int-state="Proyecto">Con Proyecto</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="scale-info">
+            <div>
+              <span class="eyebrow">Intersecciones y Puntos Críticos</span>
+              <h3>Continuidad y control de velocidades de viraje</h3>
+              <p>Las intersecciones concentran la mayor parte de los siniestros viales. Diseñamos cruces protegidos, adelantamientos de línea de detención, fases semafóricas dedicadas y radios de giro contenidos para asegurar visibilidad mutua.</p>
+            </div>
+
+            <div class="tech-spec-box">
+              <div class="tech-spec-row"><span>Geometría</span><span>Verificación radios de giro vehículos mayores</span></div>
+              <div class="tech-spec-row"><span>Segregación</span><span>Islas de resguardo, demarcación y señalética</span></div>
+              <div class="tech-spec-row"><span>Operación UOCT</span><span>Índice de riesgo operacional por fase semafórica</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 03: RED METROPOLITANA Y SIG -->
+      <div class="scale-panel" id="panel-red">
+        <div class="scale-split">
+          <div class="scale-visual">
+            <div class="scale-canvas" style="background: #181B1F;">
+              <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="550" fill="#181B1F"/>
+                <!-- Concentric Accessibility Rings -->
+                <circle cx="400" cy="275" r="210" fill="none" stroke="rgba(247,247,245,0.08)" stroke-width="1" stroke-dasharray="6 6"/>
+                <circle cx="400" cy="275" r="140" fill="none" stroke="rgba(0,137,196,0.28)" stroke-width="1.5"/>
+                <circle cx="400" cy="275" r="75" fill="rgba(0,137,196,0.12)" stroke="#0089C4" stroke-width="2"/>
+                <!-- Base Network -->
+                <g stroke="#0089C4" stroke-width="3" fill="none" opacity="0.8">
+                  <path d="M 140,340 L 290,295 L 400,275 L 540,220 L 660,180"/>
+                  <path d="M 320,90 L 380,210 L 400,275 L 440,420"/>
+                </g>
+                <!-- Simulated Expansion Layer -->
+                <g id="mapSvgFuture" opacity="0" stroke="#E5A910" stroke-width="3" stroke-dasharray="10 6" fill="none" style="transition: opacity 0.4s ease;">
+                  <path d="M 160,180 L 320,210 L 520,290 L 670,350"/>
+                  <path d="M 240,440 L 400,275 L 590,115"/>
+                  <circle cx="290" cy="295" r="7" fill="#E5A910" stroke="none"/>
+                  <circle cx="540" cy="220" r="7" fill="#E5A910" stroke="none"/>
+                </g>
+                <circle cx="400" cy="275" r="8" fill="#FFFFFF"/>
+              </svg>
+              <img id="mapImg" src="assets/mapas/mapa-final-indice-multianillo.webp" alt="Mapa Índice Multianillo Actual" onerror="this.style.display='none'">
+              <span class="stage-pill mono" id="mapBadge">Escenario Actual · Índice Multianillo</span>
+            </div>
+
+            <div class="scale-controls">
+              <div class="pill-group">
+                <button type="button" class="pill-btn active" data-map-idx="0">01 · Red Actual</button>
+                <button type="button" class="pill-btn blue" data-map-idx="1">02 · Escenario Simulado</button>
+              </div>
+              <span class="mono" style="color: var(--ink-3);">ANÁLISIS SIG · GRAN SANTIAGO</span>
+            </div>
+          </div>
+
+          <div class="scale-info">
+            <div>
+              <span class="eyebrow">Planificación Territorial y Conectividad</span>
+              <h3>Más allá de los kilómetros lineales</h3>
+              <p>Una red ciclista solo cumple su propósito cuando conecta orígenes y destinos cotidianos sin cortes abruptos. Evaluamos cobertura territorial, conectividad con transporte público y potencial de cambio modal para priorizar tramos de alto impacto.</p>
+            </div>
+
+            <div class="tech-spec-box">
+              <div class="tech-spec-row"><span>Modelación SIG</span><span>Accesibilidad, densidad de viajes y brechas de red</span></div>
+              <div class="tech-spec-row"><span>Instrumentos</span><span>Planes maestros comunales e intercomunales</span></div>
+              <div class="tech-spec-row"><span>Intermodalidad</span><span>Integración con Metro, trenes y equipamientos</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-ciclo-tint border-t border-slate-200 py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-ciclo flex items-center justify-center text-white shrink-0">
-          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6.5 11H17.5C21.642 11 25 14.358 25 18.5V22.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M6.5 17.5H14.5C16.709 17.5 18.5 19.291 18.5 21.5V25.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.82"/>
-            <circle cx="25" cy="25.5" r="2.3" fill="#FFFFFF"/>
-          </svg>
-        </div>
+  <!-- ================= RESPALDO (HIGH-CONTRAST DARK BAND) ================= -->
+  <section class="band-dark" id="respaldo">
+    <div class="container">
+      <div class="section-header">
         <div>
-          <span class="font-display font-bold text-sm tracking-wider text-ciclo-charcoal">PLAN CICLO</span>
-          <p class="text-xs text-ciclo-slate">Planificación y Diseño Cicloinclusivo · planciclo.cl</p>
+          <span class="eyebrow">Respaldo técnico y académico</span>
+          <h2 class="section-title">Experiencia desde el estándar nacional hasta la obra</h2>
+        </div>
+        <p class="section-desc">
+          Haber liderado la formulación de estándares ministeriales y la evaluación técnica pública —junto con la investigación aplicada en ingeniería de transporte y el diseño urbano— permite destrabar proyectos complejos con precisión.
+        </p>
+      </div>
+
+      <div class="metrics-bar">
+        <div class="metric-cell">
+          <div class="metric-val"><span>+</span>500 km</div>
+          <div class="metric-label">de cicloinfraestructura evaluada y seguida en estándar nacional</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val"><span>+</span>500</div>
+          <div class="metric-label">profesionales y funcionarios públicos capacitados en 13 ciudades</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val">D.S. <span>102</span></div>
+          <div class="metric-label">Experiencia directa redactando guías técnicas y criterios SECTRA / MTT</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val">PhD<span> · UC</span></div>
+          <div class="metric-label">Doctorado en Ingeniería de Transporte y docencia en Arquitectura</div>
         </div>
       </div>
 
-      <div class="text-xs text-ciclo-slate sm:text-right space-y-1">
-        <p class="font-medium text-ciclo-charcoal">Plan Ciclo es una marca de Echiburu SpA.</p>
-        <p>© 2026 Echiburu SpA · Todos los derechos reservados · contacto@planciclo.cl</p>
+      <div class="respaldo-grid">
+        <div class="director-card">
+          <div class="director-head">
+            <div class="director-avatar" aria-hidden="true">
+              <span>TE</span>
+            </div>
+            <div>
+              <div class="director-name">Dr. Tomás Echiburú Altamirano</div>
+              <div class="director-role">Director Técnico · Fundador de Plan Ciclo</div>
+            </div>
+          </div>
+
+          <p class="director-bio">
+            Arquitecto, Magíster en Arquitectura del Paisaje y Doctor en Ingeniería de Transporte por la Pontificia Universidad Católica de Chile. Fundó y dirigió durante cuatro años el <strong>Área de Movilidad Activa de SECTRA (Ministerio de Transportes y Telecomunicaciones)</strong>, encabezando la creación de la <em>Guía de Diseño Vial Ciclo-inclusivo</em>. Actualmente es investigador postdoctoral en CEDEUS y académico de la Escuela de Arquitectura UC.
+          </p>
+
+          <div class="cred-tags">
+            <span class="cred-tag">Ex-Jefe Movilidad Activa SECTRA (MTT)</span>
+            <span class="cred-tag">PhD Ingeniería de Transporte UC</span>
+            <span class="cred-tag">Investigador CEDEUS</span>
+            <span class="cred-tag">Académico Arquitectura UC</span>
+          </div>
+        </div>
+
+        <div class="pillars-stack">
+          <div class="pillar-box">
+            <span class="mono" style="color: var(--blue);">01 · Criterio normativo desde adentro</span>
+            <h3>Lenguaje común con contrapartes evaluadoras</h3>
+            <p>Conocimiento directo de los criterios de revisión de SEREMITT, SECTRA, SERVIU y UOCT para anticipar observaciones antes de ingresar un expediente o IMIV.</p>
+          </div>
+
+          <div class="pillar-box">
+            <span class="mono" style="color: var(--blue);">02 · Evidencia empírica y análisis espacial</span>
+            <h3>Decisiones respaldadas por datos y geometría</h3>
+            <p>Integración de modelación espacial SIG, indicadores de seguridad operacional y diseño arquitectónico de calle para defender cada solución técnica.</p>
+          </div>
+
+          <div class="fasttrack-box">
+            <div>
+              <span class="mono" style="color: var(--blue); display: block; margin-bottom: 0.25rem;">Apoyo puntual B2B</span>
+              <strong style="font-size: 1rem; color: #FFFFFF;">¿Tienes observaciones abiertas bajo D.S. N° 102?</strong>
+            </div>
+            <a href="#contacto" class="btn btn-primary" data-select-topic="Revisión D.S. N° 102">Revisar expediente</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="band" id="contacto" style="border-bottom: none;">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section-title" style="margin-bottom: 1.25rem;">Conversemos sobre tu proyecto</h2>
+          <p class="section-desc">
+            Cuéntanos el alcance, los plazos o las observaciones a resolver. Respondemos directamente para coordinar una reunión técnica breve o preparar una propuesta a medida.
+          </p>
+
+          <div class="contact-direct">
+            <div>
+              <span class="mono" style="color: var(--ink-3); display: block; margin-bottom: 0.45rem;">Correo directo</span>
+              <div class="email-copy-row">
+                <a href="mailto:contacto@planciclo.cl?subject=Consulta%20Proyecto%20-%20Plan%20Ciclo" class="email-big">contacto@planciclo.cl</a>
+                <button type="button" class="copy-chip" id="copyEmailBtn">Copiar correo</button>
+              </div>
+            </div>
+
+            <div class="mono" style="color: var(--ink-3);">
+              planciclo.cl · Santiago, Chile · Cobertura nacional
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-outline-dark" data-open-dossier>
+                Abrir Dossier Comercial B2B ↗
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div>
+            <label class="field-label">Tipo de requerimiento</label>
+            <div class="topic-pills" id="topicPills">
+              <button type="button" class="topic-pill active" data-topic="Revisión D.S. N° 102">Revisión D.S. N° 102</button>
+              <button type="button" class="topic-pill" data-topic="Diseño vial / IMIV">Diseño vial / IMIV</button>
+              <button type="button" class="topic-pill" data-topic="Plan Maestro / SIG">Plan Maestro / SIG</button>
+              <button type="button" class="topic-pill" data-topic="Capacitación técnica">Capacitación</button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label class="field-label" for="fName">Nombre y cargo</label>
+              <input class="form-input" id="fName" type="text" placeholder="Ej. Camila Rojas · Jefa de Proyecto" required>
+            </div>
+            <div>
+              <label class="field-label" for="fOrg">Organización / Municipio</label>
+              <input class="form-input" id="fOrg" type="text" placeholder="Ej. Consultora Vial / SECPLA" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label" for="fEmail">Correo institucional</label>
+            <input class="form-input" id="fEmail" type="email" placeholder="nombre@organizacion.cl" required>
+          </div>
+
+          <div>
+            <label class="field-label" for="fMsg">Alcance, comuna o plazo clave</label>
+            <textarea class="form-textarea" id="fMsg" placeholder="Indica brevemente el proyecto, número de intersecciones, estado ante SEREMITT o plazos estimados..." required></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <span class="mono" style="color: var(--ink-3);">Respuesta habitual &lt; 24 h hábiles</span>
+            <button type="submit" class="btn btn-dark">Preparar correo de consulta →</button>
+          </div>
+
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div style="display: flex; align-items: center; gap: 0.9rem;">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+  <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
+  <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
+  <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#111315"/>
+  <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#111315"/>
+  <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#111315"/>
+  <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#111315"/>
+  <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#111315"/>
+  <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#111315"/>
+  <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#111315"/>
+  <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#111315"/>
+  <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#111315"/>
+  <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#111315"/>
+  <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+</svg>
+        <div>
+          <div class="brand-wordmark" style="font-size: 1.12rem; margin-bottom: 0.2rem;">Plan Ciclo</div>
+          <div class="mono" style="color: var(--ink-3); font-size: 0.66rem;">Planificación y Diseño Cicloinclusivo · planciclo.cl</div>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>Plan Ciclo es una marca de <strong>Echiburu SpA</strong>.</span>
+        <span>© 2026 Echiburu SpA · Todos los derechos reservados · contacto@planciclo.cl</span>
       </div>
     </div>
   </footer>
 
-  <!-- MODAL BROCHURE COMERCIAL B2B -->
-  <div id="brochureModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4 sm:p-6">
-    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden">
-      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-4 bg-ciclo-tint">
+  <!-- ================= DOSSIER MODAL ================= -->
+  <div class="modal-backdrop" id="dossierModal" role="dialog" aria-modal="true" aria-labelledby="dossierTitle">
+    <div class="modal-box">
+      <div class="modal-header">
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-ciclo">Plan Ciclo · Echiburu SpA</span>
-          <h3 class="font-display font-bold text-lg text-ciclo-charcoal">Dossier Comercial B2B</h3>
+          <span class="mono" style="color: var(--blue); display: block;">Plan Ciclo · Echiburu SpA</span>
+          <strong id="dossierTitle" style="font-size: 1.05rem;">Dossier Comercial B2B</strong>
         </div>
-        <div class="flex items-center gap-2.5">
-          <a href="assets/brochure/brochure_planciclo.html" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-ciclo text-white hover:bg-ciclo-dark transition-colors">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <a href="assets/brochure/brochure_planciclo.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark" style="padding: 0.5rem 0.9rem; font-size: 0.8rem;">
             Abrir en pestaña nueva ↗
           </a>
-          <button type="button" onclick="closeBrochureModal()" class="p-1.5 rounded-lg text-ciclo-slate hover:text-ciclo-charcoal hover:bg-slate-200/80 transition-colors" aria-label="Cerrar">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
+          <button type="button" class="btn btn-dark" id="closeDossierBtn" style="padding: 0.5rem 0.9rem; font-size: 0.8rem;">Cerrar ✕</button>
         </div>
       </div>
-      <div class="p-4 sm:p-6 bg-slate-100/70 flex-1 overflow-hidden">
-        <iframe
-          src="assets/brochure/brochure_planciclo.html"
-          title="Plan Ciclo — Dossier Comercial B2B"
-          class="w-full h-[72vh] rounded-xl border border-slate-200 bg-white shadow-sm"
-        ></iframe>
+      <div class="modal-body">
+        <iframe id="dossierFrame" title="Dossier Comercial B2B Plan Ciclo"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- INTERACTIVIDAD -->
   <script>
-    // 1. Navegación transparente -> sólida al scroll
-    const header = document.getElementById('mainHeader');
-    const logoBox = document.getElementById('logoBox');
-    const logoPlanText = document.getElementById('logoPlanText');
-    const logoCicloText = document.getElementById('logoCicloText');
-    const desktopNav = document.getElementById('desktopNav');
-    const brochureNavBtn = document.getElementById('brochureNavBtn');
-    const ctaNavBtn = document.getElementById('ctaNavBtn');
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    // 1. Header scroll state & mobile drawer
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 48);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-
-    function updateHeaderOnScroll() {
-      if (window.scrollY > 48) {
-        header.classList.remove('bg-transparent', 'text-white');
-        header.classList.add('bg-white/95', 'backdrop-blur-md', 'text-ciclo-charcoal', 'border-b', 'border-slate-200/80', 'shadow-sm');
-        logoBox.className = 'w-11 h-11 rounded-lg bg-ciclo group-hover:bg-ciclo-dark transition-all flex items-center justify-center shrink-0 shadow-sm';
-        logoPlanText.className = 'font-display font-bold text-[20px] tracking-[0.07em] text-ciclo transition-colors';
-        logoCicloText.className = 'font-display font-medium text-[18px] tracking-[0.09em] text-ciclo-charcoal mt-0.5 transition-colors';
-        desktopNav.className = 'hidden md:flex items-center gap-7 text-sm font-medium text-ciclo-slate';
-        brochureNavBtn.className = 'inline-flex items-center gap-1.5 text-ciclo hover:text-ciclo-dark font-semibold transition-all';
-        ctaNavBtn.className = 'px-4 py-2.5 rounded-lg bg-ciclo text-white hover:bg-ciclo-dark font-semibold transition-colors shadow-sm';
-        mobileMenuBtn.className = 'md:hidden p-2 rounded-lg text-ciclo-charcoal hover:bg-slate-100';
-      } else {
-        header.classList.add('bg-transparent', 'text-white');
-        header.classList.remove('bg-white/95', 'backdrop-blur-md', 'text-ciclo-charcoal', 'border-b', 'border-slate-200/80', 'shadow-sm');
-        logoBox.className = 'w-11 h-11 rounded-lg bg-white/15 backdrop-blur-sm border border-white/25 group-hover:bg-ciclo transition-all flex items-center justify-center shrink-0';
-        logoPlanText.className = 'font-display font-bold text-[20px] tracking-[0.07em] text-white transition-colors';
-        logoCicloText.className = 'font-display font-medium text-[18px] tracking-[0.09em] text-white/90 mt-0.5 transition-colors';
-        desktopNav.className = 'hidden md:flex items-center gap-7 text-sm font-medium text-white/90';
-        brochureNavBtn.className = 'inline-flex items-center gap-1.5 text-white hover:opacity-80 font-semibold transition-all';
-        ctaNavBtn.className = 'px-4 py-2.5 rounded-lg bg-white text-ciclo-deep hover:bg-ciclo-light font-semibold transition-colors shadow-sm';
-        mobileMenuBtn.className = 'md:hidden p-2 rounded-lg text-white hover:bg-white/10';
-      }
-    }
-    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
-    updateHeaderOnScroll();
-
-    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a, button').forEach((el) => {
-      el.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.querySelectorAll('[data-close-mobile]').forEach(el => {
+      el.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
-    // 2. Revelado al scroll
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
-      });
-    }, { threshold: 0.14 });
-    document.querySelectorAll('.reveal-up').forEach((el) => revealObserver.observe(el));
-
-    // 3. Scrollytelling "Entre el plano y la calle" con PNGs
-    const storySteps = document.querySelectorAll('.story-step');
-    const enfoqueImgBase = document.getElementById('enfoqueImgBase');
-    const enfoqueImgProy = document.getElementById('enfoqueImgProy');
-    const enfoqueLayerPill = document.getElementById('enfoqueLayerPill');
-    const btnEnfoqueBase = document.getElementById('btnEnfoqueBase');
-    const btnEnfoqueProy = document.getElementById('btnEnfoqueProy');
-    const storyDiagramTitle = document.getElementById('storyDiagramTitle');
-    const storyStepBadge = document.getElementById('storyStepBadge');
-    const storyDiagramCaption = document.getElementById('storyDiagramCaption');
-
-    function setEnfoqueView(mode) {
-      const isProy = mode === 'proyecto';
-      if (enfoqueImgBase) enfoqueImgBase.style.opacity = isProy ? '0' : '1';
-      if (enfoqueImgProy) enfoqueImgProy.style.opacity = isProy ? '1' : '0';
-      if (enfoqueLayerPill) {
-        enfoqueLayerPill.textContent = isProy ? 'Con Proyecto' : 'Situación Base';
-        enfoqueLayerPill.className = isProy
-          ? 'absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-ciclo text-white text-[11px] font-semibold tracking-wide pointer-events-none'
-          : 'absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-ciclo-charcoal/85 text-white text-[11px] font-semibold tracking-wide pointer-events-none';
-      }
-      if (btnEnfoqueBase && btnEnfoqueProy) {
-        btnEnfoqueBase.className = isProy
-          ? 'px-2.5 py-1 rounded-md text-[11px] font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-colors'
-          : 'px-2.5 py-1 rounded-md text-[11px] font-semibold bg-ciclo text-white transition-colors';
-        btnEnfoqueProy.className = isProy
-          ? 'px-2.5 py-1 rounded-md text-[11px] font-semibold bg-ciclo text-white transition-colors'
-          : 'px-2.5 py-1 rounded-md text-[11px] font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-colors';
-      }
-    }
-
-    const storyStates = {
-      1: {
-        title: '01 · Situación Base y diagnóstico normativo',
-        badge: '1 / 3',
-        caption: 'Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.',
-        view: 'base'
+    // 2. Enfoque 3-step interactive controller
+    const enfoqueSteps = [
+      {
+        label: '01 · Situación Base y diagnóstico normativo',
+        counter: '1 / 3',
+        badge: 'Situación Base',
+        isProject: false,
+        caption: 'Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.'
       },
-      2: {
-        title: '02 · Geometría e intersección protegida',
-        badge: '2 / 3',
-        caption: 'Incorporación de pistas segregadas, islas de resguardo y control geométrico en cruces.',
-        view: 'proyecto'
+      {
+        label: '02 · Resolución de puntos críticos e intersecciones',
+        counter: '2 / 3',
+        badge: 'Con Proyecto · Geometría',
+        isProject: true,
+        caption: 'Ajuste de radios de giro, islas de resguardo y continuidad ciclovial bajo D.S. N° 102.'
       },
-      3: {
-        title: '03 · Operación continua en terreno',
-        badge: '3 / 3',
-        caption: 'Trayectorias legibles, visibilidad despejada y convivencia segura entre todos los modos.',
-        view: 'proyecto'
+      {
+        label: '03 · Validación de desempeño operacional en terreno',
+        counter: '3 / 3',
+        badge: 'Con Proyecto · Operación',
+        isProject: true,
+        caption: 'Verificación de intervisibilidad, velocidades de viraje contenidas y legibilidad para todos los usuarios.'
       }
-    };
+    ];
 
-    const storyObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const step = entry.target.getAttribute('data-step');
-        const state = storyStates[step];
-        if (!state) return;
+    const stepBtns = document.querySelectorAll('[data-enfoque-step]');
+    const enfoqueImgProyecto = document.getElementById('enfoqueImgProyecto');
+    const enfoqueSvgProject = document.getElementById('enfoqueSvgProject');
+    const enfoqueBadge = document.getElementById('enfoqueBadge');
+    const enfoqueStepLabel = document.getElementById('enfoqueStepLabel');
+    const enfoqueStepCounter = document.getElementById('enfoqueStepCounter');
+    const enfoqueCaption = document.getElementById('enfoqueCaption');
+    const enfoquePins = document.querySelectorAll('#enfoquePins .tech-pin');
 
-        storySteps.forEach((s) => {
-          s.classList.remove('border-ciclo', 'ring-2', 'ring-ciclo/15');
-          s.classList.add('border-slate-200/80');
-        });
-        entry.target.classList.remove('border-slate-200/80');
-        entry.target.classList.add('border-ciclo', 'ring-2', 'ring-ciclo/15');
-
-        storyDiagramTitle.textContent = state.title;
-        storyStepBadge.textContent = state.badge;
-        storyDiagramCaption.textContent = state.caption;
-        setEnfoqueView(state.view);
+    function setEnfoqueStep(idx) {
+      const s = enfoqueSteps[idx];
+      stepBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      enfoqueStepLabel.textContent = s.label;
+      enfoqueStepCounter.textContent = s.counter;
+      enfoqueBadge.textContent = s.badge;
+      enfoqueBadge.classList.toggle('project', s.isProject);
+      enfoqueCaption.textContent = s.caption;
+      enfoqueImgProyecto.style.opacity = s.isProject ? '1' : '0';
+      enfoqueSvgProject.setAttribute('opacity', s.isProject ? '1' : '0');
+      enfoquePins.forEach(pin => {
+        pin.style.display = Number(pin.dataset.step) === idx ? 'inline-flex' : 'none';
       });
-    }, { rootMargin: '-25% 0px -35% 0px', threshold: 0.2 });
-    storySteps.forEach((step) => storyObserver.observe(step));
-
-    // 4. Comparador Antes / Después (Arco)
-    window.updateBA = function(val) {
-      const pct = Math.max(0, Math.min(100, Number(val)));
-      const afterImg = document.getElementById('baAfterImg');
-      const beforeImg = document.getElementById('baBeforeImg');
-      const clip = document.getElementById('baBeforeClip');
-      const line = document.getElementById('baDividerLine');
-      const slider = document.getElementById('baSlider');
-      const label = document.getElementById('baPercentLabel');
-      if (afterImg && beforeImg) {
-        const w = afterImg.getBoundingClientRect().width;
-        if (w > 0) beforeImg.style.width = w + 'px';
-      }
-      if (clip) clip.style.width = pct + '%';
-      if (line) line.style.left = pct + '%';
-      if (slider && Number(slider.value) !== pct) slider.value = pct;
-      if (label) label.textContent = 'Corte: ' + Math.round(pct) + '%';
-    };
-
-    const baContainer = document.getElementById('baContainer');
-    const baAfterImg = document.getElementById('baAfterImg');
-    function updateBAFromClientX(clientX) {
-      const r = baContainer.getBoundingClientRect();
-      if (r.width > 0) window.updateBA(((clientX - r.left) / r.width) * 100);
     }
-    if (baContainer) {
-      baContainer.addEventListener('mousedown', (e) => updateBAFromClientX(e.clientX));
-      baContainer.addEventListener('mousemove', (e) => { if (e.buttons === 1) updateBAFromClientX(e.clientX); });
-      baContainer.addEventListener('touchstart', (e) => { if (e.touches[0]) updateBAFromClientX(e.touches[0].clientX); }, { passive: true });
-      baContainer.addEventListener('touchmove', (e) => { if (e.touches[0]) updateBAFromClientX(e.touches[0].clientX); }, { passive: true });
-    }
-    if (baAfterImg) baAfterImg.addEventListener('load', () => window.updateBA(50));
-    window.addEventListener('load', () => window.updateBA(50));
-    window.addEventListener('resize', () => {
-      const s = document.getElementById('baSlider');
-      window.updateBA(s ? s.value : 50);
+
+    stepBtns.forEach(btn => {
+      btn.addEventListener('click', () => setEnfoqueStep(Number(btn.dataset.enfoqueStep)));
     });
 
-    // 5. Selector de Escalas (Arco / Nodo / Red)
-    function switchScale(scale) {
-      document.querySelectorAll('.scale-panel').forEach((p) => p.classList.add('hidden'));
-      document.getElementById(`panel-${scale}`).classList.remove('hidden');
+    const togglePinsBtn = document.getElementById('toggleEnfoquePins');
+    const pinsContainer = document.getElementById('enfoquePins');
+    let pinsOn = true;
+    togglePinsBtn.addEventListener('click', () => {
+      pinsOn = !pinsOn;
+      pinsContainer.classList.toggle('hidden', !pinsOn);
+      togglePinsBtn.classList.toggle('active', pinsOn);
+      togglePinsBtn.innerHTML = pinsOn ? '<span>●</span> Capas técnicas: ON' : '<span>○</span> Capas técnicas: OFF';
+    });
 
-      document.querySelectorAll('.scale-tab').forEach((btn) => {
-        btn.className = 'scale-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-ciclo-slate hover:text-ciclo-charcoal transition-all';
+    // 3. Multiscalar Tabs
+    const scaleTabBtns = document.querySelectorAll('[data-scale-tab]');
+    const scalePanels = document.querySelectorAll('.scale-panel');
+    scaleTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.scaleTab;
+        scaleTabBtns.forEach(b => b.classList.toggle('active', b === btn));
+        scalePanels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + target));
       });
-      document.getElementById(`tab-${scale}`).className =
-        'scale-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-ciclo text-white shadow-sm transition-all';
-
-      if (scale === 'calle') {
-        const s = document.getElementById('baSlider');
-        requestAnimationFrame(() => window.updateBA(s ? s.value : 50));
-      }
-    }
-
-    // 6. Secuencia pareada de intersecciones en Nodo
-    (function initInterseccionPngFade() {
-      const slides = Array.from(document.querySelectorAll('#interseccionPngFadeStage .interseccion-fade-slide'));
-      const labelEl = document.getElementById('interseccionPngLabel');
-      if (slides.length < 2) return;
-      let idx = 0;
-
-      function show(i) {
-        idx = ((i % slides.length) + slides.length) % slides.length;
-        slides.forEach((img, k) => {
-          img.style.opacity = k === idx ? '1' : '0';
-        });
-        if (labelEl) {
-          const txt = slides[idx].getAttribute('data-label') || '';
-          labelEl.textContent = txt;
-          const isProy = txt.includes('Con Proyecto');
-          labelEl.className = isProy
-            ? 'absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-ciclo text-white text-[11px] font-semibold tracking-wide z-10'
-            : 'absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-ciclo-charcoal/85 text-white text-[11px] font-semibold tracking-wide z-10';
-        }
-      }
-      show(0);
-      setInterval(() => show(idx + 1), 2600);
-    })();
-
-    // 7. Modal Brochure B2B
-    const brochureModal = document.getElementById('brochureModal');
-    function openBrochureModal() {
-      brochureModal.classList.remove('hidden');
-      brochureModal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeBrochureModal() {
-      brochureModal.classList.add('hidden');
-      brochureModal.classList.remove('flex');
-      document.body.style.overflow = '';
-    }
-    brochureModal.addEventListener('click', (e) => {
-      if (e.target === brochureModal) closeBrochureModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !brochureModal.classList.contains('hidden')) closeBrochureModal();
     });
 
-    // 8. Formulario de contacto
+    // 4. Before/After Street Profile Comparator (drag + range input)
+    const compareStage = document.getElementById('compareStage');
+    const compareBeforeWrap = document.getElementById('compareBeforeWrap');
+    const compareDivider = document.getElementById('compareDivider');
+    const compareRange = document.getElementById('compareRange');
+    const cutIndicator = document.getElementById('cutIndicator');
+
+    function updateCompare(pct) {
+      const clamped = Math.max(0, Math.min(100, pct));
+      compareBeforeWrap.style.clipPath = `inset(0 ${100 - clamped}% 0 0)`;
+      compareDivider.style.left = clamped + '%';
+      compareRange.value = clamped;
+      cutIndicator.textContent = `CORTE: ${Math.round(clamped)}%`;
+    }
+
+    compareRange.addEventListener('input', (e) => updateCompare(Number(e.target.value)));
+
+    let isDragging = false;
+    function pointerToPct(clientX) {
+      const rect = compareStage.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+    compareStage.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      compareStage.setPointerCapture(e.pointerId);
+      updateCompare(pointerToPct(e.clientX));
+    });
+    compareStage.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      updateCompare(pointerToPct(e.clientX));
+    });
+    compareStage.addEventListener('pointerup', () => { isDragging = false; });
+
+    // 5. Intersections Viewer (5 nodes x Base/Proyecto)
+    const intCodes = ['I1', 'I5', 'I12', 'I19', 'I23'];
+    let curIntIdx = 0;
+    let curIntState = 'Base';
+    const intImg = document.getElementById('intersectionImg');
+    const intBadge = document.getElementById('intersectionBadge');
+    const intSvgProject = document.getElementById('intSvgProject');
+
+    function updateIntersection() {
+      const code = intCodes[curIntIdx];
+      const isProj = curIntState === 'Proyecto';
+      intImg.style.display = 'block';
+      intImg.src = `assets/plantas/${code}_${curIntState}.png`;
+      intBadge.textContent = `Intersección ${curIntIdx + 1} (${code}) · ${isProj ? 'Con Proyecto' : 'Situación Base'}`;
+      intBadge.classList.toggle('project', isProj);
+      intSvgProject.setAttribute('opacity', isProj ? '1' : '0');
+    }
+
+    document.querySelectorAll('[data-int-idx]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        curIntIdx = Number(btn.dataset.intIdx);
+        document.querySelectorAll('[data-int-idx]').forEach(b => b.classList.toggle('active', b === btn));
+        updateIntersection();
+      });
+    });
+
+    document.querySelectorAll('[data-int-state]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        curIntState = btn.dataset.intState;
+        document.querySelectorAll('[data-int-state]').forEach(b => b.classList.toggle('active', b === btn));
+        updateIntersection();
+      });
+    });
+
+    // 6. Metropolitan SIG Maps Switcher
+    const maps = [
+      {
+        src: 'assets/mapas/mapa-final-indice-multianillo.webp',
+        badge: 'Escenario Actual · Índice Multianillo',
+        isFuture: false
+      },
+      {
+        src: 'assets/mapas/mapa-futuro-simulado-multianillo.webp',
+        badge: 'Escenario Futuro Simulado · Conectividad',
+        isFuture: true
+      }
+    ];
+    const mapImg = document.getElementById('mapImg');
+    const mapBadge = document.getElementById('mapBadge');
+    const mapSvgFuture = document.getElementById('mapSvgFuture');
+
+    document.querySelectorAll('[data-map-idx]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const m = maps[Number(btn.dataset.mapIdx)];
+        document.querySelectorAll('[data-map-idx]').forEach(b => b.classList.toggle('active', b === btn));
+        mapImg.style.display = 'block';
+        mapImg.src = m.src;
+        mapBadge.textContent = m.badge;
+        mapBadge.classList.toggle('project', m.isFuture);
+        mapSvgFuture.setAttribute('opacity', m.isFuture ? '1' : '0');
+      });
+    });
+
+    // 7. Contact Form & Quick Topic Pre-selection
+    let selectedTopic = 'Revisión D.S. N° 102';
+    const topicPills = document.querySelectorAll('.topic-pill');
+
+    function setTopic(topic) {
+      selectedTopic = topic;
+      topicPills.forEach(p => p.classList.toggle('active', p.dataset.topic === topic));
+    }
+
+    topicPills.forEach(p => p.addEventListener('click', () => setTopic(p.dataset.topic)));
+    document.querySelectorAll('[data-select-topic]').forEach(el => {
+      el.addEventListener('click', () => setTopic(el.dataset.selectTopic));
+    });
+
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    copyEmailBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('contacto@planciclo.cl');
+        copyEmailBtn.textContent = '✓ Copiado';
+        setTimeout(() => copyEmailBtn.textContent = 'Copiar correo', 2200);
+      } catch (e) {
+        copyEmailBtn.textContent = 'contacto@planciclo.cl';
+      }
+    });
+
+    // Opcional: pega aquí tu endpoint de Formspree (ej. 'https://formspree.io/f/tuCodigo')
+    // para enviar directamente sin abrir el cliente de correo. Si queda vacío, usa mailto:.
+    const FORMSPREE_ENDPOINT = '';
+
     const contactForm = document.getElementById('contactForm');
-    const formFeedback = document.getElementById('formFeedback');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const action = contactForm.getAttribute('action');
-      if (action.includes('tu-endpoint-planciclo')) {
-        formFeedback.textContent = 'Vista previa lista: conecta tu ID de Formspree/Web3Forms en el atributo action del formulario o escríbenos directo a contacto@planciclo.cl.';
-        formFeedback.classList.remove('hidden');
+      const name = document.getElementById('fName').value.trim();
+      const org = document.getElementById('fOrg').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const msg = document.getElementById('fMsg').value.trim();
+      const subjectPlain = `[Plan Ciclo] ${selectedTopic} — ${org}`;
+      const bodyPlain = `Nombre: ${name}\nOrganización: ${org}\nCorreo: ${email}\nRequerimiento: ${selectedTopic}\n\nDetalle:\n${msg}`;
+
+      if (FORMSPREE_ENDPOINT) {
+        const origLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        try {
+          const res = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              _subject: subjectPlain,
+              requerimiento: selectedTopic,
+              nombre: name,
+              organizacion: org,
+              email,
+              mensaje: msg
+            })
+          });
+          if (res.ok) {
+            formStatus.innerHTML = 'Consulta enviada correctamente. Te responderemos a la brevedad desde <strong>contacto@planciclo.cl</strong>.';
+            formStatus.classList.add('show');
+            contactForm.reset();
+          } else {
+            throw new Error('Formspree error');
+          }
+        } catch (err) {
+          formStatus.innerHTML = 'No pudimos enviar el formulario automáticamente. Escríbenos directo a <strong>contacto@planciclo.cl</strong>.';
+          formStatus.classList.add('show');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = origLabel;
+        }
         return;
       }
-      try {
-        const res = await fetch(action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          formFeedback.textContent = 'Mensaje enviado correctamente. Te responderemos a la brevedad desde contacto@planciclo.cl.';
-          formFeedback.classList.remove('hidden');
-          contactForm.reset();
-        }
-      } catch (err) {
-        formFeedback.textContent = 'No se pudo enviar automáticamente. Por favor escríbenos directo a contacto@planciclo.cl.';
-        formFeedback.classList.remove('hidden');
-      }
-    });
-  </script>
 
-<!-- RED-MAP-SCRIPT -->
-<script>
-  window.selectRedMap = function(idx) {
-    const imgs = document.querySelectorAll('#panel-red .red-map-img');
-    const btns = document.querySelectorAll('#panel-red .red-map-btn');
-    const counter = document.getElementById('redMapCounter');
-    imgs.forEach((img, k) => img.classList.toggle('hidden', k !== idx));
-    btns.forEach((btn, k) => {
-      btn.className = k === idx
-        ? 'red-map-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-ciclo text-white shadow-sm'
-        : 'red-map-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-ciclo-slate border border-slate-200 hover:border-ciclo hover:text-ciclo-charcoal';
+      const subject = encodeURIComponent(subjectPlain);
+      const body = encodeURIComponent(bodyPlain);
+      formStatus.innerHTML = `Abriendo tu cliente de correo para <strong>contacto@planciclo.cl</strong>. ¿Usas Gmail en el navegador y no se abrió? <button type="button" id="copyDraftBtn" style="text-decoration:underline;color:var(--blue);font-weight:600;margin-left:0.25rem;">Copiar texto del mensaje</button>`;
+      formStatus.classList.add('show');
+      const copyDraftBtn = document.getElementById('copyDraftBtn');
+      if (copyDraftBtn) {
+        copyDraftBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(`Para: contacto@planciclo.cl\nAsunto: ${subjectPlain}\n\n${bodyPlain}`);
+            copyDraftBtn.textContent = '✓ Mensaje copiado';
+          } catch (err) {
+            copyDraftBtn.textContent = 'contacto@planciclo.cl';
+          }
+        });
+      }
+      window.location.href = `mailto:contacto@planciclo.cl?subject=${subject}&body=${body}`;
     });
-    if (counter) counter.textContent = `${idx + 1} / ${imgs.length}`;
-  };
-</script>
-<!-- /RED-MAP-SCRIPT -->
+
+    // 8. Dossier Modal
+    const dossierModal = document.getElementById('dossierModal');
+    const dossierFrame = document.getElementById('dossierFrame');
+    const dossierUrl = 'assets/brochure/brochure_planciclo.html';
+
+    document.querySelectorAll('[data-open-dossier]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!dossierFrame.src) dossierFrame.src = dossierUrl;
+        dossierModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeDossier() {
+      dossierModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('closeDossierBtn').addEventListener('click', closeDossier);
+    dossierModal.addEventListener('click', (e) => { if (e.target === dossierModal) closeDossier(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDossier(); });
+
+  </script>
 </body>
 </html>
