@@ -13,7 +13,6 @@
     :root {
       --bg: #F7F7F5;
       --surface: #FFFFFF;
-      --surface-alt: #EFEFEB;
       --ink: #111315;
       --ink-2: #464C54;
       --ink-3: #767E87;
@@ -22,14 +21,12 @@
       --blue: #0089C4;
       --blue-dark: #006E9E;
       --blue-soft: rgba(0, 137, 196, 0.08);
-      --accent: #D94B2B;
-      --accent-soft: rgba(217, 75, 43, 0.10);
       --dark-bg: #111315;
       --dark-surface: #1A1D21;
       --dark-border: rgba(247, 247, 245, 0.12);
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
-      --max-w: 1280px;
+      --max-w: 1360px;
       --radius: 2px;
       --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
     }
@@ -48,7 +45,7 @@
     body {
       background-color: var(--bg);
       color: var(--ink);
-      line-height: 1.6;
+      line-height: 1.55;
       overflow-x: hidden;
     }
 
@@ -60,7 +57,7 @@
       width: 100%;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
     }
 
     .mono {
@@ -73,19 +70,19 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .eyebrow::before {
       content: "";
-      width: 18px;
+      width: 16px;
       height: 2px;
       background: var(--blue);
       display: inline-block;
@@ -100,20 +97,20 @@
       z-index: 100;
       transition: background-color var(--transition), border-color var(--transition), color var(--transition);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(17, 19, 21, 0.35);
+      background: rgba(17, 19, 21, 0.32);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       color: #F7F7F5;
     }
 
     .site-header.scrolled {
-      background: rgba(247, 247, 245, 0.94);
+      background: rgba(247, 247, 245, 0.95);
       border-bottom-color: var(--border);
       color: var(--ink);
     }
 
     .header-inner {
-      height: 76px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -123,12 +120,12 @@
     .brand-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.8rem;
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       flex-shrink: 0;
       display: block;
     }
@@ -139,13 +136,10 @@
     .site-header.scrolled .logo-light { display: none; }
 
     .brand-wordmark {
-      font-size: 1.32rem;
+      font-size: 1.28rem;
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1;
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.24em;
     }
 
     .nav-desktop {
@@ -158,16 +152,14 @@
       font-size: 0.88rem;
       font-weight: 500;
       opacity: 0.82;
-      transition: opacity var(--transition), color var(--transition);
-      position: relative;
+      transition: opacity var(--transition);
     }
-
     .nav-link:hover { opacity: 1; }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.7rem;
       margin-left: 0.5rem;
     }
 
@@ -175,10 +167,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
-      font-size: 0.86rem;
+      gap: 0.5rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      padding: 0.72rem 1.25rem;
+      padding: 0.68rem 1.2rem;
       border-radius: var(--radius);
       transition: all var(--transition);
       white-space: nowrap;
@@ -201,16 +193,6 @@
       background: var(--blue);
     }
 
-    .btn-outline-light {
-      border: 1px solid rgba(247, 247, 245, 0.35);
-      color: #F7F7F5;
-      background: rgba(255, 255, 255, 0.04);
-    }
-    .btn-outline-light:hover {
-      border-color: #F7F7F5;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
     .btn-outline-dark {
       border: 1px solid var(--border-strong);
       color: var(--ink);
@@ -224,7 +206,7 @@
 
     .header-dossier-btn {
       border: 1px solid rgba(247, 247, 245, 0.3);
-      padding: 0.55rem 1rem;
+      padding: 0.55rem 0.95rem;
       font-size: 0.82rem;
     }
     .site-header.scrolled .header-dossier-btn {
@@ -248,7 +230,7 @@
     .mobile-menu {
       display: none;
       position: fixed;
-      inset: 76px 0 0 0;
+      inset: 74px 0 0 0;
       background: var(--dark-bg);
       color: #F7F7F5;
       padding: 2rem;
@@ -258,7 +240,7 @@
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       padding-bottom: 1rem;
@@ -269,14 +251,14 @@
     .hero {
       position: relative;
       height: 100svh;
-      min-height: 660px;
+      min-height: 640px;
       max-height: 980px;
       display: flex;
       flex-direction: column;
       background: var(--dark-bg);
       color: #F7F7F5;
       overflow: hidden;
-      padding-top: clamp(98px, 12vh, 132px);
+      padding-top: clamp(96px, 12vh, 130px);
       padding-bottom: clamp(1.75rem, 3.2vh, 2.5rem);
     }
 
@@ -296,16 +278,15 @@
       filter: contrast(1.03) saturate(0.95);
     }
 
-    /* Subtle editorial vignette: dark top & bottom for legibility, crystal-clear middle band for cyclists */
     .hero-scrim {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg,
         rgba(17, 19, 21, 0.74) 0%,
-        rgba(17, 19, 21, 0.44) 24%,
-        rgba(17, 19, 21, 0.08) 48%,
-        rgba(17, 19, 21, 0.10) 68%,
+        rgba(17, 19, 21, 0.42) 24%,
+        rgba(17, 19, 21, 0.06) 48%,
+        rgba(17, 19, 21, 0.08) 68%,
         rgba(17, 19, 21, 0.72) 86%,
         rgba(17, 19, 21, 0.92) 100%
       );
@@ -321,15 +302,13 @@
       justify-content: space-between;
     }
 
-    .hero-top {
-      max-width: 920px;
-    }
+    .hero-top { max-width: 920px; }
 
     .hero-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.05rem;
       color: rgba(247, 247, 245, 0.86);
       text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
     }
@@ -347,16 +326,12 @@
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 0.98;
-      margin-bottom: 0;
       color: #FFFFFF;
       text-shadow: 0 4px 28px rgba(0, 0, 0, 0.32);
     }
 
-    .hero h1 .accent-dot {
-      color: var(--blue);
-    }
+    .hero h1 .accent-dot { color: var(--blue); }
 
-    /* Open middle breathing window so cyclists remain unobstructed */
     .hero-window {
       flex: 1;
       min-height: clamp(110px, 24vh, 280px);
@@ -365,35 +340,21 @@
     .hero-footer-group {
       display: flex;
       flex-direction: column;
-      gap: 1.35rem;
-    }
-
-    .hero-lead-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
+      gap: 1.25rem;
     }
 
     .hero-lead {
-      font-size: clamp(1rem, 1.35vw, 1.2rem);
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
       line-height: 1.5;
       color: rgba(247, 247, 245, 0.90);
-      max-width: 660px;
-      margin: 0;
-      font-weight: 400;
+      max-width: 640px;
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
     }
-
-    .hero-lead strong {
-      color: #FFFFFF;
-      font-weight: 600;
-    }
+    .hero-lead strong { color: #FFFFFF; font-weight: 600; }
 
     .hero-bottom {
       border-top: 1px solid rgba(247, 247, 245, 0.22);
-      padding-top: 1.15rem;
+      padding-top: 1.1rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -405,422 +366,144 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.75rem 1.5rem;
-      color: rgba(247, 247, 245, 0.72);
+      gap: 0.7rem 1.4rem;
+      color: rgba(247, 247, 245, 0.74);
     }
-
-    .normative-badges span.sep {
-      color: var(--blue);
-    }
+    .normative-badges span.sep { color: var(--blue); }
 
     .scroll-cue {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(247, 247, 245, 0.72);
+      color: rgba(247, 247, 245, 0.74);
       transition: color var(--transition);
     }
     .scroll-cue:hover { color: #FFFFFF; }
 
-    /* ================= SECTIONS GENERAL ================= */
+    /* ================= SHARED SECTION STYLES ================= */
     section.band {
-      padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+      padding: clamp(4rem, 7vw, 6.5rem) 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .section-header {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2.5rem;
-      align-items: end;
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    section.band-white {
+      background: var(--surface);
     }
 
     .section-title {
-      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.75rem, 3vw, 2.65rem);
       font-weight: 800;
       letter-spacing: -0.035em;
-      line-height: 1.06;
+      line-height: 1.07;
       color: var(--ink);
     }
 
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--ink-2);
-      line-height: 1.65;
-    }
-
-    /* ================= ENFOQUE ================= */
-    .enfoque-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .viewport-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      position: sticky;
-      top: 96px;
-    }
-
-    .viewport-bar {
+    .bullet-list {
+      list-style: none;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.9rem 1.2rem;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
+      flex-direction: column;
+      gap: 0.85rem;
     }
 
-    .viewport-stage {
-      position: relative;
-      aspect-ratio: 16 / 11;
-      background: #EAECE8;
-      overflow: hidden;
+    .bullet-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      font-size: 0.94rem;
+      color: var(--ink-2);
+      line-height: 1.42;
     }
 
-    .viewport-stage img.stage-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 420ms ease;
+    .bullet-list li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--blue);
+      flex-shrink: 0;
+      transform: translateY(-2px);
     }
 
-    .viewport-stage .svg-fallback {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+    .bullet-list li strong {
+      color: var(--ink);
+      font-weight: 700;
     }
-
-    .viewport-stage img.stage-img { z-index: 2; }
 
     .stage-pill {
       position: absolute;
       top: 1rem;
       left: 1rem;
-      z-index: 5;
-      background: rgba(17, 19, 21, 0.86);
+      z-index: 12;
+      background: rgba(17, 19, 21, 0.84);
       color: #F7F7F5;
-      padding: 0.38rem 0.75rem;
-      backdrop-filter: blur(6px);
+      padding: 0.34rem 0.72rem;
+      backdrop-filter: blur(8px);
+      transition: background-color 350ms ease;
+      pointer-events: none;
     }
 
     .stage-pill.project {
       background: var(--blue);
+      color: #FFFFFF;
     }
 
-    /* Technical annotation pins */
-    .tech-pins {
+    /* Diagonal 45° blue wiper SVG overlay */
+    .wiper-svg {
       position: absolute;
       inset: 0;
-      z-index: 6;
-      pointer-events: none;
-      transition: opacity var(--transition);
-    }
-    .tech-pins.hidden { opacity: 0; }
-
-    .tech-pin {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(17, 19, 21, 0.9);
-      color: #FFFFFF;
-      padding: 0.32rem 0.6rem;
-      border-left: 2px solid var(--blue);
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    }
-
-    .tech-pin.alert { border-left-color: var(--accent); }
-
-    .tech-pin::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-    .tech-pin.alert::before { background: var(--accent); }
-
-    .viewport-footer {
-      padding: 1rem 1.2rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .viewport-caption {
-      font-size: 0.88rem;
-      color: var(--ink-2);
-    }
-
-    .toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 0.75rem;
-      border: 1px solid var(--border-strong);
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--ink);
-      background: var(--bg);
-      transition: all var(--transition);
-    }
-    .toggle-btn.active {
-      background: var(--ink);
-      color: #F7F7F5;
-      border-color: var(--ink);
-    }
-
-    .steps-list {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--border);
-    }
-
-    .step-item {
-      padding: 1.75rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      border-left: 3px solid transparent;
-      cursor: pointer;
-      transition: all var(--transition);
-      background: transparent;
-      text-align: left;
       width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+      overflow: visible;
     }
 
-    .step-item:hover {
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    .step-item.active {
-      background: var(--surface);
-      border-left-color: var(--blue);
-    }
-
-    .step-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.65rem;
-      color: var(--ink-3);
-    }
-
-    .step-item.active .step-meta { color: var(--blue); }
-
-    .step-item h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.55rem;
-      color: var(--ink);
-    }
-
-    .step-item p {
-      font-size: 0.94rem;
-      color: var(--ink-2);
-      line-height: 1.6;
-    }
-
-    /* ================= SERVICIOS (SWISS GRID) ================= */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-      background: var(--surface);
-    }
-
-    .service-card {
-      padding: clamp(2rem, 3.5vw, 3rem);
-      border-right: 1px solid var(--border);
+    /* ================= SHOWCASE VISUAL: ARCO (PERFIL) -> NODOS + RED ================= */
+    section.band-visual {
+      padding: clamp(2.75rem, 5vw, 4.25rem) 0;
       border-bottom: 1px solid var(--border);
+    }
+
+    .visual-head {
       display: flex;
-      flex-direction: column;
+      align-items: flex-end;
       justify-content: space-between;
-      gap: 1.75rem;
-      position: relative;
-      transition: background-color var(--transition);
-    }
-
-    .service-card:hover {
-      background: #FCFDFC;
-    }
-
-    .service-card.featured {
-      background: linear-gradient(180deg, rgba(0, 137, 196, 0.045) 0%, #FFFFFF 45%);
-    }
-
-    .service-card.featured::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--blue);
-    }
-
-    .service-top-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      gap: 1.25rem;
+      flex-wrap: wrap;
       margin-bottom: 1.25rem;
     }
 
-    .service-num {
+    .visual-title {
+      font-size: clamp(1.12rem, 1.65vw, 1.52rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .diptych-col .visual-title {
+      font-size: clamp(1.02rem, 1.48vw, 1.4rem);
+    }
+
+    .visual-sub {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--ink-3);
     }
 
-    .client-tag {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.6rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--ink-2);
-    }
-
-    .service-card.featured .client-tag {
-      background: var(--blue-soft);
-      border-color: rgba(0, 137, 196, 0.25);
-      color: var(--blue-dark);
-    }
-
-    .service-card h3 {
-      font-size: 1.45rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      margin-bottom: 0.85rem;
-    }
-
-    .service-card p {
-      font-size: 0.96rem;
-      color: var(--ink-2);
-      line-height: 1.6;
-    }
-
-    .service-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .service-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 0.65rem;
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-
-    .service-list li::before {
-      content: "—";
-      color: var(--blue);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .service-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--blue);
-      margin-top: 0.5rem;
-    }
-    .service-cta:hover { color: var(--blue-dark); gap: 0.7rem; }
-
-    /* ================= ESCALAS MULTIESCALAR ================= */
-    .scale-tabs {
-      display: inline-flex;
-      border: 1px solid var(--border-strong);
-      background: var(--surface);
-      padding: 4px;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-
-    .scale-tab {
-      padding: 0.7rem 1.2rem;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--ink-2);
-      transition: all var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .scale-tab .tab-idx {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      opacity: 0.65;
-    }
-
-    .scale-tab.active {
-      background: var(--ink);
-      color: #F7F7F5;
-    }
-
-    .scale-panel { display: none; }
-    .scale-panel.active { display: block; }
-
-    /* Before/After Slider */
+    /* ----- 01 · PERFIL VIAL (ARCO) ----- */
     .comparator-shell {
       background: var(--surface);
       border: 1px solid var(--border);
     }
 
-    .comparator-head {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .comparator-head h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
     .compare-stage {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 8.2;
-      min-height: 320px;
+      aspect-ratio: 16 / 7.2;
+      min-height: 290px;
       background: #E8EAE6;
       overflow: hidden;
       user-select: none;
@@ -865,9 +548,9 @@
       top: 0;
       bottom: 0;
       left: 50%;
-      width: 2px;
-      background: #FFFFFF;
-      box-shadow: 0 0 0 1px rgba(17, 19, 21, 0.3);
+      width: 3px;
+      background: var(--blue);
+      box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.88);
       z-index: 8;
       transform: translateX(-50%);
       pointer-events: none;
@@ -878,114 +561,150 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: #FFFFFF;
-      border: 2px solid #FFFFFF;
+      width: 46px;
+      height: 46px;
+      padding: 3px;
+      border-radius: 0;
+      background: #FFFFFF;
+      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 4px 16px rgba(17, 19, 21, 0.22);
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
+    .compare-stage:hover .compare-handle {
+      transform: translate(-50%, -50%) scale(1.07);
+      box-shadow: 0 6px 22px rgba(17, 19, 21, 0.28);
+    }
+
+    .handle-iso {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Etiquetas suaves y discretas en la parte inferior del perfil */
     .compare-badge {
       position: absolute;
-      top: 1.15rem;
+      bottom: 0.85rem;
       z-index: 7;
-      padding: 0.38rem 0.75rem;
+      padding: 0.28rem 0.62rem;
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.64rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       pointer-events: none;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     .compare-badge.left {
-      left: 1.15rem;
-      background: rgba(17, 19, 21, 0.85);
-      color: #F7F7F5;
+      left: 0.85rem;
+      background: rgba(17, 19, 21, 0.56);
+      color: rgba(247, 247, 245, 0.9);
     }
 
     .compare-badge.right {
-      right: 1.15rem;
-      background: var(--blue);
-      color: #FFFFFF;
+      right: 0.85rem;
+      background: rgba(0, 137, 196, 0.78);
+      color: rgba(255, 255, 255, 0.95);
     }
 
-    .compare-range-bar {
-      padding: 0.9rem 1.5rem;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .compare-range-bar input[type="range"] {
-      flex: 1;
-      accent-color: var(--blue);
-      cursor: ew-resize;
-    }
-
-    .meta-strip {
+    /* ----- 02 + 03 · DÍPTICO CUADRADO NODOS (IZQ) + RED (DER) ----- */
+    .diptych-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--border);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: start;
     }
 
-    .meta-cell {
-      padding: 1.35rem 1.5rem;
-      border-right: 1px solid var(--border);
-    }
-    .meta-cell:last-child { border-right: none; }
-
-    .meta-cell h4 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: var(--ink);
-    }
-
-    .meta-cell p {
-      font-size: 0.86rem;
-      color: var(--ink-2);
-      line-height: 1.55;
-    }
-
-    /* Escala 2 & 3 split layout */
-    .scale-split {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      background: var(--surface);
-      border: 1px solid var(--border);
-    }
-
-    .scale-visual {
-      border-right: 1px solid var(--border);
+    .diptych-col {
       display: flex;
       flex-direction: column;
+      gap: 0.9rem;
+      min-width: 0;
     }
 
-    .scale-canvas {
+    .diptych-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .diag-stage-wrap {
       position: relative;
-      aspect-ratio: 16 / 11;
-      background: #E8EAE6;
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
       overflow: hidden;
     }
 
-    .scale-canvas img {
+    .diag-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: var(--bg);
+      overflow: hidden;
+      user-select: none;
+      touch-action: pan-y;
+      cursor: nwse-resize;
+    }
+
+    .diag-stage.dark-canvas {
+      background: #181B1F;
+    }
+
+    .node-matrix {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(var(--grid-n, 2), 1fr);
+      grid-template-rows: repeat(var(--grid-n, 2), 1fr);
+      gap: 6px;
+      padding: 6px;
+      background: var(--bg);
+      pointer-events: none;
+    }
+
+    .diag-layer-base {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .diag-layer-proj {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+      clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+      will-change: clip-path;
+      pointer-events: none;
+    }
+
+    .diag-layer-base > img,
+    .diag-layer-proj > img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: 2;
+      pointer-events: none;
     }
 
-    .scale-canvas .svg-fallback {
+    .diag-layer-base > .svg-fallback,
+    .diag-layer-proj > .svg-fallback {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -993,157 +712,158 @@
       z-index: 1;
     }
 
-    .scale-controls {
-      padding: 1rem 1.25rem;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
+    .node-cell {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #E4E6E2;
+    }
+
+    .node-cell img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .diag-badge-tl,
+    .diag-badge-br {
+      position: absolute;
+      z-index: 12;
+      padding: 0.28rem 0.62rem;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      pointer-events: none;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: opacity 220ms ease;
+    }
+
+    .diag-badge-tl {
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(17, 19, 21, 0.62);
+      color: rgba(247, 247, 245, 0.92);
+    }
+
+    .diag-badge-br {
+      bottom: 0.85rem;
+      right: 0.85rem;
+      background: rgba(0, 137, 196, 0.82);
+      color: #FFFFFF;
+    }
+
+    .diag-handle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 46px;
+      height: 46px;
+      padding: 3px;
+      border-radius: 0;
+      background: #FFFFFF;
+      border: none;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      justify-content: center;
+      z-index: 14;
+      pointer-events: auto;
+      touch-action: none;
+      cursor: nwse-resize;
+      box-shadow: 0 4px 16px rgba(17, 19, 21, 0.22);
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .pill-group {
-      display: inline-flex;
-      gap: 4px;
-      flex-wrap: wrap;
+    .diag-handle::after {
+      content: "";
+      position: absolute;
+      inset: -18px;
     }
 
-    .pill-btn {
-      padding: 0.42rem 0.78rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      border: 1px solid var(--border-strong);
-      background: var(--surface);
-      color: var(--ink-2);
-      transition: all var(--transition);
-    }
-    .pill-btn.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: #FFFFFF;
-    }
-    .pill-btn.blue.active {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #FFFFFF;
+    .diag-stage:hover .diag-handle,
+    .diag-stage.dragging .diag-handle {
+      transform: translate(-50%, -50%) scale(1.07);
+      box-shadow: 0 6px 22px rgba(17, 19, 21, 0.28);
     }
 
-    .scale-info {
-      padding: clamp(1.75rem, 3vw, 2.5rem);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .scale-info h3 {
-      font-size: 1.55rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 0.85rem;
-    }
-
-    .scale-info p {
-      font-size: 0.94rem;
-      color: var(--ink-2);
-      line-height: 1.65;
-    }
-
-    .tech-spec-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 1rem 1.15rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    .tech-spec-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.82rem;
-      border-bottom: 1px dashed var(--border-strong);
-      padding-bottom: 0.45rem;
-    }
-    .tech-spec-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .tech-spec-row span:first-child { color: var(--ink-3); font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; }
-    .tech-spec-row span:last-child { font-weight: 600; color: var(--ink); text-align: right; }
-
-    /* ================= RESPALDO (DARK EDITORIAL BAND) ================= */
+    /* ================= DARK BAND · RESPALDO CON CONTADORES ================= */
     .band-dark {
       background: var(--dark-bg);
       color: #F7F7F5;
-      padding: clamp(5rem, 8.5vw, 8rem) 0;
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
       position: relative;
       overflow: hidden;
     }
 
     .band-dark .section-title { color: #FFFFFF; }
-    .band-dark .section-desc { color: rgba(247, 247, 245, 0.74); }
 
     .metrics-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--dark-border);
       border-bottom: 1px solid var(--dark-border);
-      margin-bottom: 4rem;
+      margin: 2.5rem 0 3.25rem;
     }
 
     .metric-cell {
-      padding: 2rem 1.75rem 2rem 0;
+      padding: 1.85rem 1.5rem 1.85rem 0;
       border-right: 1px solid var(--dark-border);
     }
     .metric-cell:not(:first-child) { padding-left: 1.75rem; }
     .metric-cell:last-child { border-right: none; }
 
     .metric-val {
-      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-size: clamp(2.1rem, 3.5vw, 3rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       color: #FFFFFF;
       line-height: 1;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.55rem;
+      font-variant-numeric: tabular-nums;
     }
 
-    .metric-val span { color: var(--blue); }
+    .metric-val .accent { color: var(--blue); }
 
     .metric-label {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: rgba(247, 247, 245, 0.68);
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .respaldo-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 3rem;
-      align-items: start;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: stretch;
     }
 
     .director-card {
       background: var(--dark-surface);
       border: 1px solid var(--dark-border);
-      padding: 2.25rem;
+      padding: 2rem 2.25rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      justify-content: space-between;
+      gap: 1.4rem;
     }
 
     .director-head {
       display: flex;
       align-items: center;
-      gap: 1.35rem;
-      padding-bottom: 1.5rem;
+      gap: 1.25rem;
+      padding-bottom: 1.25rem;
       border-bottom: 1px solid var(--dark-border);
     }
 
     .director-avatar {
-      width: 72px;
-      height: 72px;
+      width: 62px;
+      height: 62px;
       flex-shrink: 0;
       background: #111315;
       border: 1px solid rgba(0, 137, 196, 0.45);
@@ -1151,100 +871,193 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: hidden;
     }
-
     .director-avatar span {
       font-family: var(--font-mono);
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #F7F7F5;
-      letter-spacing: 0.05em;
     }
-
     .director-avatar::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 3px;
       background: var(--blue);
     }
 
     .director-name {
-      font-size: 1.35rem;
+      font-size: 1.22rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #FFFFFF;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .director-role {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--blue);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .director-bio {
-      font-size: 0.95rem;
-      color: rgba(247, 247, 245, 0.78);
-      line-height: 1.68;
-    }
-
-    .cred-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .cred-tag {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 0.35rem 0.65rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--dark-border);
-      color: rgba(247, 247, 245, 0.82);
-    }
-
-    .pillars-stack {
+    .dark-bullets {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 0.68rem;
     }
-
-    .pillar-box {
-      padding: 1.75rem;
-      border: 1px solid var(--dark-border);
-      background: rgba(255, 255, 255, 0.02);
+    .dark-bullets li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.68rem;
+      font-size: 0.93rem;
+      color: rgba(247, 247, 245, 0.80);
     }
-
-    .pillar-box h3 {
-      font-size: 1.15rem;
+    .dark-bullets li::before {
+      content: "—";
+      color: var(--blue);
       font-weight: 700;
+      flex-shrink: 0;
+    }
+    .dark-bullets li strong { color: #FFFFFF; font-weight: 600; }
+
+    .fasttrack-panel {
+      border: 1px solid rgba(0, 137, 196, 0.35);
+      background: linear-gradient(155deg, rgba(0, 137, 196, 0.14) 0%, rgba(26, 29, 33, 0.9) 100%);
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.4rem;
+    }
+
+    .fasttrack-panel h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
       color: #FFFFFF;
-      margin: 0.6rem 0 0.5rem;
-      letter-spacing: -0.02em;
+      margin-top: 0.45rem;
     }
 
-    .pillar-box p {
-      font-size: 0.92rem;
-      color: rgba(247, 247, 245, 0.72);
-      line-height: 1.6;
+    /* ================= SERVICIOS (ULTRA-SCANNABLE BULLETS) ================= */
+    .services-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.25rem;
     }
 
-    .fasttrack-box {
-      padding: 1.5rem 1.75rem;
-      background: rgba(0, 137, 196, 0.12);
-      border: 1px solid rgba(0, 137, 196, 0.38);
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .service-card {
+      padding: clamp(1.75rem, 3vw, 2.4rem);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.3rem;
+      position: relative;
+    }
+
+    .service-card.featured {
+      background: linear-gradient(180deg, rgba(0, 137, 196, 0.045) 0%, #FFFFFF 55%);
+    }
+
+    .service-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    .service-top-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
     }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-3);
+    }
+
+    .client-tag {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.26rem 0.52rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+    }
+
+    .service-card.featured .client-tag {
+      background: var(--blue-soft);
+      border-color: rgba(0, 137, 196, 0.25);
+      color: var(--blue-dark);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.52rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--ink-2);
+    }
+
+    .service-list li::before {
+      content: "—";
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 0.4rem;
+    }
+    .service-cta:hover { color: var(--blue-dark); gap: 0.7rem; }
 
     /* ================= CONTACTO ================= */
     .contact-grid {
@@ -1255,11 +1068,11 @@
     }
 
     .contact-direct {
-      margin-top: 2.25rem;
+      margin-top: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      padding-top: 2rem;
+      gap: 1.2rem;
+      padding-top: 1.75rem;
       border-top: 1px solid var(--border);
     }
 
@@ -1271,7 +1084,7 @@
     }
 
     .email-big {
-      font-size: 1.35rem;
+      font-size: 1.32rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: var(--ink);
@@ -1293,10 +1106,10 @@
     .contact-form {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: clamp(1.75rem, 3vw, 2.75rem);
+      padding: clamp(1.75rem, 3vw, 2.5rem);
       display: flex;
       flex-direction: column;
-      gap: 1.35rem;
+      gap: 1.25rem;
     }
 
     .field-label {
@@ -1306,17 +1119,17 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--ink-2);
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.5rem;
     }
 
     .topic-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.45rem;
     }
 
     .topic-pill {
-      padding: 0.52rem 0.85rem;
+      padding: 0.48rem 0.8rem;
       border: 1px solid var(--border-strong);
       font-size: 0.82rem;
       font-weight: 500;
@@ -1338,7 +1151,7 @@
 
     .form-input, .form-textarea {
       width: 100%;
-      padding: 0.82rem 0.95rem;
+      padding: 0.8rem 0.95rem;
       font-family: var(--font-sans);
       font-size: 0.94rem;
       color: var(--ink);
@@ -1354,7 +1167,7 @@
       background: #FFFFFF;
     }
 
-    .form-textarea { min-height: 112px; resize: vertical; }
+    .form-textarea { min-height: 104px; resize: vertical; }
 
     .form-status {
       display: none;
@@ -1369,7 +1182,7 @@
     /* ================= FOOTER ================= */
     .site-footer {
       background: var(--surface);
-      padding: 3rem 0;
+      padding: 2.75rem 0;
       border-top: 1px solid var(--border);
     }
 
@@ -1387,7 +1200,7 @@
       color: var(--ink-3);
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.3rem;
       align-items: flex-end;
     }
 
@@ -1442,23 +1255,26 @@
     @media (max-width: 980px) {
       .nav-desktop { display: none; }
       .mobile-toggle { display: inline-flex; }
-      .section-header,
-      .enfoque-grid,
       .services-grid,
-      .scale-split,
       .respaldo-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
-      .viewport-card { position: static; }
-      .scale-visual { border-right: none; border-bottom: 1px solid var(--border); }
       .metrics-bar { grid-template-columns: repeat(2, 1fr); }
-      .metric-cell { padding: 1.5rem 1rem !important; border-bottom: 1px solid var(--dark-border); }
+      .metric-cell { padding: 1.4rem 1rem !important; border-bottom: 1px solid var(--dark-border); }
       .metric-cell:nth-child(2n) { border-right: none; }
-      .meta-strip { grid-template-columns: 1fr; }
-      .meta-cell { border-right: none; border-bottom: 1px solid var(--border); }
-      .meta-cell:last-child { border-bottom: none; }
       .footer-meta { text-align: left; align-items: flex-start; }
+    }
+
+    @media (max-width: 860px) {
+      .diptych-grid {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .visual-title, .diptych-col .visual-title { white-space: normal; }
     }
 
     @media (max-width: 600px) {
@@ -1510,10 +1326,8 @@
       </a>
 
       <nav class="nav-desktop" aria-label="Navegación principal">
-        <a href="#enfoque" class="nav-link">Enfoque</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#escalas" class="nav-link">Escalas</a>
         <a href="#respaldo" class="nav-link">Respaldo</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
         <div class="nav-actions">
           <button type="button" class="btn header-dossier-btn" data-open-dossier>Dossier B2B</button>
           <a href="#contacto" class="btn btn-primary">Conversemos</a>
@@ -1531,10 +1345,8 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#enfoque" data-close-mobile>Enfoque</a>
-    <a href="#servicios" data-close-mobile>Servicios</a>
-    <a href="#escalas" data-close-mobile>Escalas</a>
     <a href="#respaldo" data-close-mobile>Respaldo</a>
+    <a href="#servicios" data-close-mobile>Servicios</a>
     <a href="#contacto" data-close-mobile>Conversemos</a>
     <button type="button" class="btn btn-primary" data-open-dossier data-close-mobile style="margin-top: 0.5rem;">Abrir Dossier Comercial B2B</button>
   </div>
@@ -1554,19 +1366,16 @@
           <span class="live-dot"></span>
           Consultoría técnica en movilidad activa · Sector público y privado
         </div>
-
         <h1>Planificación y diseño cicloinclusivo<span class="accent-dot">.</span></h1>
       </div>
 
       <div class="hero-window" aria-hidden="true"></div>
 
       <div class="hero-footer-group">
-        <div class="hero-lead-row">
-          <p class="hero-lead">
-            Redes, proyectos viales y estudios de cicloinfraestructura con
-            <strong>rigor normativo, viabilidad de aprobación</strong> y desempeño real en la calle.
-          </p>
-        </div>
+        <p class="hero-lead">
+          Redes, proyectos viales y estudios de cicloinfraestructura con
+          <strong>rigor normativo, viabilidad de aprobación</strong> y desempeño real en la calle.
+        </p>
 
         <div class="hero-bottom">
           <div class="normative-badges mono">
@@ -1576,7 +1385,7 @@
             <span class="sep">/</span>
             <span>Guía de Diseño Vial Ciclo-inclusivo SECTRA</span>
           </div>
-          <a href="#enfoque" class="scroll-cue mono">
+          <a href="#perfil" class="scroll-cue mono">
             Deslizar para recorrer
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </a>
@@ -1585,137 +1394,272 @@
     </div>
   </section>
 
-  <!-- ================= ENFOQUE ================= -->
-  <section class="band" id="enfoque">
+  <!-- ================= 01 · PERFIL VIAL (ARCO) ================= -->
+  <section class="band-visual band-white" id="perfil">
     <div class="container">
-      <div class="section-header">
+      <div class="visual-head">
         <div>
-          <span class="eyebrow">Enfoque</span>
-          <h2 class="section-title">Entre el plano y la calle</h2>
+          <span class="eyebrow" style="margin-bottom: 0.35rem;">01 · Arco</span>
+          <h2 class="visual-title">Cabida y Diseño de Perfiles</h2>
         </div>
-        <p class="section-desc">
-          Cumplir formalmente una lámina no garantiza que un proyecto se apruebe sin trabas ni que opere con seguridad en terreno. Integramos criterio normativo, ingeniería vial y lectura urbana para diseñar infraestructura viable en tramitación y efectiva en operación.
-        </p>
+
+        <a href="#" id="profileDemoBtn" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Arma tu propio perfil
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
       </div>
 
-      <div class="enfoque-grid">
-        <div class="viewport-card">
-          <div class="viewport-bar">
-            <span class="mono" id="enfoqueStepLabel">01 · Situación Base y diagnóstico normativo</span>
-            <span class="mono" style="color: var(--ink-3);" id="enfoqueStepCounter">1 / 3</span>
+      <div class="comparator-shell">
+        <div class="compare-stage" id="compareStage">
+          <div class="compare-layer">
+            <svg class="svg-fallback" viewBox="0 0 1200 540" preserveAspectRatio="xMidYMid slice">
+              <rect width="1200" height="540" fill="#F2F4F2"/>
+              <rect x="0" y="60" width="130" height="340" fill="#E1E4E0"/>
+              <rect x="1070" y="40" width="130" height="360" fill="#E1E4E0"/>
+              <circle cx="190" cy="240" r="56" fill="#8FA98E" opacity="0.72"/><rect x="186" y="280" width="8" height="120" fill="#5D534A"/>
+              <circle cx="995" cy="240" r="56" fill="#8FA98E" opacity="0.72"/><rect x="991" y="280" width="8" height="120" fill="#5D534A"/>
+              <rect x="0" y="400" width="250" height="42" fill="#D4D7D2"/>
+              <rect x="950" y="400" width="250" height="42" fill="#D4D7D2"/>
+              <rect x="250" y="405" width="150" height="37" fill="#0089C4"/>
+              <rect x="400" y="405" width="26" height="37" fill="#E5A910"/>
+              <rect x="426" y="405" width="524" height="37" fill="#2A2E33"/>
+              <rect x="0" y="442" width="1200" height="98" fill="#E4E5E2"/>
+              <rect x="470" y="274" width="190" height="124" rx="8" fill="#C93B2B"/>
+              <rect x="485" y="292" width="160" height="46" rx="3" fill="#23272B"/>
+            </svg>
+            <img src="assets/perfiles/corredor-proyecto.png" alt="Perfil vial — Con Proyecto" onerror="this.style.display='none'">
           </div>
 
-          <div class="viewport-stage">
-            <!-- Architectural SVG Fallback (renders seamlessly if remote assets are offline) -->
-            <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice" id="enfoqueSvgFallback">
-              <rect width="800" height="550" fill="#EAECE8"/>
-              <!-- Urban Blocks -->
-              <rect x="0" y="0" width="245" height="165" fill="#DCDFD9"/>
-              <rect x="555" y="0" width="245" height="165" fill="#DCDFD9"/>
-              <rect x="0" y="385" width="245" height="165" fill="#DCDFD9"/>
-              <rect x="555" y="385" width="245" height="165" fill="#DCDFD9"/>
-              <!-- Roadway Asphalt -->
-              <rect x="265" y="0" width="270" height="550" fill="#2A2E33"/>
-              <rect x="0" y="185" width="800" height="180" fill="#2A2E33"/>
-              <!-- Lane dashes -->
-              <line x1="400" y1="0" x2="400" y2="175" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
-              <line x1="400" y1="375" x2="400" y2="550" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
-              <line x1="0" y1="275" x2="255" y2="275" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
-              <line x1="545" y1="275" x2="800" y2="275" stroke="#F7F7F5" stroke-width="2" stroke-dasharray="14 14" opacity="0.5"/>
-              <!-- Project Layer (toggled via JS) -->
-              <g id="enfoqueSvgProject" opacity="0" style="transition: opacity 0.4s ease;">
-                <!-- Segregated Blue Cycleway -->
-                <rect x="0" y="330" width="800" height="32" fill="#0089C4"/>
-                <rect x="268" y="0" width="32" height="550" fill="#0089C4"/>
-                <!-- Buffer Hatch -->
-                <rect x="0" y="324" width="252" height="6" fill="#E5A910"/>
-                <rect x="548" y="324" width="252" height="6" fill="#E5A910"/>
-                <!-- Corner Protected Islands (Gajos D.S. 102) -->
-                <path d="M 304,324 L 332,324 A 28,28 0 0 1 304,296 Z" fill="#F7F7F5"/>
-                <path d="M 548,324 L 520,324 A 28,28 0 0 0 548,296 Z" fill="#F7F7F5"/>
-                <!-- Zebra Crossings -->
-                <g fill="#F7F7F5" opacity="0.9">
-                  <rect x="236" y="196" width="18" height="10"/><rect x="236" y="216" width="18" height="10"/>
-                  <rect x="236" y="236" width="18" height="10"/><rect x="236" y="256" width="18" height="10"/>
-                  <rect x="236" y="276" width="18" height="10"/><rect x="236" y="296" width="18" height="10"/>
-                  <rect x="546" y="196" width="18" height="10"/><rect x="546" y="216" width="18" height="10"/>
-                  <rect x="546" y="236" width="18" height="10"/><rect x="546" y="256" width="18" height="10"/>
-                  <rect x="546" y="276" width="18" height="10"/><rect x="546" y="296" width="18" height="10"/>
-                </g>
-              </g>
-            </svg>
-
-            <!-- Real planciclo.cl assets -->
-            <img class="stage-img" id="enfoqueImgBase" src="assets/enfoque/esc-base.png" alt="Planta de intersección — Situación Base" onerror="this.style.display='none'">
-            <img class="stage-img" id="enfoqueImgProyecto" src="assets/enfoque/esc-proyecto.png" alt="Planta de intersección — Con Proyecto" style="opacity:0;" onerror="this.style.display='none'">
-
-            <span class="stage-pill mono" id="enfoqueBadge">Situación Base</span>
-
-            <!-- Technical Pins Overlay -->
-            <div class="tech-pins" id="enfoquePins">
-              <div class="tech-pin alert" style="left: 34%; top: 58%;" data-step="0">Conflicto de viraje derecho</div>
-              <div class="tech-pin alert" style="left: 68%; top: 38%;" data-step="0">Ancho subestándar entre L.O.</div>
-              <div class="tech-pin" style="left: 41%; top: 60%; display:none;" data-step="1">Isla de resguardo · Radio R=6 m</div>
-              <div class="tech-pin" style="left: 66%; top: 64%; display:none;" data-step="1">Cruce continuo D.S. N° 102</div>
-              <div class="tech-pin" style="left: 38%; top: 52%; display:none;" data-step="2">Intervisibilidad ≥ 25 m</div>
-              <div class="tech-pin" style="left: 64%; top: 62%; display:none;" data-step="2">Velocidad de viraje ≤ 15 km/h</div>
+          <div class="compare-before-wrap" id="compareBeforeWrap">
+            <div class="compare-layer">
+              <svg class="svg-fallback" viewBox="0 0 1200 540" preserveAspectRatio="xMidYMid slice">
+                <rect width="1200" height="540" fill="#ECECE9"/>
+                <rect x="0" y="60" width="130" height="340" fill="#D5D7D3"/>
+                <rect x="1070" y="40" width="130" height="360" fill="#D5D7D3"/>
+                <rect x="0" y="400" width="175" height="42" fill="#CACCC8"/>
+                <rect x="1025" y="400" width="175" height="42" fill="#CACCC8"/>
+                <rect x="175" y="405" width="850" height="37" fill="#32363B"/>
+                <rect x="0" y="442" width="1200" height="98" fill="#DEDFD9"/>
+                <rect x="240" y="350" width="115" height="50" rx="8" fill="#5D646D"/>
+                <rect x="450" y="350" width="115" height="50" rx="8" fill="#464C54"/>
+                <rect x="660" y="350" width="115" height="50" rx="8" fill="#5D646D"/>
+                <rect x="850" y="350" width="115" height="50" rx="8" fill="#464C54"/>
+              </svg>
+              <img src="assets/perfiles/corredor-base.png" alt="Perfil vial — Situación Base" onerror="this.style.display='none'">
             </div>
           </div>
 
-          <div class="viewport-footer">
-            <p class="viewport-caption" id="enfoqueCaption">Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.</p>
-            <button type="button" class="toggle-btn active" id="toggleEnfoquePins">
-              <span>●</span> Capas técnicas: ON
-            </button>
+          <span class="compare-badge left">Situación Base</span>
+          <span class="compare-badge right">Con Proyecto</span>
+
+          <div class="compare-divider" id="compareDivider">
+            <div class="compare-handle"><svg class="handle-iso" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
+                <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
+                <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#111315"/>
+                <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#111315"/>
+                <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#111315"/>
+                <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#111315"/>
+                <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#111315"/>
+                <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#111315"/>
+                <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#111315"/>
+                <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#111315"/>
+                <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#111315"/>
+                <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#111315"/>
+                <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+              </svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · NODOS + 03 · RED (DÍPTICO CUADRADO CON DIAGONAL AZUL 45°) ================= -->
+  <section class="band-visual" id="nodos-red">
+    <div class="container">
+      <div class="diptych-grid">
+        <div class="diptych-col" id="nodos">
+          <div class="diptych-head">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.3rem;">02 · Nodos · D.S. N° 102</span>
+              <h2 class="visual-title">Evaluación y Diseño de Intersecciones</h2>
+            </div>
+          </div>
+
+          <div class="diag-stage-wrap">
+            <div class="diag-stage" id="nodeStage" role="slider" aria-label="Comparador diagonal de intersecciones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+              <div class="node-matrix diag-layer-base" id="nodeMatrixBase"></div>
+              <div class="node-matrix diag-layer-proj" id="nodeMatrixProj"></div>
+
+              <svg class="wiper-svg" aria-hidden="true">
+                <line id="nodeWiperHalo" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.88)" stroke-width="7.5"/>
+                <line id="nodeWiperLine" x1="0" y1="0" x2="0" y2="0" stroke="#0089C4" stroke-width="4"/>
+              </svg>
+
+              <div class="diag-handle" id="nodeDiagHandle" aria-hidden="true"><svg class="handle-iso" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
+                <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
+                <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#111315"/>
+                <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#111315"/>
+                <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#111315"/>
+                <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#111315"/>
+                <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#111315"/>
+                <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#111315"/>
+                <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#111315"/>
+                <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#111315"/>
+                <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#111315"/>
+                <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#111315"/>
+                <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+              </svg></div>
+
+              <span class="diag-badge-tl" id="nodeBadgeBase">Situación Base</span>
+              <span class="diag-badge-br" id="nodeBadgeProj">Con Proyecto</span>
+            </div>
           </div>
         </div>
 
-        <div class="steps-list">
-          <button type="button" class="step-item active" data-enfoque-step="0">
-            <div class="step-meta mono">
-              <span>01</span>
-              <span>·</span>
-              <span>Viabilidad normativa</span>
+        <div class="diptych-col" id="redes">
+          <div class="diptych-head">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.3rem;">03 · Red · Actual / Plan GORE RM</span>
+              <h2 class="visual-title">Análisis y Planificación Territorial</h2>
             </div>
-            <h3>Rigor técnico desde el primer trazo</h3>
-            <p>Definimos emplazamiento, anchos efectivos y criterios geométricos desde el anteproyecto para anticipar observaciones técnicas y asegurar la viabilidad de aprobación ante las contrapartes públicas.</p>
-          </button>
+          </div>
 
-          <button type="button" class="step-item" data-enfoque-step="1">
-            <div class="step-meta mono">
-              <span>02</span>
-              <span>·</span>
-              <span>Resolución de puntos críticos</span>
-            </div>
-            <h3>Continuidad donde los flujos se cruzan</h3>
-            <p>Los mayores riesgos aparecen donde la ciclovía se interrumpe: intersecciones, paraderos de buses, accesos vehiculares y virajes. Ajustamos radios de giro, islas de resguardo y transiciones para sostener la continuidad en cada cruce.</p>
-          </button>
+          <div class="diag-stage-wrap">
+            <div class="diag-stage dark-canvas" id="mapStage" role="slider" aria-label="Comparador diagonal de accesibilidad de red ciclista" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+              <div class="diag-layer-base">
+                <svg class="svg-fallback" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+                  <rect width="600" height="600" fill="#181B1F"/>
+                  <circle cx="300" cy="300" r="220" fill="none" stroke="rgba(247,247,245,0.08)" stroke-dasharray="6 6"/>
+                  <circle cx="300" cy="300" r="145" fill="none" stroke="rgba(0,137,196,0.3)" stroke-width="1.5"/>
+                  <circle cx="300" cy="300" r="75" fill="rgba(0,137,196,0.14)" stroke="#0089C4" stroke-width="2"/>
+                  <g stroke="#0089C4" stroke-width="3" fill="none" opacity="0.85">
+                    <path d="M 80,380 L 220,330 L 300,300 L 420,240 L 520,190"/>
+                    <path d="M 240,90 L 285,220 L 300,300 L 340,480"/>
+                  </g>
+                </svg>
+                <img src="assets/mapas/mapa-final-indice-multianillo.webp" alt="Accesibilidad red de ciclovías existente" onerror="this.style.display='none'">
+              </div>
 
-          <button type="button" class="step-item" data-enfoque-step="2">
-            <div class="step-meta mono">
-              <span>03</span>
-              <span>·</span>
-              <span>Desempeño en terreno</span>
+              <div class="diag-layer-proj" id="mapFutureLayer">
+                <svg class="svg-fallback" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+                  <rect width="600" height="600" fill="#141920"/>
+                  <circle cx="300" cy="300" r="220" fill="rgba(0,137,196,0.08)" stroke="rgba(0,137,196,0.45)" stroke-width="1.5"/>
+                  <circle cx="300" cy="300" r="145" fill="rgba(0,137,196,0.16)" stroke="#0089C4" stroke-width="2"/>
+                  <circle cx="300" cy="300" r="75" fill="rgba(0,137,196,0.26)" stroke="#38BDF8" stroke-width="2"/>
+                  <g stroke="#38BDF8" stroke-width="3" fill="none">
+                    <path d="M 80,380 L 220,330 L 300,300 L 420,240 L 520,190"/>
+                    <path d="M 240,90 L 285,220 L 300,300 L 340,480"/>
+                    <path d="M 100,190 L 240,230 L 410,330 L 530,400" stroke="#E5A910" stroke-dasharray="10 6"/>
+                    <path d="M 160,500 L 300,300 L 470,120" stroke="#E5A910" stroke-dasharray="10 6"/>
+                  </g>
+                </svg>
+                <img src="assets/mapas/mapa-futuro-simulado-multianillo.webp" alt="Escenario proyectado Plan GORE Metropolitano" onerror="this.style.display='none'">
+              </div>
+
+              <svg class="wiper-svg" aria-hidden="true">
+                <line id="mapWiperHalo" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.88)" stroke-width="7.5"/>
+                <line id="mapWiperLine" x1="0" y1="0" x2="0" y2="0" stroke="#0089C4" stroke-width="4"/>
+              </svg>
+
+              <div class="diag-handle" id="mapDiagHandle" aria-hidden="true"><svg class="handle-iso" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
+                <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
+                <path d="M 11.50,72.00 L 0.00,83.50 L 0.00,72.00 Z" fill="#111315"/>
+                <path d="M 28.00,88.50 L 28.00,100.00 L 16.50,100.00 Z" fill="#111315"/>
+                <path d="M 65.00,0.00 L 65.00,18.50 L 55.50,28.00 L 35.00,28.00 L 35.00,0.00 Z" fill="#111315"/>
+                <path d="M 48.50,35.00 L 35.00,48.50 L 35.00,35.00 Z" fill="#111315"/>
+                <path d="M 65.00,51.50 L 65.00,65.00 L 51.50,65.00 Z" fill="#111315"/>
+                <path d="M 44.50,72.00 L 65.00,72.00 L 65.00,100.00 L 35.00,100.00 L 35.00,81.50 Z" fill="#111315"/>
+                <path d="M 83.50,0.00 L 72.00,11.50 L 72.00,0.00 Z" fill="#111315"/>
+                <path d="M 100.00,16.50 L 100.00,28.00 L 88.50,28.00 Z" fill="#111315"/>
+                <path d="M 81.50,35.00 L 100.00,35.00 L 100.00,65.00 L 72.00,65.00 L 72.00,44.50 Z" fill="#111315"/>
+                <path d="M 100.00,72.00 L 100.00,100.00 L 72.00,100.00 L 72.00,72.00 Z" fill="#111315"/>
+                <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
+              </svg></div>
+
+              <span class="diag-badge-tl" id="mapBadgeBase">Red actual</span>
+              <span class="diag-badge-br" id="mapBadgeProj">Plan GORE RM</span>
             </div>
-            <h3>Infraestructura legible para todos los usuarios</h3>
-            <p>Evaluamos intervisibilidad, velocidades reales de giro y convivencia cotidiana entre peatones, ciclistas y vehículos motorizados. El objetivo son calles predecibles, cómodas y seguras desde el primer día de operación.</p>
-          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESPALDO (BANDA OSCURA + CONTADORES + PhD UC) ================= -->
+  <section class="band-dark" id="respaldo">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Respaldo técnico y académico</span>
+        <h2 class="section-title">Experiencia desde el estándar nacional hasta la obra</h2>
+      </div>
+
+      <div class="metrics-bar" id="metricsBar">
+        <div class="metric-cell">
+          <div class="metric-val"><span class="accent">+</span><span class="counter" data-target="500">0</span> km</div>
+          <div class="metric-label">de cicloinfraestructura evaluada bajo estándar nacional</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val"><span class="accent">+</span><span class="counter" data-target="500">0</span></div>
+          <div class="metric-label">profesionales y funcionarios públicos capacitados</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val"><span class="counter" data-target="13">0</span></div>
+          <div class="metric-label">ciudades capacitadas en diseño vial cicloinclusivo</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-val">PhD<span class="accent"> · UC</span></div>
+          <div class="metric-label">Doctorado en Ingeniería de Transporte y docencia en Arquitectura</div>
+        </div>
+      </div>
+
+      <div class="respaldo-grid">
+        <div class="director-card">
+          <div class="director-head">
+            <div class="director-avatar" aria-hidden="true"><span>TE</span></div>
+            <div>
+              <div class="director-name">Dr. Tomás Echiburú Altamirano</div>
+              <div class="director-role">Director Técnico · Fundador de Plan Ciclo</div>
+            </div>
+          </div>
+
+          <ul class="dark-bullets">
+            <li><span><strong>Ex-Jefe del Área de Movilidad Activa SECTRA (MTT)</strong> — creador de la Guía de Diseño Vial Ciclo-inclusivo.</span></li>
+            <li><span><strong>Arquitecto, Mg. Arquitectura del Paisaje y PhD en Ingeniería de Transporte</strong> (UC).</span></li>
+            <li><span><strong>Investigador postdoctoral CEDEUS</strong> y académico de la Escuela de Arquitectura UC.</span></li>
+          </ul>
+        </div>
+
+        <div class="fasttrack-panel">
+          <div>
+            <span class="mono" style="color: var(--blue);">Criterio evaluador desde adentro</span>
+            <h3>¿Necesitas aprobar un proyecto bajo D.S. N° 102 o resolver observaciones?</h3>
+          </div>
+
+          <ul class="dark-bullets">
+            <li><span>Coordinación directa con criterios SEREMITT, SECTRA, SERVIU y UOCT.</span></li>
+            <li><span>Revisión preventiva de planimetría antes de ingresar a tramitación.</span></li>
+          </ul>
+
+          <div>
+            <a href="#contacto" class="btn btn-primary" data-select-topic="Revisión D.S. N° 102">Revisar expediente →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= SERVICIOS ================= -->
-  <section class="band" id="servicios">
+  <section class="band band-white" id="servicios">
     <div class="container">
-      <div class="section-header">
+      <div class="services-head">
         <div>
           <span class="eyebrow">Servicios</span>
-          <h2 class="section-title">Apoyo técnico especializado en cada etapa</h2>
+          <h2 class="section-title">Especialidad técnica en cada etapa</h2>
         </div>
-        <p class="section-desc">
-          Colaboramos como especialistas asociados con consultoras de transporte, equipos de ingeniería vial y estudios IMIV, o directamente con municipalidades, gobiernos regionales y desarrolladores urbanos.
-        </p>
+        <button type="button" class="btn btn-outline-dark" data-open-dossier>Ver Dossier Comercial B2B ↗</button>
       </div>
 
       <div class="services-grid">
@@ -1723,14 +1667,14 @@
           <div>
             <div class="service-top-row">
               <span class="service-num">01</span>
-              <span class="client-tag">IMIV · Consultoras viales · GORE</span>
+              <span class="client-tag">IMIV · Consultoras · GORE</span>
             </div>
             <h3>Planificación y Diseño Cicloinclusivo</h3>
-            <p>Desarrollo de planes maestros comunales, anteproyectos viales, perfiles transversales e intersecciones protegidas con alto estándar operativo.</p>
           </div>
           <ul class="service-list">
-            <li>Diseño de especialidad ciclovial para proyectos urbanos e IMIV</li>
-            <li>Resolución de nodos críticos, paraderos RED y zonas calma (Zona 30)</li>
+            <li>Planes maestros comunales, anteproyectos y perfiles transversales</li>
+            <li>Diseño de especialidad ciclovial para estudios IMIV</li>
+            <li>Intersecciones protegidas, paraderos y zonas calma (Zona 30)</li>
           </ul>
         </article>
 
@@ -1740,11 +1684,11 @@
               <span class="service-num">02</span>
               <span class="client-tag">Municipios · Desarrolladores</span>
             </div>
-            <h3>Evaluación y Diagnóstico de Movilidad Activa</h3>
-            <p>Auditorías en terreno, análisis espacial de redes y evaluación de seguridad vial para priorizar inversiones y medidas de mitigación.</p>
+            <h3>Evaluación y Diagnóstico de Movilidad</h3>
           </div>
           <ul class="service-list">
-            <li>Catastros operativos, conectividad territorial y detección de brechas</li>
+            <li>Auditorías operacionales en terreno y seguridad vial</li>
+            <li>Análisis SIG de accesibilidad, redes y detección de brechas</li>
             <li>Estudios de intermodalidad, BiciHubs y cicloestacionamientos</li>
           </ul>
         </article>
@@ -1756,16 +1700,15 @@
               <span class="client-tag">SEREMITT · SECTRA · SERVIU · UOCT</span>
             </div>
             <h3>Revisión Normativa y Aprobación D.S. N° 102</h3>
-            <p>Acompañamiento técnico para proyectos que requieren autorización ante SEREMITT y coordinación con SECTRA, SERVIU y UOCT bajo D.S. N° 102 (MTT), OGUC y D.S. N° 78.</p>
           </div>
           <div>
             <ul class="service-list">
-              <li>Revisión preventiva de planimetría y memorias antes de ingreso</li>
+              <li>Revisión preventiva de planimetría y memorias pre-ingreso</li>
               <li>Respuesta a observaciones técnicas y destrabe de expedientes</li>
+              <li>Alineamiento bajo D.S. N° 102, OGUC y D.S. N° 78</li>
             </ul>
             <a href="#contacto" class="service-cta" data-select-topic="Revisión D.S. N° 102">
-              Solicitar revisión preventiva
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              Solicitar revisión preventiva →
             </a>
           </div>
         </article>
@@ -1776,329 +1719,14 @@
               <span class="service-num">04</span>
               <span class="client-tag">Equipos públicos · Co-diseño</span>
             </div>
-            <h3>Capacitación Técnica y Procesos Participativos</h3>
-            <p>Talleres aplicados para equipos municipales y consultoras, junto con instancias de participación ciudadana y validación en terreno.</p>
+            <h3>Capacitación Técnica y Participación</h3>
           </div>
           <ul class="service-list">
-            <li>Formación en diseño vial cicloinclusivo y normativa vigente</li>
-            <li>Auditorías participativas y co-diseño de espacio público</li>
+            <li>Talleres aplicados en normativa y diseño vial cicloinclusivo</li>
+            <li>Capacitación a equipos SECPLA, tránsito y consultoras</li>
+            <li>Auditorías participativas y validación en terreno</li>
           </ul>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ESCALAS MULTIESCALAR ================= -->
-  <section class="band" id="escalas">
-    <div class="container">
-      <div class="section-header" style="align-items: center;">
-        <div>
-          <span class="eyebrow">Metodología multiescalar</span>
-          <h2 class="section-title">Del perfil de calle a la red metropolitana</h2>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-          <div class="scale-tabs" role="tablist">
-            <button type="button" class="scale-tab active" data-scale-tab="perfil"><span class="tab-idx">01</span> Perfil vial</button>
-            <button type="button" class="scale-tab" data-scale-tab="intersecciones"><span class="tab-idx">02</span> Intersecciones</button>
-            <button type="button" class="scale-tab" data-scale-tab="red"><span class="tab-idx">03</span> Red SIG</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB 01: PERFIL VIAL BEFORE/AFTER -->
-      <div class="scale-panel active" id="panel-perfil">
-        <div class="comparator-shell">
-          <div class="comparator-head">
-            <div>
-              <span class="mono" style="color: var(--blue);">Perfil Vial Tipo · Avenida Estructurante (24 m L.O.)</span>
-              <h3>Corredor — Situación Base vs. Con Proyecto</h3>
-            </div>
-            <span class="mono" id="cutIndicator" style="color: var(--ink-2);">CORTE: 50%</span>
-          </div>
-
-          <div class="compare-stage" id="compareStage">
-            <!-- AFTER (CON PROYECTO) -->
-            <div class="compare-layer">
-              <svg class="svg-fallback" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-                <rect width="1200" height="600" fill="#F2F4F2"/>
-                <!-- Sky & Subtle Building Elevations -->
-                <rect x="0" y="80" width="130" height="360" fill="#E1E4E0"/>
-                <rect x="1070" y="60" width="130" height="380" fill="#E1E4E0"/>
-                <!-- Trees -->
-                <circle cx="190" cy="270" r="62" fill="#8FA98E" opacity="0.72"/><rect x="186" y="310" width="8" height="130" fill="#5D534A"/>
-                <circle cx="995" cy="270" r="62" fill="#8FA98E" opacity="0.72"/><rect x="991" y="310" width="8" height="130" fill="#5D534A"/>
-                <!-- Sidewalks -->
-                <rect x="0" y="440" width="250" height="44" fill="#D4D7D2"/>
-                <rect x="950" y="440" width="250" height="44" fill="#D4D7D2"/>
-                <!-- Segregated Blue Cycleway (D.S. 102) -->
-                <rect x="250" y="446" width="150" height="38" fill="#0089C4"/>
-                <rect x="400" y="446" width="26" height="38" fill="#E5A910"/>
-                <!-- Roadway Asphalt -->
-                <rect x="426" y="446" width="524" height="38" fill="#2A2E33"/>
-                <!-- Subgrade -->
-                <rect x="0" y="484" width="1200" height="116" fill="#E4E5E2"/>
-                <!-- Cyclist silhouette -->
-                <circle cx="315" cy="422" r="14" fill="none" stroke="#111315" stroke-width="3.5"/>
-                <circle cx="355" cy="422" r="14" fill="none" stroke="#111315" stroke-width="3.5"/>
-                <path d="M315,422 L332,398 L350,398 L355,422 M332,398 L322,382" stroke="#111315" stroke-width="3.5" fill="none"/>
-                <!-- RED Bus -->
-                <rect x="470" y="310" width="190" height="128" rx="8" fill="#C93B2B"/>
-                <rect x="485" y="328" width="160" height="48" rx="3" fill="#23272B"/>
-                <rect x="485" y="392" width="160" height="14" fill="#FFFFFF" opacity="0.9"/>
-                <!-- Dimension lines -->
-                <g stroke="#111315" stroke-width="1.2" font-family="IBM Plex Mono, monospace" font-size="13" fill="#111315" text-anchor="middle">
-                  <line x1="250" y1="520" x2="400" y2="520"/><text x="325" y="544" stroke="none" fill="#0089C4" font-weight="600">CICLOVÍA 2,4m</text>
-                  <line x1="426" y1="520" x2="950" y2="520"/><text x="688" y="544" stroke="none">CALZADA OPTIMIZADA + PISTA SOLO BUS</text>
-                </g>
-              </svg>
-              <img src="assets/perfiles/corredor-proyecto.png" alt="Perfil vial — Con Proyecto" onerror="this.style.display='none'">
-            </div>
-
-            <!-- BEFORE (SITUACIÓN BASE) -->
-            <div class="compare-before-wrap" id="compareBeforeWrap">
-              <div class="compare-layer">
-                <svg class="svg-fallback" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-                  <rect width="1200" height="600" fill="#ECECE9"/>
-                  <rect x="0" y="80" width="130" height="360" fill="#D5D7D3"/>
-                  <rect x="1070" y="60" width="130" height="380" fill="#D5D7D3"/>
-                  <!-- Narrow sidewalks -->
-                  <rect x="0" y="440" width="175" height="44" fill="#CACCC8"/>
-                  <rect x="1025" y="440" width="175" height="44" fill="#CACCC8"/>
-                  <!-- Over-wide Roadway -->
-                  <rect x="175" y="446" width="850" height="38" fill="#32363B"/>
-                  <rect x="0" y="484" width="1200" height="116" fill="#DEDFD9"/>
-                  <!-- Multiple Cars -->
-                  <rect x="240" y="388" width="115" height="52" rx="8" fill="#5D646D"/>
-                  <rect x="440" y="388" width="115" height="52" rx="8" fill="#464C54"/>
-                  <rect x="650" y="388" width="115" height="52" rx="8" fill="#5D646D"/>
-                  <rect x="850" y="388" width="115" height="52" rx="8" fill="#464C54"/>
-                  <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#464C54" text-anchor="middle">
-                    <text x="600" y="544">SITUACIÓN BASE · 4 PISTAS MOTORIZADAS SIN SEGREGACIÓN CICLISTA</text>
-                  </g>
-                </svg>
-                <img src="assets/perfiles/corredor-base.png" alt="Perfil vial — Situación Base" onerror="this.style.display='none'">
-              </div>
-            </div>
-
-            <span class="compare-badge left">Situación Base</span>
-            <span class="compare-badge right">Con Proyecto</span>
-
-            <div class="compare-divider" id="compareDivider">
-              <div class="compare-handle">⇄</div>
-            </div>
-          </div>
-
-          <div class="compare-range-bar">
-            <span class="mono" style="color: var(--ink-3);">Situación Base</span>
-            <input type="range" id="compareRange" min="0" max="100" value="50" aria-label="Comparador Situación Base vs Con Proyecto">
-            <span class="mono" style="color: var(--blue);">Con Proyecto</span>
-          </div>
-
-          <div class="meta-strip">
-            <div class="meta-cell">
-              <h4>Redistribución del perfil</h4>
-              <p>Optimización del ancho entre líneas oficiales para equilibrar calzada, transporte público, ciclovía y veredas sin expropiaciones.</p>
-            </div>
-            <div class="meta-cell">
-              <h4>Segregación y estándar D.S. N° 102</h4>
-              <p>Definición de anchos efectivos, franjas de resguardo de 0,5 m y dispositivos físicos acordes a la jerarquía y velocidad de la vía.</p>
-            </div>
-            <div class="meta-cell">
-              <h4>Convivencia con paraderos RED</h4>
-              <p>Resolución de interfaces entre pista ciclovial, pistas solo bus, arbolado existente y accesos prediales críticos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB 02: INTERSECCIONES -->
-      <div class="scale-panel" id="panel-intersecciones">
-        <div class="scale-split">
-          <div class="scale-visual">
-            <div class="scale-canvas">
-              <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
-                <rect width="800" height="550" fill="#EAECE8"/>
-                <rect x="0" y="0" width="230" height="160" fill="#D8DBD5"/>
-                <rect x="570" y="0" width="230" height="160" fill="#D8DBD5"/>
-                <rect x="0" y="390" width="230" height="160" fill="#D8DBD5"/>
-                <rect x="570" y="390" width="230" height="160" fill="#D8DBD5"/>
-                <rect x="255" y="0" width="290" height="550" fill="#2A2E33"/>
-                <rect x="0" y="180" width="800" height="190" fill="#2A2E33"/>
-                <g id="intSvgProject" opacity="0" style="transition: opacity 0.35s ease;">
-                  <rect x="0" y="335" width="800" height="30" fill="#0089C4"/>
-                  <rect x="260" y="0" width="30" height="550" fill="#0089C4"/>
-                  <path d="M 294,331 L 326,331 A 32,32 0 0 1 294,299 Z" fill="#F7F7F5"/>
-                  <path d="M 556,331 L 524,331 A 32,32 0 0 0 556,299 Z" fill="#F7F7F5"/>
-                </g>
-              </svg>
-              <img id="intersectionImg" src="assets/plantas/I1_Base.png" alt="Intersección 1 Situación Base" onerror="this.style.display='none'">
-              <span class="stage-pill mono" id="intersectionBadge">Intersección 1 · Situación Base</span>
-            </div>
-
-            <div class="scale-controls">
-              <div class="pill-group" id="intSelector">
-                <button type="button" class="pill-btn active" data-int-idx="0">I1</button>
-                <button type="button" class="pill-btn" data-int-idx="1">I5</button>
-                <button type="button" class="pill-btn" data-int-idx="2">I12</button>
-                <button type="button" class="pill-btn" data-int-idx="3">I19</button>
-                <button type="button" class="pill-btn" data-int-idx="4">I23</button>
-              </div>
-              <div class="pill-group">
-                <button type="button" class="pill-btn active" data-int-state="Base">Situación Base</button>
-                <button type="button" class="pill-btn blue" data-int-state="Proyecto">Con Proyecto</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="scale-info">
-            <div>
-              <span class="eyebrow">Intersecciones y Puntos Críticos</span>
-              <h3>Continuidad y control de velocidades de viraje</h3>
-              <p>Las intersecciones concentran la mayor parte de los siniestros viales. Diseñamos cruces protegidos, adelantamientos de línea de detención, fases semafóricas dedicadas y radios de giro contenidos para asegurar visibilidad mutua.</p>
-            </div>
-
-            <div class="tech-spec-box">
-              <div class="tech-spec-row"><span>Geometría</span><span>Verificación radios de giro vehículos mayores</span></div>
-              <div class="tech-spec-row"><span>Segregación</span><span>Islas de resguardo, demarcación y señalética</span></div>
-              <div class="tech-spec-row"><span>Operación UOCT</span><span>Índice de riesgo operacional por fase semafórica</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB 03: RED METROPOLITANA Y SIG -->
-      <div class="scale-panel" id="panel-red">
-        <div class="scale-split">
-          <div class="scale-visual">
-            <div class="scale-canvas" style="background: #181B1F;">
-              <svg class="svg-fallback" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
-                <rect width="800" height="550" fill="#181B1F"/>
-                <!-- Concentric Accessibility Rings -->
-                <circle cx="400" cy="275" r="210" fill="none" stroke="rgba(247,247,245,0.08)" stroke-width="1" stroke-dasharray="6 6"/>
-                <circle cx="400" cy="275" r="140" fill="none" stroke="rgba(0,137,196,0.28)" stroke-width="1.5"/>
-                <circle cx="400" cy="275" r="75" fill="rgba(0,137,196,0.12)" stroke="#0089C4" stroke-width="2"/>
-                <!-- Base Network -->
-                <g stroke="#0089C4" stroke-width="3" fill="none" opacity="0.8">
-                  <path d="M 140,340 L 290,295 L 400,275 L 540,220 L 660,180"/>
-                  <path d="M 320,90 L 380,210 L 400,275 L 440,420"/>
-                </g>
-                <!-- Simulated Expansion Layer -->
-                <g id="mapSvgFuture" opacity="0" stroke="#E5A910" stroke-width="3" stroke-dasharray="10 6" fill="none" style="transition: opacity 0.4s ease;">
-                  <path d="M 160,180 L 320,210 L 520,290 L 670,350"/>
-                  <path d="M 240,440 L 400,275 L 590,115"/>
-                  <circle cx="290" cy="295" r="7" fill="#E5A910" stroke="none"/>
-                  <circle cx="540" cy="220" r="7" fill="#E5A910" stroke="none"/>
-                </g>
-                <circle cx="400" cy="275" r="8" fill="#FFFFFF"/>
-              </svg>
-              <img id="mapImg" src="assets/mapas/mapa-final-indice-multianillo.webp" alt="Mapa Índice Multianillo Actual" onerror="this.style.display='none'">
-              <span class="stage-pill mono" id="mapBadge">Escenario Actual · Índice Multianillo</span>
-            </div>
-
-            <div class="scale-controls">
-              <div class="pill-group">
-                <button type="button" class="pill-btn active" data-map-idx="0">01 · Red Actual</button>
-                <button type="button" class="pill-btn blue" data-map-idx="1">02 · Escenario Simulado</button>
-              </div>
-              <span class="mono" style="color: var(--ink-3);">ANÁLISIS SIG · GRAN SANTIAGO</span>
-            </div>
-          </div>
-
-          <div class="scale-info">
-            <div>
-              <span class="eyebrow">Planificación Territorial y Conectividad</span>
-              <h3>Más allá de los kilómetros lineales</h3>
-              <p>Una red ciclista solo cumple su propósito cuando conecta orígenes y destinos cotidianos sin cortes abruptos. Evaluamos cobertura territorial, conectividad con transporte público y potencial de cambio modal para priorizar tramos de alto impacto.</p>
-            </div>
-
-            <div class="tech-spec-box">
-              <div class="tech-spec-row"><span>Modelación SIG</span><span>Accesibilidad, densidad de viajes y brechas de red</span></div>
-              <div class="tech-spec-row"><span>Instrumentos</span><span>Planes maestros comunales e intercomunales</span></div>
-              <div class="tech-spec-row"><span>Intermodalidad</span><span>Integración con Metro, trenes y equipamientos</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= RESPALDO (HIGH-CONTRAST DARK BAND) ================= -->
-  <section class="band-dark" id="respaldo">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="eyebrow">Respaldo técnico y académico</span>
-          <h2 class="section-title">Experiencia desde el estándar nacional hasta la obra</h2>
-        </div>
-        <p class="section-desc">
-          Haber liderado la formulación de estándares ministeriales y la evaluación técnica pública —junto con la investigación aplicada en ingeniería de transporte y el diseño urbano— permite destrabar proyectos complejos con precisión.
-        </p>
-      </div>
-
-      <div class="metrics-bar">
-        <div class="metric-cell">
-          <div class="metric-val"><span>+</span>500 km</div>
-          <div class="metric-label">de cicloinfraestructura evaluada y seguida en estándar nacional</div>
-        </div>
-        <div class="metric-cell">
-          <div class="metric-val"><span>+</span>500</div>
-          <div class="metric-label">profesionales y funcionarios públicos capacitados en 13 ciudades</div>
-        </div>
-        <div class="metric-cell">
-          <div class="metric-val">D.S. <span>102</span></div>
-          <div class="metric-label">Experiencia directa redactando guías técnicas y criterios SECTRA / MTT</div>
-        </div>
-        <div class="metric-cell">
-          <div class="metric-val">PhD<span> · UC</span></div>
-          <div class="metric-label">Doctorado en Ingeniería de Transporte y docencia en Arquitectura</div>
-        </div>
-      </div>
-
-      <div class="respaldo-grid">
-        <div class="director-card">
-          <div class="director-head">
-            <div class="director-avatar" aria-hidden="true">
-              <span>TE</span>
-            </div>
-            <div>
-              <div class="director-name">Dr. Tomás Echiburú Altamirano</div>
-              <div class="director-role">Director Técnico · Fundador de Plan Ciclo</div>
-            </div>
-          </div>
-
-          <p class="director-bio">
-            Arquitecto, Magíster en Arquitectura del Paisaje y Doctor en Ingeniería de Transporte por la Pontificia Universidad Católica de Chile. Fundó y dirigió durante cuatro años el <strong>Área de Movilidad Activa de SECTRA (Ministerio de Transportes y Telecomunicaciones)</strong>, encabezando la creación de la <em>Guía de Diseño Vial Ciclo-inclusivo</em>. Actualmente es investigador postdoctoral en CEDEUS y académico de la Escuela de Arquitectura UC.
-          </p>
-
-          <div class="cred-tags">
-            <span class="cred-tag">Ex-Jefe Movilidad Activa SECTRA (MTT)</span>
-            <span class="cred-tag">PhD Ingeniería de Transporte UC</span>
-            <span class="cred-tag">Investigador CEDEUS</span>
-            <span class="cred-tag">Académico Arquitectura UC</span>
-          </div>
-        </div>
-
-        <div class="pillars-stack">
-          <div class="pillar-box">
-            <span class="mono" style="color: var(--blue);">01 · Criterio normativo desde adentro</span>
-            <h3>Lenguaje común con contrapartes evaluadoras</h3>
-            <p>Conocimiento directo de los criterios de revisión de SEREMITT, SECTRA, SERVIU y UOCT para anticipar observaciones antes de ingresar un expediente o IMIV.</p>
-          </div>
-
-          <div class="pillar-box">
-            <span class="mono" style="color: var(--blue);">02 · Evidencia empírica y análisis espacial</span>
-            <h3>Decisiones respaldadas por datos y geometría</h3>
-            <p>Integración de modelación espacial SIG, indicadores de seguridad operacional y diseño arquitectónico de calle para defender cada solución técnica.</p>
-          </div>
-
-          <div class="fasttrack-box">
-            <div>
-              <span class="mono" style="color: var(--blue); display: block; margin-bottom: 0.25rem;">Apoyo puntual B2B</span>
-              <strong style="font-size: 1rem; color: #FFFFFF;">¿Tienes observaciones abiertas bajo D.S. N° 102?</strong>
-            </div>
-            <a href="#contacto" class="btn btn-primary" data-select-topic="Revisión D.S. N° 102">Revisar expediente</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2109,10 +1737,11 @@
       <div class="contact-grid">
         <div>
           <span class="eyebrow">Contacto</span>
-          <h2 class="section-title" style="margin-bottom: 1.25rem;">Conversemos sobre tu proyecto</h2>
-          <p class="section-desc">
-            Cuéntanos el alcance, los plazos o las observaciones a resolver. Respondemos directamente para coordinar una reunión técnica breve o preparar una propuesta a medida.
-          </p>
+          <h2 class="section-title" style="margin-bottom: 1rem;">Conversemos sobre tu proyecto</h2>
+          <ul class="bullet-list" style="margin-top: 1.25rem;">
+            <li><span>Indícanos alcance, comuna o plazos de tramitación.</span></li>
+            <li><span>Coordinamos una reunión breve o propuesta técnica a medida.</span></li>
+          </ul>
 
           <div class="contact-direct">
             <div>
@@ -2125,12 +1754,6 @@
 
             <div class="mono" style="color: var(--ink-3);">
               planciclo.cl · Santiago, Chile · Cobertura nacional
-            </div>
-
-            <div>
-              <button type="button" class="btn btn-outline-dark" data-open-dossier>
-                Abrir Dossier Comercial B2B ↗
-              </button>
             </div>
           </div>
         </div>
@@ -2164,7 +1787,7 @@
 
           <div>
             <label class="field-label" for="fMsg">Alcance, comuna o plazo clave</label>
-            <textarea class="form-textarea" id="fMsg" placeholder="Indica brevemente el proyecto, número de intersecciones, estado ante SEREMITT o plazos estimados..." required></textarea>
+            <textarea class="form-textarea" id="fMsg" placeholder="Indica brevemente el proyecto, número de intersecciones o plazos estimados..." required></textarea>
           </div>
 
           <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
@@ -2181,7 +1804,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
         <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
   <path d="M 28.00,0.00 L 28.00,28.00 L 0.00,28.00 L 0.00,0.00 Z" fill="#111315"/>
   <path d="M 28.00,35.00 L 28.00,55.50 L 18.50,65.00 L 0.00,65.00 L 0.00,35.00 Z" fill="#111315"/>
@@ -2198,8 +1821,8 @@
   <path d="M 100.00,9.00 L 9.00,100.00 L 0.00,100.00 L 0.00,91.00 L 91.00,0.00 L 100.00,0.00 Z" fill="#0089C4"/>
 </svg>
         <div>
-          <div class="brand-wordmark" style="font-size: 1.12rem; margin-bottom: 0.2rem;">Plan Ciclo</div>
-          <div class="mono" style="color: var(--ink-3); font-size: 0.66rem;">Planificación y Diseño Cicloinclusivo · planciclo.cl</div>
+          <div class="brand-wordmark" style="font-size: 1.1rem; margin-bottom: 0.15rem;">Plan Ciclo</div>
+          <div class="mono" style="color: var(--ink-3); font-size: 0.65rem;">Planificación y Diseño Cicloinclusivo · planciclo.cl</div>
         </div>
       </div>
 
@@ -2232,11 +1855,24 @@
   </div>
 
   <script>
+    // =========================================================================
+    // CONFIGURACIÓN RÁPIDA DE ENLACES EXTERNOS / FORMULARIO
+    // =========================================================================
+    // 1. Ruta o URL de tu aplicación interactiva de perfiles (abre en pestaña nueva)
+    const PROFILE_DEMO_URL = 'assets/perfil-demo/index.html';
+
+    // 2. Opcional: endpoint de Formspree (ej. 'https://formspree.io/f/tuCodigo')
+    const FORMSPREE_ENDPOINT = '';
+    // =========================================================================
+
+    const profileDemoBtn = document.getElementById('profileDemoBtn');
+    if (profileDemoBtn && PROFILE_DEMO_URL) {
+      profileDemoBtn.href = PROFILE_DEMO_URL;
+    }
+
     // 1. Header scroll state & mobile drawer
     const header = document.getElementById('siteHeader');
-    const onScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 48);
-    };
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 48);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
@@ -2247,103 +1883,181 @@
       el.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
-    // 2. Enfoque 3-step interactive controller
-    const enfoqueSteps = [
-      {
-        label: '01 · Situación Base y diagnóstico normativo',
-        counter: '1 / 3',
-        badge: 'Situación Base',
-        isProject: false,
-        caption: 'Lectura de geometría existente, conflictos de viraje y restricciones entre líneas oficiales.'
-      },
-      {
-        label: '02 · Resolución de puntos críticos e intersecciones',
-        counter: '2 / 3',
-        badge: 'Con Proyecto · Geometría',
-        isProject: true,
-        caption: 'Ajuste de radios de giro, islas de resguardo y continuidad ciclovial bajo D.S. N° 102.'
-      },
-      {
-        label: '03 · Validación de desempeño operacional en terreno',
-        counter: '3 / 3',
-        badge: 'Con Proyecto · Operación',
-        isProject: true,
-        caption: 'Verificación de intervisibilidad, velocidades de viraje contenidas y legibilidad para todos los usuarios.'
+    // =========================================================================
+    // MOTOR UNIFICADO: SLIDER DIAGONAL AZUL 45° (PARA MATRIZ DE NODOS Y MAPA RED)
+    // =========================================================================
+    function initDiagonalSlider({ stage, projLayer, lineEl, haloEl, handleEl, badgeBase, badgeProj, initialPos = 0.5, sweepDelay = 0 }) {
+      let diagPos = initialPos;
+      let userTouched = false;
+      let isDragging = false;
+      let isAnimating = false;
+
+      function update(progress) {
+        const rect = stage.getBoundingClientRect();
+        const W = rect.width || 560;
+        const H = rect.height || 560;
+        const p = Math.max(0.035, Math.min(0.965, progress));
+        diagPos = p;
+        stage.setAttribute('aria-valuenow', Math.round((1 - p) * 100));
+
+        const d = p * (W + H);
+        const poly = [[0, 0], [W, 0], [W, H], [0, H]];
+        const out = [];
+        for (let i = 0; i < 4; i++) {
+          const a = poly[i];
+          const b = poly[(i + 1) % 4];
+          const va = d - (a[0] + a[1]);
+          const vb = d - (b[0] + b[1]);
+          const inA = va <= 0;
+          const inB = vb <= 0;
+          if (inA && inB) {
+            out.push(b);
+          } else if (inA && !inB) {
+            const t = va / (va - vb);
+            out.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]);
+          } else if (!inA && inB) {
+            const t = va / (va - vb);
+            out.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]);
+            out.push(b);
+          }
+        }
+
+        const pts = out.map(pt => `${((pt[0] / W) * 100).toFixed(2)}% ${((pt[1] / H) * 100).toFixed(2)}%`).join(', ');
+        projLayer.style.clipPath = `polygon(${pts})`;
+
+        const x1 = Math.max(0, d - H);
+        const y1 = d - x1;
+        const x2 = Math.min(W, d);
+        const y2 = d - x2;
+
+        lineEl.setAttribute('x1', x1.toFixed(1));
+        lineEl.setAttribute('y1', y1.toFixed(1));
+        lineEl.setAttribute('x2', x2.toFixed(1));
+        lineEl.setAttribute('y2', y2.toFixed(1));
+
+        haloEl.setAttribute('x1', x1.toFixed(1));
+        haloEl.setAttribute('y1', y1.toFixed(1));
+        haloEl.setAttribute('x2', x2.toFixed(1));
+        haloEl.setAttribute('y2', y2.toFixed(1));
+
+        const mx = (x1 + x2) / 2;
+        const my = (y1 + y2) / 2;
+        handleEl.style.left = `${(mx / W) * 100}%`;
+        handleEl.style.top = `${(my / H) * 100}%`;
+
+        if (badgeBase) badgeBase.style.opacity = p < 0.16 ? '0' : '1';
+        if (badgeProj) badgeProj.style.opacity = p > 0.84 ? '0' : '1';
       }
-    ];
 
-    const stepBtns = document.querySelectorAll('[data-enfoque-step]');
-    const enfoqueImgProyecto = document.getElementById('enfoqueImgProyecto');
-    const enfoqueSvgProject = document.getElementById('enfoqueSvgProject');
-    const enfoqueBadge = document.getElementById('enfoqueBadge');
-    const enfoqueStepLabel = document.getElementById('enfoqueStepLabel');
-    const enfoqueStepCounter = document.getElementById('enfoqueStepCounter');
-    const enfoqueCaption = document.getElementById('enfoqueCaption');
-    const enfoquePins = document.querySelectorAll('#enfoquePins .tech-pin');
+      function pointerToP(clientX, clientY) {
+        const rect = stage.getBoundingClientRect();
+        const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+        const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+        return (x + y) / (rect.width + rect.height);
+      }
 
-    function setEnfoqueStep(idx) {
-      const s = enfoqueSteps[idx];
-      stepBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
-      enfoqueStepLabel.textContent = s.label;
-      enfoqueStepCounter.textContent = s.counter;
-      enfoqueBadge.textContent = s.badge;
-      enfoqueBadge.classList.toggle('project', s.isProject);
-      enfoqueCaption.textContent = s.caption;
-      enfoqueImgProyecto.style.opacity = s.isProject ? '1' : '0';
-      enfoqueSvgProject.setAttribute('opacity', s.isProject ? '1' : '0');
-      enfoquePins.forEach(pin => {
-        pin.style.display = Number(pin.dataset.step) === idx ? 'inline-flex' : 'none';
+      stage.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'touch') {
+          const hr = handleEl.getBoundingClientRect();
+          const cx = hr.left + hr.width / 2;
+          const cy = hr.top + hr.height / 2;
+          const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+          if (!handleEl.contains(e.target) && dist > 48) return;
+        }
+        userTouched = true;
+        isDragging = true;
+        stage.classList.add('dragging');
+        stage.setPointerCapture(e.pointerId);
+        update(pointerToP(e.clientX, e.clientY));
       });
+      stage.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        update(pointerToP(e.clientX, e.clientY));
+      });
+      stage.addEventListener('pointerup', () => {
+        isDragging = false;
+        stage.classList.remove('dragging');
+      });
+      stage.addEventListener('pointercancel', () => {
+        isDragging = false;
+        stage.classList.remove('dragging');
+      });
+
+      stage.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+          e.preventDefault(); userTouched = true; update(diagPos - 0.06);
+        } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+          e.preventDefault(); userTouched = true; update(diagPos + 0.06);
+        }
+      });
+
+      function runSweep(amplitude, duration) {
+        if (isAnimating || userTouched) return;
+        isAnimating = true;
+        const start = performance.now();
+        const baseP = diagPos;
+        function step(now) {
+          if (userTouched) { isAnimating = false; return; }
+          const t = Math.min((now - start) / duration, 1);
+          const wave = Math.sin(t * Math.PI * 2) * (1 - t * 0.35);
+          update(baseP - amplitude * wave);
+          if (t < 1) {
+            requestAnimationFrame(step);
+          } else {
+            update(initialPos);
+            isAnimating = false;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      let sweptScroll = false;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !sweptScroll) {
+            sweptScroll = true;
+            setTimeout(() => runSweep(0.16, 1900), sweepDelay);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+      obs.observe(stage);
+
+      stage.addEventListener('mouseenter', () => runSweep(0.065, 850));
+
+      if (window.ResizeObserver) {
+        new ResizeObserver(() => update(diagPos)).observe(stage);
+      } else {
+        window.addEventListener('resize', () => update(diagPos));
+      }
+      update(initialPos);
     }
 
-    stepBtns.forEach(btn => {
-      btn.addEventListener('click', () => setEnfoqueStep(Number(btn.dataset.enfoqueStep)));
-    });
-
-    const togglePinsBtn = document.getElementById('toggleEnfoquePins');
-    const pinsContainer = document.getElementById('enfoquePins');
-    let pinsOn = true;
-    togglePinsBtn.addEventListener('click', () => {
-      pinsOn = !pinsOn;
-      pinsContainer.classList.toggle('hidden', !pinsOn);
-      togglePinsBtn.classList.toggle('active', pinsOn);
-      togglePinsBtn.innerHTML = pinsOn ? '<span>●</span> Capas técnicas: ON' : '<span>○</span> Capas técnicas: OFF';
-    });
-
-    // 3. Multiscalar Tabs
-    const scaleTabBtns = document.querySelectorAll('[data-scale-tab]');
-    const scalePanels = document.querySelectorAll('.scale-panel');
-    scaleTabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.scaleTab;
-        scaleTabBtns.forEach(b => b.classList.toggle('active', b === btn));
-        scalePanels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + target));
-      });
-    });
-
-    // 4. Before/After Street Profile Comparator (drag + range input)
+    // =========================================================================
+    // 2. PERFIL VIAL (ARCO): SLIDER VERTICAL AZUL + BARRIDO DE CORTESÍA
+    // =========================================================================
     const compareStage = document.getElementById('compareStage');
     const compareBeforeWrap = document.getElementById('compareBeforeWrap');
     const compareDivider = document.getElementById('compareDivider');
-    const compareRange = document.getElementById('compareRange');
-    const cutIndicator = document.getElementById('cutIndicator');
+    let comparePos = 50;
+    let userTouchedSlider = false;
+    let isDragging = false;
+    let compareAnimating = false;
 
     function updateCompare(pct) {
       const clamped = Math.max(0, Math.min(100, pct));
+      comparePos = clamped;
       compareBeforeWrap.style.clipPath = `inset(0 ${100 - clamped}% 0 0)`;
       compareDivider.style.left = clamped + '%';
-      compareRange.value = clamped;
-      cutIndicator.textContent = `CORTE: ${Math.round(clamped)}%`;
     }
 
-    compareRange.addEventListener('input', (e) => updateCompare(Number(e.target.value)));
-
-    let isDragging = false;
     function pointerToPct(clientX) {
       const rect = compareStage.getBoundingClientRect();
       return ((clientX - rect.left) / rect.width) * 100;
     }
+
     compareStage.addEventListener('pointerdown', (e) => {
+      userTouchedSlider = true;
       isDragging = true;
       compareStage.setPointerCapture(e.pointerId);
       updateCompare(pointerToPct(e.clientX));
@@ -2354,70 +2068,125 @@
     });
     compareStage.addEventListener('pointerup', () => { isDragging = false; });
 
-    // 5. Intersections Viewer (5 nodes x Base/Proyecto)
-    const intCodes = ['I1', 'I5', 'I12', 'I19', 'I23'];
-    let curIntIdx = 0;
-    let curIntState = 'Base';
-    const intImg = document.getElementById('intersectionImg');
-    const intBadge = document.getElementById('intersectionBadge');
-    const intSvgProject = document.getElementById('intSvgProject');
-
-    function updateIntersection() {
-      const code = intCodes[curIntIdx];
-      const isProj = curIntState === 'Proyecto';
-      intImg.style.display = 'block';
-      intImg.src = `assets/plantas/${code}_${curIntState}.png`;
-      intBadge.textContent = `Intersección ${curIntIdx + 1} (${code}) · ${isProj ? 'Con Proyecto' : 'Situación Base'}`;
-      intBadge.classList.toggle('project', isProj);
-      intSvgProject.setAttribute('opacity', isProj ? '1' : '0');
+    function runCompareSweep(amplitude, duration) {
+      if (compareAnimating || userTouchedSlider) return;
+      compareAnimating = true;
+      const start = performance.now();
+      const basePos = comparePos;
+      function step(now) {
+        if (userTouchedSlider) { compareAnimating = false; return; }
+        const t = Math.min((now - start) / duration, 1);
+        const wave = Math.sin(t * Math.PI * 2) * (1 - t * 0.35);
+        updateCompare(basePos - amplitude * wave);
+        if (t < 1) {
+          requestAnimationFrame(step);
+        } else {
+          updateCompare(48);
+          compareAnimating = false;
+        }
+      }
+      requestAnimationFrame(step);
     }
 
-    document.querySelectorAll('[data-int-idx]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        curIntIdx = Number(btn.dataset.intIdx);
-        document.querySelectorAll('[data-int-idx]').forEach(b => b.classList.toggle('active', b === btn));
-        updateIntersection();
+    let sweptOnce = false;
+    const sweepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !sweptOnce && !userTouchedSlider) {
+          sweptOnce = true;
+          runCompareSweep(22, 2000);
+          sweepObserver.disconnect();
+        }
       });
+    }, { threshold: 0.4 });
+    sweepObserver.observe(compareStage);
+
+    compareStage.addEventListener('mouseenter', () => runCompareSweep(7, 850));
+
+    // =========================================================================
+    // 3. NODOS (MATRIZ 2x2 ESCALABLE A 3x3) + RED (MAPA GORE RM)
+    // =========================================================================
+    // Para pasar a 3x3 (como el logo), cambia NODE_GRID_SIZE a 3 y pon 9 códigos:
+    const NODE_GRID_SIZE = 2;
+    const NODE_GRID_CODES = ['I1', 'I5', 'I12', 'I19'];
+
+    const nodeMatrixBase = document.getElementById('nodeMatrixBase');
+    const nodeMatrixProj = document.getElementById('nodeMatrixProj');
+
+    function buildNodeMatrix() {
+      nodeMatrixBase.style.setProperty('--grid-n', NODE_GRID_SIZE);
+      nodeMatrixProj.style.setProperty('--grid-n', NODE_GRID_SIZE);
+      const codes = NODE_GRID_CODES.slice(0, NODE_GRID_SIZE * NODE_GRID_SIZE);
+
+      nodeMatrixBase.innerHTML = codes.map(code => `
+        <div class="node-cell">
+          <img src="assets/plantas/${code}_Base.png" alt="Intersección ${code} — Situación Base">
+        </div>
+      `).join('');
+
+      nodeMatrixProj.innerHTML = codes.map(code => `
+        <div class="node-cell">
+          <img src="assets/plantas/${code}_Proyecto.png" alt="Intersección ${code} — Con Proyecto">
+        </div>
+      `).join('');
+    }
+    buildNodeMatrix();
+
+    initDiagonalSlider({
+      stage: document.getElementById('nodeStage'),
+      projLayer: nodeMatrixProj,
+      lineEl: document.getElementById('nodeWiperLine'),
+      haloEl: document.getElementById('nodeWiperHalo'),
+      handleEl: document.getElementById('nodeDiagHandle'),
+      badgeBase: document.getElementById('nodeBadgeBase'),
+      badgeProj: document.getElementById('nodeBadgeProj'),
+      initialPos: 0.5,
+      sweepDelay: 0
     });
 
-    document.querySelectorAll('[data-int-state]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        curIntState = btn.dataset.intState;
-        document.querySelectorAll('[data-int-state]').forEach(b => b.classList.toggle('active', b === btn));
-        updateIntersection();
-      });
+    initDiagonalSlider({
+      stage: document.getElementById('mapStage'),
+      projLayer: document.getElementById('mapFutureLayer'),
+      lineEl: document.getElementById('mapWiperLine'),
+      haloEl: document.getElementById('mapWiperHalo'),
+      handleEl: document.getElementById('mapDiagHandle'),
+      badgeBase: document.getElementById('mapBadgeBase'),
+      badgeProj: document.getElementById('mapBadgeProj'),
+      initialPos: 0.5,
+      sweepDelay: 220
     });
 
-    // 6. Metropolitan SIG Maps Switcher
-    const maps = [
-      {
-        src: 'assets/mapas/mapa-final-indice-multianillo.webp',
-        badge: 'Escenario Actual · Índice Multianillo',
-        isFuture: false
-      },
-      {
-        src: 'assets/mapas/mapa-futuro-simulado-multianillo.webp',
-        badge: 'Escenario Futuro Simulado · Conectividad',
-        isFuture: true
-      }
-    ];
-    const mapImg = document.getElementById('mapImg');
-    const mapBadge = document.getElementById('mapBadge');
-    const mapSvgFuture = document.getElementById('mapSvgFuture');
+    // =========================================================================
+    // 4. CONTADORES RÁPIDOS DE RESPALDO
+    // =========================================================================
+    const metricsBar = document.getElementById('metricsBar');
+    let metricsAnimated = false;
+    const metricsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !metricsAnimated) {
+          metricsAnimated = true;
+          const counters = metricsBar.querySelectorAll('.counter');
+          const duration = 1100;
+          const startTime = performance.now();
 
-    document.querySelectorAll('[data-map-idx]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const m = maps[Number(btn.dataset.mapIdx)];
-        document.querySelectorAll('[data-map-idx]').forEach(b => b.classList.toggle('active', b === btn));
-        mapImg.style.display = 'block';
-        mapImg.src = m.src;
-        mapBadge.textContent = m.badge;
-        mapBadge.classList.toggle('project', m.isFuture);
-        mapSvgFuture.setAttribute('opacity', m.isFuture ? '1' : '0');
+          function tickCounters(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counters.forEach(el => {
+              const target = Number(el.dataset.target);
+              el.textContent = Math.round(target * eased);
+            });
+            if (progress < 1) requestAnimationFrame(tickCounters);
+          }
+          requestAnimationFrame(tickCounters);
+          metricsObserver.disconnect();
+        }
       });
-    });
+    }, { threshold: 0.25 });
+    metricsObserver.observe(metricsBar);
 
-    // 7. Contact Form & Quick Topic Pre-selection
+    // =========================================================================
+    // 6. FORMULARIO DE CONTACTO Y DOSSIER MODAL
+    // =========================================================================
     let selectedTopic = 'Revisión D.S. N° 102';
     const topicPills = document.querySelectorAll('.topic-pill');
 
@@ -2441,10 +2210,6 @@
         copyEmailBtn.textContent = 'contacto@planciclo.cl';
       }
     });
-
-    // Opcional: pega aquí tu endpoint de Formspree (ej. 'https://formspree.io/f/tuCodigo')
-    // para enviar directamente sin abrir el cliente de correo. Si queda vacío, usa mailto:.
-    const FORMSPREE_ENDPOINT = '';
 
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
@@ -2484,7 +2249,7 @@
             throw new Error('Formspree error');
           }
         } catch (err) {
-          formStatus.innerHTML = 'No pudimos enviar el formulario automáticamente. Escríbenos directo a <strong>contacto@planciclo.cl</strong>.';
+          formStatus.innerHTML = 'No pudimos enviar automáticamente. Escríbenos directo a <strong>contacto@planciclo.cl</strong>.';
           formStatus.classList.add('show');
         } finally {
           submitBtn.disabled = false;
@@ -2511,7 +2276,7 @@
       window.location.href = `mailto:contacto@planciclo.cl?subject=${subject}&body=${body}`;
     });
 
-    // 8. Dossier Modal
+    // 7. Dossier Modal
     const dossierModal = document.getElementById('dossierModal');
     const dossierFrame = document.getElementById('dossierFrame');
     const dossierUrl = 'assets/brochure/brochure_planciclo.html';
@@ -2531,7 +2296,6 @@
     document.getElementById('closeDossierBtn').addEventListener('click', closeDossier);
     dossierModal.addEventListener('click', (e) => { if (e.target === dossierModal) closeDossier(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDossier(); });
-
   </script>
 </body>
 </html>
