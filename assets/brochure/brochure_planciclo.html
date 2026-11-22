@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Ciclo — Dossier Comercial B2B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ciclo: #4D76A1;
+      --ciclo-dark: #38597C;
+      --ciclo-darker: #1F354D;
+      --ciclo-light: #EBF1F6;
+      --ciclo-tint: #F4F7FA;
+      --signal: #D94E4E;
+      --ink: #1A202C;
+      --slate: #4A5568;
+      --border: #DCE4EC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    }
+
+    .toolbar {
+      width: 215.9mm;
+      max-width: 100%;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    }
+
+    .toolbar span {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    .btn-print {
+      background: var(--ciclo);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 7px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background: var(--ciclo-dark);
+    }
+
+    /* Hoja Carta exacta: 215.9mm x 279.4mm */
+    .sheet {
+      width: 215.9mm;
+      height: 279.4mm;
+      background: #FFFFFF;
+      padding: 13mm 15mm 12mm 15mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+    }
+
+    /* Cabecera */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 11px;
+      border-bottom: 2.5px solid var(--ciclo);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--ciclo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--ciclo);
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--slate);
+      margin-top: 3px;
+    }
+
+    .contact-top {
+      text-align: right;
+      font-size: 10.5px;
+      color: var(--slate);
+      line-height: 1.45;
+    }
+
+    .contact-top strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Hero comercial B2B */
+    .hero {
+      background: linear-gradient(135deg, var(--ciclo-darker) 0%, var(--ciclo-dark) 55%, var(--ciclo) 100%);
+      color: #FFFFFF;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 12px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.14);
+      padding: 4px 9px;
+      border-radius: 999px;
+      margin-bottom: 9px;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--signal);
+    }
+
+    .hero h1 {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.22;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 11.2px;
+      line-height: 1.5;
+      color: #EBF2F7;
+    }
+
+    /* Proceso en 3 pasos */
+    .section-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ciclo);
+      margin-bottom: 7px;
+    }
+
+    .steps-block {
+      margin-top: 13px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .step-card {
+      background: var(--ciclo-tint);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 12px;
+    }
+
+    .step-num {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: var(--ciclo);
+      letter-spacing: 0.05em;
+    }
+
+    .step-card h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 3px 0 4px 0;
+    }
+
+    .step-card p {
+      font-size: 10.2px;
+      line-height: 1.42;
+      color: var(--slate);
+    }
+
+    /* Dos columnas: Entregables y Respaldo */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #FFFFFF;
+    }
+
+    .panel h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--ciclo-light);
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+    }
+
+    .check-list li {
+      font-size: 10.3px;
+      line-height: 1.38;
+      color: var(--ink);
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--ciclo);
+      font-weight: 800;
+    }
+
+    .check-list li span {
+      color: var(--slate);
+    }
+
+    /* Franja de alcance ampliado y esquema gráfico */
+    .scope-strip {
+      margin-top: 12px;
+      background: var(--ciclo-light);
+      border-left: 3.5px solid var(--ciclo);
+      border-radius: 6px;
+      padding: 9px 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .scope-strip p {
+      font-size: 10.1px;
+      line-height: 1.4;
+      color: var(--ciclo-darker);
+    }
+
+    .scope-tags {
+      display: flex;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .tag {
+      background: #FFFFFF;
+      color: var(--ciclo-dark);
+      border: 1px solid #C6D6E6;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+
+    /* Pie y firma */
+    .footer {
+      border-top: 1.5px solid var(--border);
+      padding-top: 10px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .director-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .director-creds {
+      font-size: 9.8px;
+      color: var(--slate);
+      line-height: 1.38;
+      margin-top: 2px;
+    }
+
+    .cta-footer {
+      text-align: right;
+      font-size: 10.3px;
+      line-height: 1.42;
+    }
+
+    .cta-footer .mail {
+      font-weight: 700;
+      color: var(--ciclo);
+      font-size: 11.5px;
+    }
+
+    .legal-note {
+      font-size: 9px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+        margin: 0;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .sheet {
+        box-shadow: none;
+        width: 215.9mm;
+        height: 279.4mm;
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <span>Vista previa configurada para 1 sola hoja Carta · Desactiva "Encabezados y pies de página" al guardar PDF</span>
+    <button class="btn-print" onclick="window.print()">Guardar como PDF (1 página)</button>
+  </div>
+
+  <main class="sheet">
+    <div>
+      <!-- CABECERA -->
+      <header class="header">
+        <div class="brand">
+          <div class="logo-box">
+            <svg width="32" height="24" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="15" cy="31" r="9.5" stroke="#FFFFFF" stroke-width="2.6"/>
+              <path d="M 55.8 25.2 A 9.5 9.5 0 1 0 58.3 32.5" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M 54.6 34.4 L 58.6 31.6 L 60.8 36.0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 15 31 L 27.5 31 L 39.5 17.5 L 23.5 17.5 Z" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M 27.5 31 L 22.2 13.5 M 19 13.5 L 25.5 13.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 38.2 12.5 L 41 17.5 L 49 31 M 34.5 12.5 L 38.5 12.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="27.5" cy="31" r="2.6" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title font-display">PLAN CICLO</div>
+            <div class="brand-sub">Planificación y Diseño Cicloinclusivo · Especialidad B2B</div>
+          </div>
+        </div>
+        <div class="contact-top">
+          <strong>Ficha Técnica B2B</strong><br />
+          contacto@planciclo.cl · planciclo.cl<br />
+          Santiago, Chile
+        </div>
+      </header>
+
+      <!-- HERO COMERCIAL DIRECTO -->
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Soporte especializado para consultoras de transporte, ingeniería vial e IMIV
+        </div>
+        <h1 class="font-display">
+          ¿Tu proyecto incluye una ciclovía y debe aprobarse bajo el D.S. N° 102/2019 MTT?
+        </h1>
+        <p>
+          Evita rondas prolongadas de observaciones ante SEREMITT, SECTRA, SERVIU y UOCT. Nos compartes los antecedentes base y el tramo de trazado requerido, y en <strong>1 semana</strong> entregamos el diseño operacional y la memoria normativa listos para ingreso, con acompañamiento técnico en el levantamiento de observaciones hasta su visación.
+        </p>
+      </section>
+
+      <!-- 3 PASOS -->
+      <section class="steps-block">
+        <div class="section-label">Cómo operamos en 3 pasos</div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01 · ANTECEDENTES</div>
+            <h3 class="font-display">Envío de requerimientos</h3>
+            <p>Nos compartes la planimetría base, los límites del tramo (desde–hasta) y el marco del estudio mayor, corredor o IMIV.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02 · PLAZO 1 SEMANA</div>
+            <h3 class="font-display">Diseño y memoria D.S. 102</h3>
+            <p>Entregamos perfiles tipo, intersecciones, señalización y memoria técnica conforme a D.S. N° 102/2019, OGUC y Guía SECTRA.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03 · SEGUIMIENTO</div>
+            <h3 class="font-display">Acompañamiento a visación</h3>
+            <p>Si la autoridad emite observaciones sobre la especialidad ciclovial dentro del alcance acordado, las respondemos hasta su aprobación.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENTREGABLES Y VALOR AGREGADO -->
+      <section class="two-col">
+        <div class="panel">
+          <h3 class="font-display">Entregables de la especialidad</h3>
+          <ul class="check-list">
+            <li><strong>Emplazamiento y perfiles transversales:</strong> <span>verificación de cabida vial, aceras y arbolado (Art. 2.3.2 bis OGUC).</span></li>
+            <li><strong>Segregación e interacciones complejas:</strong> <span>tratamiento físico según velocidad, paradas RED y accesos vehiculares.</span></li>
+            <li><strong>Intersecciones críticas e Índice de Riesgo (Ir):</strong> <span>esquinas protegidas, líneas adelantadas y análisis operacional por fases.</span></li>
+            <li><strong>Señalización y demarcación:</strong> <span>criterios conforme al Manual de Señalización de Tránsito (D.S. N° 78/2012 MTT).</span></li>
+            <li><strong>Memoria Técnica de Anteproyecto:</strong> <span>expediente estructurado bajo criterios de revisión D.S. N° 102/2019 y Guía SECTRA.</span></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3 class="font-display">Por qué integrarnos a tu equipo</h3>
+          <ul class="check-list">
+            <li><strong>Experiencia directa en revisión:</strong> <span>conocimiento desde adentro de los criterios técnicos de SECTRA y MTT.</span></li>
+            <li><strong>Entre el plano y la calle:</strong> <span>soluciones que cumplen la norma y funcionan realmente para las personas.</span></li>
+            <li><strong>Integración B2B sin fricción:</strong> <span>operamos como brazo especialista bajo confidencialidad, sin competir en licitaciones.</span></li>
+            <li><strong>Ahorro de horas-hombre:</strong> <span>evita retrabajos de equipos centrales y acelera el cierre de estados de pago.</span></li>
+            <li><strong>Flexibilidad de modalidad:</strong> <span>auditoría preventiva pre-ingreso, destrabe de oficios o desarrollo completo.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FRANJA DE OTRAS CAPACIDADES -->
+      <div class="scope-strip">
+        <p>
+          <strong>Otras líneas de colaboración:</strong> además de expedientes D.S. 102, apoyamos estudios de redes, planes maestros comunales, auditorías de seguridad vial, capacitación normativa y observación de vida pública.
+        </p>
+        <div class="scope-tags">
+          <span class="tag">Redes SIG</span>
+          <span class="tag">IMIV</span>
+          <span class="tag">Auditorías</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIE DE PÁGINA Y FIRMA -->
+    <footer class="footer">
+      <div>
+        <div class="director-name">Dr. Tomás Echiburú Altamirano — Director Técnico</div>
+        <div class="director-creds">
+          Arquitecto, Mg. Arquitectura del Paisaje y PhD en Ingeniería de Transporte (PUC)<br />
+          Ex-Encargado del Área de Movilidad Activa de SECTRA (MTT, 2022–2026)
+        </div>
+        <div class="legal-note">Plan Ciclo es una marca de Echiburu SpA · Consultoría especializada en movilidad activa.</div>
+      </div>
+      <div class="cta-footer">
+        <div class="mail">contacto@planciclo.cl</div>
+        <div><strong>planciclo.cl</strong> · Santiago, Chile</div>
+        <div class="legal-note">Solicita una memoria de muestra o revisemos tu trazado.</div>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
